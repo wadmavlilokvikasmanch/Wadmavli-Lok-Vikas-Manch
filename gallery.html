@@ -1,717 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gallery | Wadmavli Lok Vikas Manch</title>
+    <title>WLVM Gallery | Wadmavli Lok Vikas Manch</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f9fc;
+            color: #243746;
+            text-align: center;
+        }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:#243746;
-    background:#f8fbfd;
-}
+        header {
+            background: #075b9a;
+            color: white;
+            padding: 25px 15px;
+        }
 
-/* HEADER */
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
 
-header{
-    background:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 3px 18px rgba(0,0,0,.10);
-}
+        header p {
+            margin: 8px 0 0;
+            color: #ffd1df;
+            font-weight: bold;
+        }
 
-.container{
-    width:90%;
-    max-width:1150px;
-    margin:auto;
-}
+        .gallery {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-.navbar{
-    min-height:78px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
+        .gallery h2 {
+            color: #075b9a;
+            font-size: 32px;
+        }
 
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
+        .gallery p {
+            color: #637582;
+            font-size: 16px;
+        }
 
-.logo-box{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#075b9a,#e85b88);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-weight:bold;
-    font-size:14px;
-}
+        .photo-card {
+            background: white;
+            max-width: 650px;
+            margin: 35px auto;
+            padding: 15px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
 
-.brand h2{
-    color:#075b9a;
-    font-size:18px;
-    line-height:1.2;
-}
+        .photo-card img {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
 
-.brand span{
-    color:#e85b88;
-    font-size:11px;
-    font-weight:bold;
-    letter-spacing:1px;
-}
+        .photo-card h3 {
+            color: #075b9a;
+            margin: 18px 0 5px;
+            font-size: 23px;
+        }
 
-nav{
-    display:flex;
-    gap:18px;
-    align-items:center;
-}
+        .photo-card p {
+            margin-bottom: 10px;
+        }
 
-nav a{
-    text-decoration:none;
-    color:#243746;
-    font-size:14px;
-    font-weight:bold;
-}
+        .back {
+            display: inline-block;
+            margin: 10px 0 40px;
+            padding: 12px 24px;
+            background: #e85b88;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
 
-nav a:hover{
-    color:#e85b88;
-}
+        footer {
+            background: #063b67;
+            color: white;
+            padding: 25px 15px;
+        }
 
-.donate{
-    background:#e85b88;
-    color:white !important;
-    padding:9px 17px;
-    border-radius:25px;
-}
-
-/* HERO */
-
-.hero{
-    padding:85px 20px;
-    text-align:center;
-
-    background:
-    radial-gradient(circle at 10% 20%,rgba(232,91,136,.15),transparent 30%),
-    radial-gradient(circle at 90% 80%,rgba(7,91,154,.15),transparent 30%),
-    linear-gradient(135deg,#f8fcff,#fff4f8);
-}
-
-.hero-small{
-    color:#e85b88;
-    font-size:13px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.hero h1{
-    color:#063b67;
-    font-size:55px;
-    margin:10px 0;
-}
-
-.hero h1 span{
-    color:#e85b88;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    color:#637582;
-    font-size:17px;
-}
-
-/* GALLERY */
-
-.gallery-section{
-    padding:70px 0;
-}
-
-.gallery-intro{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.gallery-intro h2{
-    color:#063b67;
-    font-size:35px;
-}
-
-.gallery-intro p{
-    color:#637582;
-    margin-top:8px;
-}
-
-/* PHOTO GRID */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 22px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-7px);
-    box-shadow:0 12px 30px rgba(0,0,0,.13);
-}
-
-.card img{
-    width:100%;
-    height:270px;
-    object-fit:cover;
-    display:block;
-    cursor:pointer;
-}
-
-.card-info{
-    padding:18px;
-}
-
-.card-info h3{
-    color:#063b67;
-    margin-bottom:6px;
-    font-size:19px;
-}
-
-.card-info p{
-    color:#637582;
-    font-size:14px;
-}
-
-/* CTA */
-
-.cta{
-    padding:70px 20px;
-    text-align:center;
-    background:linear-gradient(135deg,#075b9a,#063b67);
-    color:white;
-}
-
-.cta h2{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.cta p{
-    max-width:650px;
-    margin:0 auto 25px;
-    color:#e1edf5;
-}
-
-.button{
-    display:inline-block;
-    text-decoration:none;
-    padding:13px 25px;
-    border-radius:30px;
-    font-weight:bold;
-    margin:5px;
-}
-
-.pink{
-    background:#e85b88;
-    color:white;
-}
-
-.white{
-    background:white;
-    color:#075b9a;
-}
-
-/* FOOTER */
-
-footer{
-    background:#062f50;
-    color:white;
-    text-align:center;
-    padding:40px 20px 25px;
-}
-
-footer h2{
-    font-size:22px;
-}
-
-.tagline{
-    color:#ffabc4;
-    font-weight:bold;
-    margin-top:5px;
-}
-
-.social{
-    margin:18px 0;
-}
-
-.social a{
-    display:inline-block;
-    color:white;
-    text-decoration:none;
-    border:1px solid rgba(255,255,255,.3);
-    padding:7px 14px;
-    border-radius:20px;
-    margin:4px;
-}
-
-.social a:hover{
-    background:#e85b88;
-}
-
-.copyright{
-    color:#bdd1df;
-    font-size:13px;
-    margin-top:15px;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:5000;
-    background:rgba(0,0,0,.9);
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.lightbox img{
-    max-width:95%;
-    max-height:85vh;
-    border-radius:12px;
-}
-
-.close{
-    position:absolute;
-    top:15px;
-    right:25px;
-    color:white;
-    font-size:42px;
-    cursor:pointer;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    nav{
-        display:none;
-    }
-
-    .gallery{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:600px){
-
-    .gallery{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        padding:65px 20px;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .card img{
-        height:240px;
-    }
-}
-</style>
+        footer strong {
+            color: #ffabc4;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-
-<div class="container navbar">
-
-<div class="brand">
-
-<div class="logo-box">
-WLVM
-</div>
-
-<div>
-<h2>Wadmavli Lok Vikas Manch</h2>
-<span>TOWARDS EMPOWERMENT</span>
-</div>
-
-</div>
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="index.html#about">About</a>
-
-<a href="index.html#programs">Programs</a>
-
-<a href="gallery.html">Gallery</a>
-
-<a href="index.html#partners">Partners</a>
-
-<a href="index.html#contact">Contact</a>
-
-<a href="index.html#donate" class="donate">Donate</a>
-
-</nav>
-
-</div>
-
+    <h1>Wadmavli Lok Vikas Manch</h1>
+    <p>Towards Empowerment</p>
 </header>
 
+<section class="gallery">
 
-<!-- HERO -->
+    <h2>Our Gallery</h2>
 
-<section class="hero">
+    <p>
+        A glimpse into the work of Wadmavli Lok Vikas Manch.
+    </p>
 
-<div class="container">
+    <div class="photo-card">
 
-<div class="hero-small">
-OUR JOURNEY IN PICTURES
-</div>
+        <img
+            src="./mission-education.jpeg"
+            alt="Mission Education Program">
 
-<h1>WLVM <span>Gallery</span></h1>
+        <h3>Mission Education</h3>
 
-<p>
-A glimpse into the work and activities of
-Wadmavli Lok Vikas Manch across education,
-empowerment, livelihoods, agriculture,
-water conservation and climate action.
-</p>
+        <p>
+            Supporting children's education in
+            Kalepadal, Hadapsar, Pune.
+        </p>
 
-</div>
+    </div>
+
+    <a class="back" href="index.html">
+        ← Back to Home
+    </a>
 
 </section>
-
-
-<!-- GALLERY -->
-
-<section class="gallery-section">
-
-<div class="container">
-
-<div class="gallery-intro">
-
-<h2>Our Work in Action</h2>
-
-<p>
-Every photograph represents a step towards empowerment.
-</p>
-
-</div>
-
-
-<div class="gallery">
-
-
-<!-- 1. MISSION EDUCATION -->
-
-<div class="card">
-
-<img
-src="mission-education.jpeg"
-alt="Mission Education Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>📚 Mission Education</h3>
-
-<p>
-Supporting children's education in
-Kalepadal, Hadapsar, Pune.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 2. ORGANIC FARMING -->
-
-<div class="card">
-
-<img
-src="organic-farming.jpeg"
-alt="Organic Farming Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>🌾 Organic Farming</h3>
-
-<p>
-Supporting farmers through training,
-awareness and sustainable farming practices.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 3. SKILL DEVELOPMENT -->
-
-<div class="card">
-
-<img
-src="skill-development.jpeg"
-alt="Skill Development Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>💼 Skill Development</h3>
-
-<p>
-Creating livelihood opportunities through
-free skill development training.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 4. TREE PLANTATION -->
-
-<div class="card">
-
-<img
-src="tree-plantation.jpeg"
-alt="Tree Plantation Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>🌳 Tree Plantation</h3>
-
-<p>
-Working towards climate action and
-environmental sustainability.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 5. WATERSHED -->
-
-<div class="card">
-
-<img
-src="watershed.jpeg"
-alt="Watershed Development Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>🌱 Watershed Development</h3>
-
-<p>
-Community-based watershed activities
-in the Balaghat Valley region.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 6. WOMEN SHG -->
-
-<div class="card">
-
-<img
-src="women-shg.jpeg"
-alt="Women Empowerment and SHG Program"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>👩 Women Empowerment & SHGs</h3>
-
-<p>
-Supporting women through SHGs,
-bank linkage and livelihood opportunities.
-</p>
-
-</div>
-
-</div>
-
-
-<!-- 7. DRIVING SCHOOL -->
-
-<div class="card">
-
-<img
-src="driving-school.jpeg"
-alt="Motor Driving School"
-onclick="openImage(this.src)"
->
-
-<div class="card-info">
-
-<h3>🚗 Motor Driving School</h3>
-
-<p>
-Driving training and licence support
-for people aged 18 years and above.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>Together, We Create Change</h2>
-
-<p>
-Your support, participation and partnership can help
-us continue creating opportunities for communities.
-</p>
-
-<a href="index.html#volunteer" class="button pink">
-Volunteer With Us
-</a>
-
-<a href="index.html#donate" class="button white">
-Donate Now
-</a>
-
-</div>
-
-</section>
-
-
-<!-- LIGHTBOX -->
-
-<div class="lightbox" id="lightbox">
-
-<span class="close" onclick="closeImage()">×</span>
-
-<img id="largeImage" src="" alt="WLVM Gallery Image">
-
-</div>
-
-
-<!-- FOOTER -->
 
 <footer>
-
-<div class="container">
-
-<h2>Wadmavli Lok Vikas Manch</h2>
-
-<div class="tagline">
-Towards Empowerment
-</div>
-
-<p>Established 19 June 2000</p>
-
-<div class="social">
-
-<a
-href="https://www.instagram.com/wadmavli_lok_vikas_manch/"
-target="_blank">
-Instagram
-</a>
-
-<a
-href="https://www.facebook.com/share/19E1mR717e/"
-target="_blank">
-Facebook
-</a>
-
-<a href="mailto:wadmavlikaij.org@gmail.com">
-Email
-</a>
-
-</div>
-
-<div class="copyright">
-© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.
-</div>
-
-</div>
-
+    <strong>Wadmavli Lok Vikas Manch</strong><br>
+    Towards Empowerment<br>
+    Established 19 June 2000
 </footer>
-
-
-<script>
-
-function openImage(image){
-
-    document.getElementById("largeImage").src = image;
-
-    document.getElementById("lightbox").style.display = "flex";
-
-}
-
-function closeImage(){
-
-    document.getElementById("lightbox").style.display = "none";
-
-}
-
-document.getElementById("lightbox").addEventListener("click", function(event){
-
-    if(event.target === this){
-        closeImage();
-    }
-
-});
-
-</script>
 
 </body>
 </html>
