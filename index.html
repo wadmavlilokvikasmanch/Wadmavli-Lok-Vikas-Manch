@@ -1928,10 +1928,10 @@ Become a Volunteer
 Support Our Work
 </h2>
 
-<img src="donate-qr.jpeg"
-   alt="Scan QR code to donate"
-   style="width:220px; margin:20px
-   auto; border-radius:12px;">
+<img id="qrCode"
+     src="donate-qr.jpeg"
+     alt="Scan QR code to donate"
+     style="width:220px; margin:20px auto; border-radius:12px; display:none;">
 
 <p>
 Your contribution can help strengthen our work
@@ -1975,13 +1975,9 @@ SBIN0020406
 </div>
 
 
-<a
-href="mailto:wadmavlikaij.org@gmail.com?subject=Donation%20Enquiry"
-class="btn btn-pink">
-
-Donate Now
-
-</a>
+<button class="btn btn-pink" onclick="showQR()">
+    Donate Now
+</button>
 
 </div>
 
@@ -2173,11 +2169,22 @@ Established 19 June 2000
 © 2026 Wadmavli Lok Vikas Manch.
 All Rights Reserved.
 </p>
-
+   
 </div>
 
 </footer>
+   
+<script>
+function showQR() {
+    const qr = document.getElementById("qrCode");
 
+    if (qr.style.display === "none") {
+        qr.style.display = "block";
+    } else {
+        qr.style.display = "none";
+    }
+}
+</script>
 
 </body>
 
