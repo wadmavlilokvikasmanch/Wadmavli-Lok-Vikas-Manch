@@ -5,129 +5,158 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>WLVM Gallery</title>
+<title>Gallery | Wadmavli Lok Vikas Manch</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f7fbfd;
-    color:#243746;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7fbfd;
+    color: #243746;
 }
 
-header{
-    background:#075b9a;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
+/* HEADER */
+
+header {
+    background: #075b9a;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
 
-header h1{
-    margin:0;
-    font-size:30px;
+header h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
-header p{
-    color:#ffd1df;
-    font-weight:bold;
+header p {
+    color: #ffd1df;
+    font-weight: bold;
+    margin-top: 8px;
 }
 
-.gallery{
-    max-width:1100px;
-    margin:50px auto;
-    padding:0 20px;
+
+/* GALLERY */
+
+.gallery {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-.gallery-title{
-    text-align:center;
-    margin-bottom:40px;
+.gallery-title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.gallery-title h2{
-    color:#075b9a;
-    font-size:35px;
+.gallery-title h2 {
+    color: #075b9a;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 
-.gallery-title p{
-    color:#637582;
+.gallery-title p {
+    color: #637582;
 }
 
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+
+/* IMAGE GRID */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.card{
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,0.10);
+
+/* CARDS */
+
+.card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
 }
 
-.card img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    display:block;
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
 }
 
-.card-content{
-    padding:20px;
+.card-content {
+    padding: 20px;
 }
 
-.card h3{
-    color:#075b9a;
-    margin:0 0 8px;
-    font-size:20px;
+.card h3 {
+    color: #075b9a;
+    margin: 0 0 8px;
+    font-size: 20px;
 }
 
-.card p{
-    color:#637582;
-    font-size:14px;
-    line-height:1.6;
+.card p {
+    color: #637582;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-.back{
-    display:block;
-    width:max-content;
-    margin:45px auto;
-    padding:12px 25px;
-    background:#e85b88;
-    color:white;
-    text-decoration:none;
-    border-radius:25px;
-    font-weight:bold;
+
+/* BACK BUTTON */
+
+.back {
+    display: block;
+    width: max-content;
+    margin: 45px auto;
+    padding: 12px 25px;
+    background: #e85b88;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
 }
 
-footer{
-    background:#063b67;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
+
+/* FOOTER */
+
+footer {
+    background: #063b67;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
 
-footer strong{
-    color:#ffabc4;
+footer strong {
+    color: #ffabc4;
 }
 
-@media(max-width:800px){
 
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
-@media(max-width:550px){
 
-    .gallery-grid{
-        grid-template-columns:1fr;
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-title h2 {
+        font-size: 28px;
     }
 
 }
@@ -140,111 +169,168 @@ footer strong{
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
-<h1>Wadmavli Lok Vikas Manch</h1>
+    <h1>Wadmavli Lok Vikas Manch</h1>
 
-<p>Towards Empowerment</p>
+    <p>Towards Empowerment</p>
 
 </header>
 
 
+<!-- GALLERY -->
+
 <section class="gallery">
 
-<div class="gallery-title">
+    <div class="gallery-title">
 
-<h2>Our Gallery</h2>
+        <h2>Our Gallery</h2>
 
-<p>
-A glimpse into the work of Wadmavli Lok Vikas Manch.
-</p>
+        <p>
+            A glimpse into the work of Wadmavli Lok Vikas Manch.
+        </p>
 
-</div>
-
-
-<div class="gallery-grid">
+    </div>
 
 
-<!-- MISSION EDUCATION -->
-
-<div class="card">
-
-<img
-src="./mission-education.jpeg"
-alt="Mission Education Program">
-
-<div class="card-content">
-
-<h3>Mission Education</h3>
-
-<p>
-Supporting children's education in
-Kalepadal, Hadapsar, Pune.
-</p>
-
-</div>
-
-</div>
+    <div class="gallery-grid">
 
 
-<!-- DRIVING SCHOOL -->
+        <!-- 1. MISSION EDUCATION -->
 
-<div class="card">
+        <div class="card">
 
-<img
-src="./driving-school.jpeg"
-alt="Motor Driving School">
+            <img
+                src="./mission-education.jpeg"
+                alt="Mission Education Program">
 
-<div class="card-content">
+            <div class="card-content">
 
-<h3>Motor Driving School</h3>
+                <h3>Mission Education</h3>
 
-<p>
-Providing driving training and licence
-support for people aged 18 years and above.
-</p>
+                <p>
+                    Supporting children's education in
+                    Kalepadal, Hadapsar, Pune.
+                </p>
 
-</div>
+            </div>
 
-</div>
-
-
-<!-- SKILL DEVELOPMENT -->
-
-<div class="card">
-
-<img
-src="./skill-development.jpeg"
-alt="Skill Development Program">
-
-<div class="card-content">
-
-<h3>Skill Development</h3>
-
-<p>
-Providing free livelihood-oriented training
-for young people aged 18–30 years.
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-</div>
+        <!-- 2. DRIVING SCHOOL -->
+
+        <div class="card">
+
+            <img
+                src="./driving-school.jpeg"
+                alt="Motor Driving School">
+
+            <div class="card-content">
+
+                <h3>Motor Driving School</h3>
+
+                <p>
+                    Providing driving training and
+                    licence support for people aged
+                    18 years and above.
+                </p>
+
+            </div>
+
+        </div>
 
 
-<a class="back" href="index.html">
-← Back to Home
-</a>
+        <!-- 3. SKILL DEVELOPMENT -->
+
+        <div class="card">
+
+            <img
+                src="./skill-development.jpeg"
+                alt="Skill Development Program">
+
+            <div class="card-content">
+
+                <h3>Skill Development</h3>
+
+                <p>
+                    Providing free livelihood-oriented
+                    training and employment opportunities
+                    for young people.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4. WOMEN SHG -->
+
+        <div class="card">
+
+            <img
+                src="./women-shg.jpeg"
+                alt="Women Empowerment and SHG Program">
+
+            <div class="card-content">
+
+                <h3>Women Empowerment & SHGs</h3>
+
+                <p>
+                    Supporting women through Self Help Groups,
+                    bank linkage, self-employment and
+                    livelihood opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. ORGANIC FARMING -->
+
+        <div class="card">
+
+            <img
+                src="./organic-farming.jpeg"
+                alt="Organic Farming Program">
+
+            <div class="card-content">
+
+                <h3>Organic Farming</h3>
+
+                <p>
+                    Supporting farmers through organic farming
+                    training, government scheme awareness,
+                    bank support and manure-making demonstrations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BACK TO HOME -->
+
+    <a class="back" href="index.html">
+        ← Back to Home
+    </a>
+
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-Wadmavli Lok Vikas Manch —
-<strong>Towards Empowerment</strong>
+    Wadmavli Lok Vikas Manch —
+    <strong>Towards Empowerment</strong>
 
 </footer>
 
