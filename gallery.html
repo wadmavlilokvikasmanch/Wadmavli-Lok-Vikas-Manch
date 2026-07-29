@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Wadmavli Lok Vikas Manch</title>
+
+<meta name="description" content="Gallery of Wadmavli Lok Vikas Manch activities and community initiatives.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --blue:#075b9a;
+    --darkblue:#063b67;
+    --pink:#e85b88;
+    --lightpink:#fff0f5;
+    --lightblue:#eef7ff;
+    --text:#243746;
+    --muted:#637582;
+    --white:#ffffff;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:#f8fbfd;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 18px rgba(0,0,0,.10);
+}
+
+.container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+}
+
+.navbar{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.brand-text h2{
+    color:var(--blue);
+    font-size:18px;
+    line-height:1.2;
+}
+
+.brand-text span{
+    color:var(--pink);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+nav a{
+    color:var(--text);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:var(--pink);
+}
+
+.donate{
+    background:var(--pink);
+    color:white !important;
+    padding:10px 18px;
+    border-radius:25px;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    radial-gradient(circle at 10% 20%,rgba(232,91,136,.15),transparent 28%),
+    radial-gradient(circle at 90% 80%,rgba(7,91,154,.15),transparent 30%),
+    linear-gradient(135deg,#f8fcff,#fff4f8);
+
+    padding:90px 20px;
+    text-align:center;
+}
+
+.hero small{
+    color:var(--pink);
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    color:var(--darkblue);
+    font-size:clamp(38px,6vw,58px);
+    margin:10px 0;
+}
+
+.hero h1 span{
+    color:var(--pink);
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:var(--muted);
+    font-size:17px;
+}
+
+/* FILTER BUTTONS */
+
+.gallery-section{
+    padding:70px 0;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:40px;
+}
+
+.filter-btn{
+    border:2px solid var(--blue);
+    background:white;
+    color:var(--blue);
+    padding:9px 17px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:var(--blue);
+    color:white;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.photo{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 22px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.photo:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(0,0,0,.13);
+}
+
+.photo img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    display:block;
+    cursor:pointer;
+}
+
+.photo-info{
+    padding:18px;
+}
+
+.photo-info h3{
+    color:var(--darkblue);
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.photo-info p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* EMPTY PHOTO PLACEHOLDER */
+
+.placeholder{
+    height:250px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(135deg,var(--lightblue),var(--lightpink));
+    color:var(--blue);
+    font-weight:bold;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:5000;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.lightbox img{
+    max-width:95%;
+    max-height:85vh;
+    border-radius:12px;
+}
+
+.close{
+    position:absolute;
+    top:18px;
+    right:28px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* CALL TO ACTION */
+
+.cta{
+    background:linear-gradient(135deg,var(--blue),var(--darkblue));
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.cta h2{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 25px;
+    color:#e0edf6;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+}
+
+.btn-pink{
+    background:var(--pink);
+    color:white;
+}
+
+.btn-white{
+    background:white;
+    color:var(--blue);
+}
+
+/* FOOTER */
+
+footer{
+    background:#062f50;
+    color:white;
+    text-align:center;
+    padding:40px 20px 25px;
+}
+
+footer h2{
+    font-size:22px;
+}
+
+.tagline{
+    color:#ffabc4;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.social{
+    margin:18px 0;
+}
+
+.social a{
+    display:inline-block;
+    color:white;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,.3);
+    padding:7px 14px;
+    border-radius:20px;
+    margin:4px;
+}
+
+.social a:hover{
+    background:var(--pink);
+}
+
+.copyright{
+    color:#bdd1df;
+    font-size:13px;
+    margin-top:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        display:none;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:65px 20px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .photo img,
+    .placeholder{
+        height:240px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container navbar">
+
+<div class="brand">
+
+<!-- YOUR LOGO -->
+<img src="logo.png"
+     alt="Wadmavli Lok Vikas Manch Logo"
+     class="logo">
+
+<div class="brand-text">
+<h2>Wadmavli Lok Vikas Manch</h2>
+<span>TOWARDS EMPOWERMENT</span>
+</div>
+
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#programs">Programs</a>
+<a href="gallery.html">Gallery</a>
+<a href="index.html#partners">Partners</a>
+<a href="index.html#contact">Contact</a>
+<a href="index.html#donate" class="donate">Donate</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<small>OUR JOURNEY IN PICTURES</small>
+
+<h1>WLVM <span>Gallery</span></h1>
+
+<p>
+A glimpse into our work with communities across education,
+women empowerment, livelihoods, agriculture, water conservation,
+skill development and environmental action.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<div class="container">
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button class="filter-btn active" onclick="filterGallery('all', this)">
+All
+</button>
+
+<button class="filter-btn" onclick="filterGallery('education', this)">
+📚 Education
+</button>
+
+<button class="filter-btn" onclick="filterGallery('women', this)">
+👩 Women Empowerment
+</button>
+
+<button class="filter-btn" onclick="filterGallery('skill', this)">
+💼 Skill Development
+</button>
+
+<button class="filter-btn" onclick="filterGallery('farming', this)">
+🌾 Organic Farming
+</button>
+
+<button class="filter-btn" onclick="filterGallery('water', this)">
+💧 Water
+</button>
+
+<button class="filter-btn" onclick="filterGallery('driving', this)">
+🚗 Driving School
+</button>
+
+<button class="filter-btn" onclick="filterGallery('watershed', this)">
+🌱 Watershed
+</button>
+
+<button class="filter-btn" onclick="filterGallery('climate', this)">
+🌳 Climate Action
+</button>
+
+</div>
+
+
+<div class="gallery">
+
+
+<!-- ========================= -->
+<!-- MISSION EDUCATION -->
+<!-- ========================= -->
+
+<div class="photo" data-category="education">
+
+<img src="images/mission-education.jpg"
+     alt="Mission Education Program">
+
+<div class="photo-info">
+
+<h3>Mission Education</h3>
+
+<p>
+Supporting children's education in Kalepadal, Hadapsar, Pune.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- WOMEN EMPOWERMENT -->
+<!-- ========================= -->
+
+<div class="photo" data-category="women">
+
+<img src="images/women-shg.jpg"
+     alt="Women Empowerment and SHG Program">
+
+<div class="photo-info">
+
+<h3>Women Empowerment & SHGs</h3>
+
+<p>
+Supporting women through SHGs, bank linkage and livelihood opportunities.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- ORGANIC FARMING -->
+<!-- ========================= -->
+
+<div class="photo" data-category="farming">
+
+<img src="images/organic-farming.jpg"
+     alt="Organic Farming Program">
+
+<div class="photo-info">
+
+<h3>Organic Farming</h3>
+
+<p>
+Supporting farmers with training, awareness and sustainable farming practices.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- SKILL DEVELOPMENT -->
+<!-- ========================= -->
+
+<div class="photo" data-category="skill">
+
+<img src="images/skill-development.jpg"
+     alt="Skill Development Training">
+
+<div class="photo-info">
+
+<h3>Skill Development</h3>
+
+<p>
+Free livelihood-oriented training for young people aged 18–30 years.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- CLEAN WATER -->
+<!-- ========================= -->
+
+<div class="photo" data-category="water">
+
+<img src="images/clean-water.jpg"
+     alt="Clean Drinking Water Program">
+
+<div class="photo-info">
+
+<h3>Clean Drinking Water</h3>
+
+<p>
+Working towards reliable access to clean drinking water.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- DRIVING SCHOOL -->
+<!-- ========================= -->
+
+<div class="photo" data-category="driving">
+
+<img src="images/driving-school.jpg"
+     alt="Motor Driving School">
+
+<div class="photo-info">
+
+<h3>Motor Driving School</h3>
+
+<p>
+Driving training and licence support for people aged 18 years and above.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- WATERSHED -->
+<!-- ========================= -->
+
+<div class="photo" data-category="watershed">
+
+<img src="images/watershed.jpg"
+     alt="Watershed Development Program">
+
+<div class="photo-info">
+
+<h3>Watershed Development</h3>
+
+<p>
+Community-based watershed activities in the Balaghat Valley region.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- CLIMATE ACTION -->
+<!-- ========================= -->
+
+<div class="photo" data-category="climate">
+
+<img src="images/tree-plantation.jpg"
+     alt="Tree Plantation and Climate Action">
+
+<div class="photo-info">
+
+<h3>Tree Plantation & Climate Action</h3>
+
+<p>
+Tree plantation and environmental awareness activities in Beed District.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- STEP TRAINING -->
+<!-- ========================= -->
+
+<div class="photo" data-category="skill">
+
+<img src="images/step-training.jpg"
+     alt="STEP Training Centre">
+
+<div class="photo-info">
+
+<h3>STEP Training</h3>
+
+<p>
+Free training in Retail Management, Grocery Service Management and Office Executive skills.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- ADD MORE PHOTOS HERE -->
+<!-- ========================= -->
+
+<!--
+To add another photo, copy the block below.
+
+<div class="photo" data-category="education">
+
+<img src="images/your-photo-name.jpg"
+     alt="Description of photo">
+
+<div class="photo-info">
+
+<h3>Your Photo Title</h3>
+
+<p>
+Short description of the activity.
+</p>
+
+</div>
+
+</div>
+
+-->
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Be Part of the Journey</h2>
+
+<p>
+Together, we can create opportunities for education,
+empowerment, sustainable livelihoods and stronger communities.
+</p>
+
+<a href="index.html#volunteer" class="btn btn-pink">
+Volunteer With Us
+</a>
+
+<a href="index.html#donate" class="btn btn-white">
+Donate Now
+</a>
+
+</div>
+
+</section>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeLightbox()">×</span>
+
+<img id="lightboxImage" src="" alt="Gallery Image">
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<h2>Wadmavli Lok Vikas Manch</h2>
+
+<div class="tagline">
+Towards Empowerment
+</div>
+
+<p style="margin-top:8px;">
+Established 19 June 2000
+</p>
+
+<div class="social">
+
+<a href="https://www.instagram.com/wadmavli_lok_vikas_manch/"
+target="_blank">
+Instagram
+</a>
+
+<a href="https://www.facebook.com/share/19E1mR717e/"
+target="_blank">
+Facebook
+</a>
+
+<a href="mailto:wadmavlikaij.org@gmail.com">
+Email
+</a>
+
+</div>
+
+<div class="copyright">
+© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* FILTER GALLERY */
+
+function filterGallery(category, button){
+
+    const photos = document.querySelectorAll(".photo");
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    photos.forEach(photo => {
+
+        if(category === "all"){
+            photo.style.display = "block";
+        }
+
+        else if(photo.dataset.category === category){
+            photo.style.display = "block";
+        }
+
+        else{
+            photo.style.display = "none";
+        }
+
+    });
+
+}
+
+
+/* IMAGE LIGHTBOX */
+
+const images = document.querySelectorAll(".photo img");
+
+images.forEach(image => {
+
+    image.addEventListener("click", function(){
+
+        document.getElementById("lightbox").style.display = "flex";
+
+        document.getElementById("lightboxImage").src = this.src;
+
+    });
+
+});
+
+
+function closeLightbox(){
+
+    document.getElementById("lightbox").style.display = "none";
+
+}
+
+
+document.getElementById("lightbox").addEventListener("click", function(event){
+
+    if(event.target === this){
+        closeLightbox();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
