@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Wadmavli Lok Vikas Manch - Towards Empowerment. Working for women empowerment, education, skill development, organic farming, water conservation, livelihoods and community development.">
+
+<meta name="keywords" content="Wadmavli Lok Vikas Manch, WLVM, Beed NGO, women empowerment, organic farming, skill development, education, watershed development">
 
 <title>Wadmavli Lok Vikas Manch | Towards Empowerment</title>
 
-<meta name="description" content="Wadmavli Lok Vikas Manch - Towards Empowerment. Working for education, women empowerment, livelihoods, organic farming, water conservation and community development since 2000.">
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
 }
 
-:root{
-    --blue:#075b9a;
-    --darkblue:#063b67;
-    --pink:#e85b88;
-    --lightpink:#fff0f5;
-    --lightblue:#eef7ff;
-    --white:#ffffff;
-    --text:#243746;
-    --muted:#637582;
-    --gold:#e6a62b;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    color:var(--text);
-    background:#fff;
-    line-height:1.7;
+    color:#243746;
+    background:#f7fbfd;
+    line-height:1.6;
 }
 
 a{
@@ -40,51 +42,68 @@ a{
 }
 
 .container{
-    width:90%;
-    max-width:1180px;
+    max-width:1200px;
+    margin:auto;
+    padding:0 25px;
+}
+
+.section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#e85b88;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    color:#063b67;
+    font-size:38px;
+    margin:8px 0;
+}
+
+.section-title p{
+    color:#637582;
+    max-width:700px;
     margin:auto;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
+    background:white;
     position:sticky;
     top:0;
-    z-index:999;
-    background:white;
-    box-shadow:0 3px 18px rgba(0,0,0,.10);
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.10);
 }
 
 .navbar{
-    min-height:78px;
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:20px;
 }
 
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.brand h2{
+    color:#075b9a;
+    font-size:21px;
 }
 
-.logo{
-    width:55px;
-    height:55px;
-    object-fit:contain;
-    border-radius:50%;
- 
-}
-
-.brand-text h2{
-    color:var(--blue);
-    font-size:18px;
-    line-height:1.2;
-}
-
-.brand-text span{
-    color:var(--pink);
+.brand p{
+    color:#e85b88;
     font-size:12px;
     font-weight:bold;
     letter-spacing:1px;
@@ -93,145 +112,125 @@ header{
 nav{
     display:flex;
     align-items:center;
-    gap:20px;
+    gap:18px;
 }
 
 nav a{
-    color:var(--text);
+    color:#243746;
     font-size:14px;
-    font-weight:600;
+    font-weight:bold;
 }
 
 nav a:hover{
-    color:var(--pink);
+    color:#e85b88;
 }
 
-.nav-donate{
-    background:var(--pink);
+.donate-nav{
+    background:#e85b88;
     color:white !important;
-    padding:10px 18px;
+    padding:9px 17px;
     border-radius:25px;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:650px;
+
     display:flex;
     align-items:center;
-    position:relative;
-    overflow:hidden;
+
+    text-align:center;
+
     background:
-        radial-gradient(circle at 10% 20%,rgba(232,91,136,.14),transparent 28%),
-        radial-gradient(circle at 90% 80%,rgba(7,91,154,.15),transparent 30%),
-        linear-gradient(135deg,#f8fcff,#fff5f8);
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(232,91,136,.15),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 90% 80%,
+        rgba(7,91,154,.15),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #f8fcff,
+        #fff4f8
+    );
 }
 
 .hero-content{
     max-width:850px;
-    padding:90px 0;
+    margin:auto;
 }
 
-.hero-tag{
-    display:inline-block;
-    padding:7px 16px;
-    border-radius:25px;
-    background:var(--lightpink);
-    color:var(--pink);
+.hero small{
+    color:#e85b88;
     font-weight:bold;
-    font-size:14px;
-    margin-bottom:18px;
+    letter-spacing:3px;
 }
 
 .hero h1{
-    font-size:clamp(40px,6vw,68px);
-    line-height:1.05;
-    color:var(--darkblue);
-    margin-bottom:15px;
+    color:#063b67;
+    font-size:60px;
+    line-height:1.1;
+    margin:15px 0;
 }
 
 .hero h1 span{
-    color:var(--pink);
+    color:#e85b88;
 }
 
-.hero h2{
-    color:var(--blue);
-    font-size:26px;
+.hero h3{
+    color:#075b9a;
+    font-size:24px;
     margin-bottom:18px;
 }
 
 .hero p{
-    max-width:750px;
+    color:#637582;
     font-size:18px;
-    color:var(--muted);
-    margin-bottom:30px;
+    max-width:750px;
+    margin:auto;
 }
 
-.btn{
+.hero-buttons{
+    margin-top:30px;
+}
+
+.button{
     display:inline-block;
-    padding:13px 25px;
+    padding:13px 27px;
     border-radius:30px;
     font-weight:bold;
     margin:5px;
-    transition:.3s;
 }
 
-.btn-blue{
-    background:var(--blue);
+.primary{
+    background:#075b9a;
     color:white;
 }
 
-.btn-blue:hover{
-    background:var(--darkblue);
-    transform:translateY(-2px);
-}
-
-.btn-pink{
-    background:var(--pink);
+.secondary{
+    background:#e85b88;
     color:white;
 }
 
-.btn-pink:hover{
-    background:#cf3f70;
-    transform:translateY(-2px);
+.outline{
+    border:2px solid #075b9a;
+    color:#075b9a;
 }
 
-.btn-outline{
-    border:2px solid var(--blue);
-    color:var(--blue);
-}
 
-/* GENERAL */
-
-section{
-    padding:85px 0;
-}
-
-.section-label{
-    text-align:center;
-    color:var(--pink);
-    font-weight:bold;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:13px;
-    margin-bottom:8px;
-}
-
-.section-title{
-    text-align:center;
-    color:var(--darkblue);
-    font-size:38px;
-    margin-bottom:15px;
-}
-
-.section-description{
-    max-width:750px;
-    text-align:center;
-    margin:0 auto 45px;
-    color:var(--muted);
-}
-
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .about{
     background:white;
@@ -240,73 +239,72 @@ section{
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:35px;
+    gap:45px;
+    align-items:center;
 }
 
-.about-box{
-    padding:35px;
-    border-radius:20px;
-    background:var(--lightblue);
-    border-left:5px solid var(--blue);
-}
-
-.about-box:nth-child(2){
-    background:var(--lightpink);
-    border-left-color:var(--pink);
-}
-
-.about-box h3{
-    color:var(--darkblue);
-    font-size:25px;
+.about-text h3{
+    color:#075b9a;
+    font-size:28px;
     margin-bottom:15px;
 }
 
-/* VISION */
-
-.vision{
-    background:#f7fbff;
-}
-
-.vision-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.vision-card{
-    padding:35px;
-    background:white;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.06);
-}
-
-.vision-card h3{
-    color:var(--blue);
-    font-size:25px;
-    margin-bottom:12px;
-}
-
-.vision-card:nth-child(2) h3{
-    color:var(--pink);
-}
-
-.objectives{
-    margin-top:25px;
-    padding:35px;
-    background:white;
-    border-radius:20px;
-}
-
-.objectives h3{
-    color:var(--darkblue);
+.about-text p{
+    color:#637582;
     margin-bottom:15px;
 }
 
-.objectives li{
-    margin:9px 0 9px 22px;
+.info-box{
+    background:#f2f8fc;
+    padding:30px;
+    border-radius:20px;
+    border-left:5px solid #e85b88;
 }
 
-/* PROGRAMS */
+.info-box h3{
+    color:#063b67;
+    margin-bottom:15px;
+}
+
+.info-box p{
+    margin-bottom:10px;
+}
+
+.info-box strong{
+    color:#075b9a;
+}
+
+
+/* =========================
+   MISSION
+========================= */
+
+.mission{
+    background:#f7fbfd;
+}
+
+.mission-box{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+.mission-box h3{
+    color:#075b9a;
+    margin-bottom:15px;
+}
+
+.mission-box p{
+    color:#637582;
+}
+
+
+/* =========================
+   PROGRAMS
+========================= */
 
 .programs{
     background:white;
@@ -314,114 +312,126 @@ section{
 
 .program-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
-.program{
-    background:white;
-    padding:28px 22px;
-    border-radius:20px;
-    border:1px solid #e5edf3;
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
+.program-card{
+    background:#f8fbfd;
+    padding:28px;
+    border-radius:18px;
+    border-top:4px solid #075b9a;
     transition:.3s;
 }
 
-.program:hover{
-    transform:translateY(-7px);
-    box-shadow:0 12px 30px rgba(0,0,0,.10);
+.program-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
 }
 
-.icon{
-    width:58px;
-    height:58px;
-    border-radius:16px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:var(--lightblue);
-    font-size:29px;
-    margin-bottom:18px;
-}
-
-.program:nth-child(even) .icon{
-    background:var(--lightpink);
-}
-
-.program h3{
-    color:var(--darkblue);
-    font-size:19px;
+.program-card .icon{
+    font-size:32px;
     margin-bottom:10px;
 }
 
-.program p{
-    color:var(--muted);
+.program-card h3{
+    color:#075b9a;
+    margin-bottom:10px;
+}
+
+.program-card p{
+    color:#637582;
     font-size:14px;
 }
 
-/* IMPACT */
+
+/* =========================
+   IMPACT
+========================= */
 
 .impact{
-    background:linear-gradient(135deg,var(--darkblue),var(--blue));
+    background:
+    linear-gradient(
+        135deg,
+        #075b9a,
+        #063b67
+    );
+
     color:white;
 }
 
-.impact .section-label{
-    color:#ffb5cb;
-}
-
-.impact .section-title{
+.impact .section-title h2{
     color:white;
 }
 
-.impact .section-description{
-    color:#dcebf7;
+.impact .section-title p{
+    color:#d9e8f2;
 }
 
 .impact-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:20px;
 }
 
-.stat{
-    padding:28px 15px;
+.impact-card{
     text-align:center;
-    border:1px solid rgba(255,255,255,.15);
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,.10);
+    padding:30px 15px;
     border-radius:18px;
 }
 
-.stat h3{
-    color:#ffb5cb;
-    font-size:35px;
+.impact-card h3{
+    color:#ffabc4;
+    font-size:38px;
 }
 
-.stat p{
-    font-size:13px;
-    color:#e6f1f8;
+.impact-card p{
+    color:white;
 }
 
-/* PROJECT DETAILS */
 
-.project-section{
-    background:#f8fafc;
+/* =========================
+   STEP PROJECT
+========================= */
+
+.step-section{
+    background:#fff4f8;
 }
 
-.project{
+.step-box{
+    max-width:950px;
+    margin:auto;
     background:white;
-    margin-bottom:18px;
-    padding:28px;
-    border-radius:17px;
-    box-shadow:0 4px 18px rgba(0,0,0,.05);
+    padding:40px;
+    border-radius:22px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
-.project h3{
-    color:var(--blue);
-    margin-bottom:8px;
+.step-box h3{
+    color:#075b9a;
+    font-size:27px;
+    margin-bottom:12px;
 }
 
-/* PARTNERS */
+.step-box p{
+    color:#637582;
+    margin-bottom:10px;
+}
+
+.step-box ul{
+    padding-left:25px;
+    color:#637582;
+}
+
+.step-box li{
+    margin-bottom:7px;
+}
+
+
+/* =========================
+   PARTNERS
+========================= */
 
 .partners{
     background:white;
@@ -429,160 +439,190 @@ section{
 
 .partner-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .partner{
-    min-height:115px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
+    padding:25px;
+    background:#f7fbfd;
+    border-radius:16px;
     text-align:center;
-    padding:20px;
-    border-radius:17px;
-    background:#f8fbfe;
-    border:1px solid #e5edf3;
-    color:var(--darkblue);
-    font-weight:bold;
+    border:1px solid #e2edf3;
 }
 
-.partner small{
-    color:var(--pink);
-    margin-top:6px;
-    font-weight:normal;
+.partner h3{
+    color:#075b9a;
+    font-size:18px;
+    margin-bottom:8px;
 }
 
-/* DIRECTOR */
-
-.director{
-    background:linear-gradient(135deg,#fff3f7,#eef8ff);
+.partner p{
+    color:#637582;
+    font-size:14px;
 }
+
+
+/* =========================
+   FOUNDER MESSAGE
+========================= */
 
 .message{
+    background:#f7fbfd;
+}
+
+.message-box{
     max-width:900px;
     margin:auto;
     background:white;
     padding:45px;
     border-radius:22px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
-.message p{
-    margin-bottom:16px;
+.message-box p{
+    color:#637582;
+    font-size:17px;
+    margin-bottom:20px;
 }
 
-.signature{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid #eee;
-    color:var(--blue);
+.message-box .signature{
+    color:#075b9a;
     font-weight:bold;
 }
 
-/* VOLUNTEER */
+
+/* =========================
+   VOLUNTEER
+========================= */
 
 .volunteer{
-    text-align:center;
-    background:#f7fbff;
+    background:#fff4f8;
 }
 
-/* DONATE */
-
-.donate{
-    background:linear-gradient(135deg,var(--pink),#d94073);
-    color:white;
-}
-
-.donate .section-label{
-    color:#ffe0e9;
-}
-
-.donate .section-title{
-    color:white;
-}
-
-.donate .section-description{
-    color:white;
-}
-
-.donation-card{
+.volunteer-box{
     max-width:850px;
     margin:auto;
-    padding:38px;
-    border-radius:22px;
-    background:white;
-    color:var(--text);
+    text-align:center;
 }
 
-.donation-card h3{
-    color:var(--darkblue);
-    margin-bottom:18px;
+.volunteer-box p{
+    color:#637582;
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   DONATE
+========================= */
+
+.donate{
+    background:white;
+}
+
+.donate-box{
+    max-width:900px;
+    margin:auto;
+    background:#f7fbfd;
+    padding:40px;
+    border-radius:22px;
+    text-align:center;
+}
+
+.donate-box h3{
+    color:#075b9a;
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.donate-box p{
+    color:#637582;
+    margin-bottom:20px;
 }
 
 .bank-details{
-    margin-top:20px;
-    padding:22px;
-    background:#f7fafc;
+    background:white;
+    padding:25px;
     border-radius:15px;
+    text-align:left;
+    max-width:600px;
+    margin:25px auto;
 }
 
 .bank-details p{
-    margin:7px 0;
+    margin:8px 0;
+    color:#243746;
 }
 
-/* CONTACT */
+.bank-details strong{
+    color:#075b9a;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
-    background:white;
+    background:#f7fbfd;
 }
 
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:25px;
+    gap:30px;
 }
 
 .contact-card{
-    padding:32px;
-    border-radius:20px;
-    background:#f7fbff;
-}
-
-.contact-card:nth-child(2){
-    background:#fff5f8;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
 .contact-card h3{
-    color:var(--blue);
+    color:#075b9a;
     margin-bottom:15px;
 }
 
-.contact-card:nth-child(2) h3{
-    color:var(--pink);
-}
-
 .contact-card p{
-    margin:9px 0;
+    color:#637582;
+    margin-bottom:10px;
 }
 
 .contact-card a{
-    color:var(--blue);
+    color:#075b9a;
     font-weight:bold;
 }
 
-/* FOOTER */
+.social-links{
+    margin-top:20px;
+}
+
+.social-links a{
+    display:inline-block;
+    margin:5px;
+    padding:9px 16px;
+    border-radius:20px;
+    background:#075b9a;
+    color:white;
+    font-size:13px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#062f50;
     color:white;
-    padding:45px 0 25px;
     text-align:center;
+    padding:40px 20px 25px;
 }
 
 footer h2{
-    color:white;
+    margin-bottom:5px;
 }
 
 footer .tagline{
@@ -590,114 +630,70 @@ footer .tagline{
     font-weight:bold;
 }
 
-.social{
-    margin:20px 0;
-}
-
-.social a{
-    display:inline-block;
-    color:white;
-    border:1px solid rgba(255,255,255,.3);
-    padding:8px 15px;
-    border-radius:20px;
-    margin:4px;
-}
-
-.social a:hover{
-    background:var(--pink);
-    border-color:var(--pink);
-}
-
-.copyright{
-    font-size:13px;
+footer p{
     color:#bdd1df;
-    margin-top:20px;
+    font-size:13px;
+    margin-top:12px;
 }
 
-/* MOBILE */
 
-@media(max-width:1000px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
 
     nav{
         display:none;
     }
 
-    .program-grid{
-        grid-template-columns:repeat(2,1fr);
+    .hero h1{
+        font-size:45px;
     }
 
-    .partner-grid{
-        grid-template-columns:repeat(2,1fr);
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .program-grid{
+        grid-template-columns:1fr 1fr;
     }
 
     .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:700px){
-
-    section{
-        padding:60px 0;
+        grid-template-columns:1fr 1fr;
     }
 
-    .about-grid,
-    .vision-grid,
+    .partner-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
     .contact-grid{
         grid-template-columns:1fr;
     }
 
-    .program-grid{
-        grid-template-columns:1fr;
-    }
+}
 
-    .partner-grid{
-        grid-template-columns:1fr 1fr;
+
+@media(max-width:600px){
+
+    .section{
+        padding:60px 0;
     }
 
     .hero{
-        min-height:570px;
-    }
-
-    .hero-content{
-        text-align:center;
+        min-height:580px;
     }
 
     .hero h1{
-        font-size:43px;
+        font-size:38px;
     }
 
-    .hero h2{
-        font-size:22px;
+    .hero h3{
+        font-size:20px;
     }
 
-    .hero p{
-        font-size:16px;
-    }
-
-    .section-title{
-        font-size:31px;
-    }
-
-    .message{
-        padding:28px;
-    }
-}
-
-@media(max-width:450px){
-
-    .brand-text h2{
-        font-size:15px;
-    }
-
-    .brand-text span{
-        font-size:10px;
-    }
-
-    .logo-circle{
-        width:43px;
-        height:43px;
-        font-size:15px;
+    .program-grid{
+        grid-template-columns:1fr;
     }
 
     .impact-grid{
@@ -707,685 +703,758 @@ footer .tagline{
     .partner-grid{
         grid-template-columns:1fr;
     }
+
+    .mission-box,
+    .message-box,
+    .donate-box{
+        padding:25px;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER / NAVIGATION
+========================= -->
 
 <header>
-<div class="container navbar">
+
+<div class="navbar">
 
 <div class="brand">
 
-<img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo"
-    class="logo">
-
-<div class="brand-text">
 <h2>Wadmavli Lok Vikas Manch</h2>
-<span>TOWARDS EMPOWERMENT</span>
-</div>
+
+<p>TOWARDS EMPOWERMENT</p>
 
 </div>
+
 
 <nav>
+
+<a href="#home">Home</a>
+
 <a href="#about">About</a>
+
 <a href="#programs">Programs</a>
+
+<a href="gallery.html">Gallery</a>
+
 <a href="#impact">Impact</a>
+
 <a href="#partners">Partners</a>
+
 <a href="#contact">Contact</a>
-<a class="nav-donate" href="#donate">Donate</a>
+
+<a href="#donate" class="donate-nav">Donate</a>
+
 </nav>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
 
-<section class="hero">
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
 
 <div class="container">
 
 <div class="hero-content">
 
-<div class="hero-tag">ESTABLISHED 19 JUNE 2000</div>
+<small>ESTABLISHED 19 JUNE 2000</small>
 
-<h1>Wadmavli <span>Lok Vikas Manch</span></h1>
+<h1>
+Wadmavli Lok Vikas <span>Manch</span>
+</h1>
 
-<h2>Towards Empowerment</h2>
-
-<p>
-Working towards equal opportunities, dignity, education,
-livelihoods and sustainable development for rural and
-marginalized communities.
-</p>
-
-<a class="btn btn-blue" href="#programs">Explore Our Work</a>
-
-<a class="btn btn-pink" href="#donate">Donate Now</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="section-label">WHO WE ARE</div>
-
-<h2 class="section-title">About Wadmavli Lok Vikas Manch</h2>
-
-<p class="section-description">
-For more than two decades, WLVM has worked with communities
-to create opportunities for empowerment and sustainable development.
-</p>
-
-<div class="about-grid">
-
-<div class="about-box">
-
-<h3>Our Organisation</h3>
+<h3>Towards Empowerment</h3>
 
 <p>
-<strong>Wadmavli Lok Vikas Manch (WLVM)</strong> was established on
-<strong>19 June 2000</strong>. The organisation works towards the
-development and empowerment of deprived, marginalized and weaker
-sections of society.
+Working towards empowerment, sustainable livelihoods,
+education, women empowerment, environmental protection
+and community development.
 </p>
 
-<p style="margin-top:15px;">
-Our work includes women empowerment, children's education,
-skill development, livelihood promotion, organic farming,
-water conservation, clean drinking water, disaster relief,
-driving education and climate action.
-</p>
+<div class="hero-buttons">
 
-</div>
+<a href="#about" class="button primary">
+Discover Our Work
+</a>
 
-<div class="about-box">
+<a href="gallery.html" class="button secondary">
+View Gallery
+</a>
 
-<h3>Our Approach</h3>
-
-<p>
-We believe communities should play an active role in their own
-development. Through training, awareness, institutional support,
-livelihood opportunities and partnerships, WLVM works to strengthen
-people and community institutions.
-</p>
-
-<p style="margin-top:15px;">
-Our focus is on creating sustainable opportunities that help
-individuals and communities move towards self-reliance,
-self-respect and dignity.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- VISION MISSION -->
-
-<section class="vision">
-
-<div class="container">
-
-<div class="section-label">OUR PURPOSE</div>
-
-<h2 class="section-title">Vision & Mission</h2>
-
-<div class="vision-grid">
-
-<div class="vision-card">
-
-<h3>Our Vision</h3>
-
-<p>
-Deprived sections of the rural society in the process of development
-with equal opportunity to all, leading life with self-respect and dignity.
-</p>
-
-</div>
-
-<div class="vision-card">
-
-<h3>Our Mission</h3>
-
-<p>
-Ensuring equal opportunities to the Dalit, backward class and tribal
-communities and their effective role in their own development.
-</p>
-
-<p style="margin-top:15px;">
-Undertaking interventions for accelerating socio-economic and
-educational change and improvement of rural, Dalit, backward,
-tribal and weaker sections of society.
-</p>
-
-</div>
-
-</div>
-
-<div class="objectives">
-
-<h3>Our Objectives</h3>
-
-<ul>
-
-<li>Improve the socio-economic and educational status of Dalit,
-backward, tribal and weaker sections of society.</li>
-
-<li>Organise women through Self Help Groups and support their
-economic self-reliance.</li>
-
-<li>Empower rural women and encourage their effective participation
-in Panchayati Raj Institutions.</li>
-
-<li>Strengthen people's institutions for rural development through
-community participation.</li>
-
-<li>Undertake activities for agricultural development.</li>
-
-<li>Organise training, community organisation and awareness
-programmes on social issues.</li>
-
-<li>Study issues affecting common people and collect relevant
-information.</li>
-
-<li>Coordinate and network with government agencies.</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROGRAMS -->
-
-<section class="programs" id="programs">
-
-<div class="container">
-
-<div class="section-label">WHAT WE DO</div>
-
-<h2 class="section-title">Our Current Programs</h2>
-
-<p class="section-description">
-Our programs focus on education, empowerment, sustainable
-livelihoods, natural resource management and community development.
-</p>
-
-<div class="program-grid">
-
-<div class="program">
-<div class="icon">🌾</div>
-<h3>Organic Farming</h3>
-<p>
-Training farmers in organic farming, government schemes,
-bank support and manure-making demonstrations.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">👩‍🌾</div>
-<h3>Women Empowerment & SHGs</h3>
-<p>
-SHG formation, bank linkage, self-employment and livelihood
-support including livestock and dairy-based enterprises.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">💼</div>
-<h3>Skill Development</h3>
-<p>
-Free livelihood-oriented training in Retail Management,
-Grocery Service Management and Office Executive skills.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">📚</div>
-<h3>Mission Education</h3>
-<p>
-Supporting education for children aged 6–13 years in
-Kalepadal, Hadapsar, Pune.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">💧</div>
-<h3>Clean Drinking Water</h3>
-<p>
-Improving access to clean drinking water through wells,
-borewells and community water storage facilities.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">🚗</div>
-<h3>Motor Driving School</h3>
-<p>
-Driving training and licence support for people aged
-18 years and above.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">🌱</div>
-<h3>Watershed Development</h3>
-<p>
-Trenching, bunding, loose boulders, soil bunds and
-tree plantation in rural communities.
-</p>
-</div>
-
-<div class="program">
-<div class="icon">🌳</div>
-<h3>Climate Change</h3>
-<p>
-Tree plantation and environmental awareness activities
-for climate action and sustainable communities.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- IMPACT -->
-
-<section class="impact" id="impact">
-
-<div class="container">
-
-<div class="section-label">OUR REACH</div>
-
-<h2 class="section-title">Our Impact</h2>
-
-<p class="section-description">
-Together with communities and partners, we are creating
-opportunities for people to learn, earn and become self-reliant.
-</p>
-
-<div class="impact-grid">
-
-<div class="stat">
-<h3>750</h3>
-<p>Children supported through Mission Education</p>
-</div>
-
-<div class="stat">
-<h3>3,250+</h3>
-<p>SHG members</p>
-</div>
-
-<div class="stat">
-<h3>350</h3>
-<p>Farmers currently involved in organic farming</p>
-</div>
-
-<div class="stat">
-<h3>60</h3>
-<p>Driving school students trained</p>
-</div>
-
-<div class="stat">
-<h3>35</h3>
-<p>Driving trainees who gained employment</p>
-</div>
-
-<div class="stat">
-<h3>10</h3>
-<p>Villages covered under organic farming</p>
-</div>
-
-<div class="stat">
-<h3>7</h3>
-<p>Villages covered under watershed development</p>
-</div>
-
-<div class="stat">
-<h3>18–30</h3>
-<p>Age group for current STEP training</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROJECT DETAILS -->
-
-<section class="project-section">
-
-<div class="container">
-
-<div class="section-label">OUR FIELD WORK</div>
-
-<h2 class="section-title">Programs in Action</h2>
-
-<div class="project">
-
-<h3>🌾 Organic Farming – Beed</h3>
-
-<p>
-The program currently involves <strong>350 farmers</strong> across
-<strong>10 villages of Beed Block, Beed District</strong>.
-Farmers receive organic farming training and awareness about
-government schemes. WLVM also supports farmers in accessing
-bank assistance under government schemes and conducts
-demonstrations on manure making.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>👩 Women Empowerment & SHGs</h3>
-
-<p>
-Women are supported through Self Help Groups, bank linkage and
-self-employment opportunities. Support includes livelihood
-activities such as livestock-based enterprises and dairy businesses,
-where women can start milk-related businesses and generate income.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>💼 STEP Skill Development – Pune</h3>
-
-<p>
-The STEP project provides completely free training to young people
-aged <strong>18–30 years</strong>. Current training centres are in
-<strong>Bhosari, Dapodi and Dighi, Pune</strong>. Current training
-areas include Retail Management, Grocery Service Management and
-Office Executive skills.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>📚 Mission Education – Kalepadal, Hadapsar, Pune</h3>
-
-<p>
-WLVM supports a pre-primary school with teachers and management
-staff for children aged <strong>6–13 years</strong>. The current
-Mission Education reach is <strong>750 children</strong>.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>💧 Clean Drinking Water – Balaghat Valley, Beed</h3>
-
-<p>
-A three-year initiative beginning from <strong>1 August</strong>
-covering three villages in Beed Block, Beed District. The project
-works to provide clean drinking water through sources such as
-borewells and wells and provides a water storage tank in the village.
-The primary beneficiaries are households from backward communities
-without reliable access to clean water.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>🚗 Motor Driving School – Beed, Patoda & Dharur</h3>
-
-<p>
-WLVM provides driving training and licence support to people
-aged <strong>18 years and above</strong>. So far, <strong>60 students
-have received training</strong> and <strong>35 have gained
-employment</strong> through the training.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>🌱 Watershed Development – Balaghat Valley</h3>
-
-<p>
-An ongoing project covering <strong>7 villages of Beed Block,
-Beed District</strong>. Activities include trenching, bunding,
-loose boulder structures, soil bunding and tree plantation.
-</p>
-
-</div>
-
-<div class="project">
-
-<h3>🌳 Tree Plantation & Climate Action</h3>
-
-<p>
-WLVM undertakes tree plantation activities in Beed District
-as part of its efforts to increase environmental awareness,
-support natural resources and address climate change.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PARTNERS -->
-
-<section class="partners" id="partners">
-
-<div class="container">
-
-<div class="section-label">COLLABORATION</div>
-
-<h2 class="section-title">Our Partners</h2>
-
-<p class="section-description">
-Our partnerships help us expand opportunities and strengthen
-our community development initiatives.
-</p>
-
-<div class="partner-grid">
-
-<div class="partner">
-Smile Foundation
-<small>New Delhi · STEP Project & Mission Education</small>
-</div>
-
-<div class="partner">
-Azim Premji Foundation
-<small>Bangalore · Clean Drinking Water</small>
-</div>
-
-<div class="partner">
-Vatsalya Trust
-<small>Mumbai · Driving School</small>
-</div>
-
-<div class="partner">
-Lok Manch
-<small>New Delhi · Organic Farming & Women Empowerment</small>
-</div>
-
-<div class="partner">
-TDSS
-<small>Pune · Organic Farming</small>
-</div>
-
-<div class="partner">
-Social Center
-<small>Ahmednagar · Watershed Development</small>
-</div>
-
-<div class="partner">
-Lighthouse Foundation
-<small>Pune · Skill Development</small>
-</div>
-
-<div class="partner">
-HIM Reality Pvt. Ltd.
-<small>Centre Development & Assets</small>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DIRECTOR MESSAGE -->
-
-<section class="director">
-
-<div class="container">
-
-<div class="section-label">LEADERSHIP</div>
-
-<h2 class="section-title">Message from Our Founder Director</h2>
-
-<div class="message">
-
-<p><strong>Dear Friends,</strong></p>
-
-<p>
-Wadmavli Lok Vikas Manch began its journey with a simple belief:
-every person deserves equal opportunities to learn, grow and live
-with self-respect and dignity.
-</p>
-
-<p>
-Since 19 June 2000, we have worked alongside communities to create
-opportunities through education, women empowerment, livelihoods,
-agriculture, water conservation and sustainable development.
-</p>
-
-<p>
-Our greatest strength is the participation and determination of
-the communities we work with. We believe lasting change happens
-when people are empowered to become active participants in their
-own development.
-</p>
-
-<p>
-We are grateful to our communities, partners, supporters and
-well-wishers who continue to walk with us on this journey.
-Together, let us continue working <strong>Towards Empowerment.</strong>
-</p>
-
-<div class="signature">
-Mr. Bhaskar Annasaheb Munde<br>
-Founder Director & Secretary<br>
-Wadmavli Lok Vikas Manch
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- VOLUNTEER -->
-
-<section class="volunteer" id="volunteer">
-
-<div class="container">
-
-<div class="section-label">JOIN OUR JOURNEY</div>
-
-<h2 class="section-title">Volunteer With Us</h2>
-
-<p class="section-description">
-Your time, skills and ideas can contribute to meaningful change.
-If you would like to volunteer with Wadmavli Lok Vikas Manch,
-get in touch with us.
-</p>
-
-<a class="btn btn-blue"
-href="mailto:wadmavlikaij.org@gmail.com?subject=Volunteer%20With%20Wadmavli%20Lok%20Vikas%20Manch">
-Become a Volunteer
+<a href="#donate" class="button outline">
+Donate Now
 </a>
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
 
-<!-- DONATE -->
 
-<section class="donate" id="donate">
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section about" id="about">
 
 <div class="container">
 
-<div class="section-label">SUPPORT OUR WORK</div>
+<div class="section-title">
 
-<h2 class="section-title">Donate Now</h2>
+<small>ABOUT WLVM</small>
 
-<p class="section-description">
-Your support can help us continue our work in education,
-women empowerment, livelihoods and sustainable community development.
+<h2>Working Towards Empowerment</h2>
+
+<p>
+Building opportunities and strengthening communities
+through inclusive and sustainable development.
 </p>
 
-<div class="donation-card">
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-text">
 
 <h3>Wadmavli Lok Vikas Manch</h3>
 
 <p>
-Donations can be made through bank transfer or UPI.
+Wadmavli Lok Vikas Manch, popularly known as WLVM,
+was established on <strong>19 June 2000</strong>.
+The organisation works for the development and
+empowerment of marginalized communities and
+other communities in need.
 </p>
 
-<div class="bank-details">
-
-<p><strong>Account Name:</strong> Wadmavli Lok Vikas Manch</p>
-
-<p><strong>Bank:</strong> State Bank of India</p>
-
-<p><strong>Branch:</strong> Neknoor, Tq. & Dist. Beed</p>
-
-<p><strong>Account Number:</strong> 62450125458</p>
-
-<p><strong>IFSC Code:</strong> SBIN0020406</p>
-
-<p><strong>UPI ID:</strong> 9011352544@ptsbi</p>
+<p>
+Our work focuses on creating opportunities through
+education, women empowerment, skill development,
+livelihood promotion, sustainable agriculture,
+water conservation, environmental action and
+community development.
+</p>
 
 </div>
 
-<p style="margin-top:20px;">
-<strong>Important:</strong> Please verify the beneficiary details
-before making a donation.
+
+<div class="info-box">
+
+<h3>Organisation Information</h3>
+
+<p>
+<strong>Official Name:</strong>
+Wadmavli Lok Vikas Manch
 </p>
 
-<a class="btn btn-pink"
-href="upi://pay?pa=9011352544@ptsbi&pn=Wadmavli%20Lok%20Vikas%20Manch">
-Donate via UPI
+<p>
+<strong>Tagline:</strong>
+Towards Empowerment
+</p>
+
+<p>
+<strong>Established:</strong>
+19 June 2000
+</p>
+
+<p>
+<strong>Founder Director & Secretary:</strong>
+Mr. Bhaskar Annasaheb Munde
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     OFFICE
+========================= -->
+
+<section class="section mission">
+
+<div class="container">
+
+<div class="mission-box">
+
+<h3>Our Locations</h3>
+
+<p>
+<strong>Office Address:</strong><br>
+Yash Niwas, Plot No. 25, Samrat Colony,
+Palwan Chowk, Dhanora Road,
+Beed, Maharashtra – 431122
+</p>
+
+<br>
+
+<p>
+<strong>Registered Address:</strong><br>
+At. Post Dahiphal (Wad), Tq. Kaij,
+Dist. Beed, Maharashtra – 431123
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PROGRAMS
+========================= -->
+
+<section class="section programs" id="programs">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>WHAT WE DO</small>
+
+<h2>Our Current Programs</h2>
+
+<p>
+Our programs address education, livelihoods,
+women empowerment, agriculture, water and
+environmental challenges.
+</p>
+
+</div>
+
+
+<div class="program-grid">
+
+
+<div class="program-card">
+
+<div class="icon">🌾</div>
+
+<h3>Organic Farming</h3>
+
+<p>
+Training farmers in organic farming,
+government scheme awareness, bank support
+and manure-making demonstrations.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">👩</div>
+
+<h3>Women Empowerment & SHGs</h3>
+
+<p>
+Supporting Self Help Groups through bank linkage,
+self-employment, livelihoods and livestock-based
+income opportunities.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">💼</div>
+
+<h3>Skill Development & Livelihood</h3>
+
+<p>
+Providing skills and livelihood-oriented
+training to improve employment and
+self-employment opportunities.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">📚</div>
+
+<h3>Mission Education</h3>
+
+<p>
+Supporting children aged 6–13 years through
+pre-primary and educational support in
+Kalepadal, Hadapsar, Pune.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">💧</div>
+
+<h3>Clean Drinking Water</h3>
+
+<p>
+Improving access to clean drinking water
+for households in villages of the Balaghat
+Valley region of Beed district.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">🚗</div>
+
+<h3>Motor Driving School</h3>
+
+<p>
+Providing driving training and support
+for obtaining driving licences to people
+aged 18 years and above.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">🌱</div>
+
+<h3>Watershed Development</h3>
+
+<p>
+Working on watershed activities including
+farm ponds, bunding, loose boulders,
+soil conservation and tree plantation.
+</p>
+
+</div>
+
+
+<div class="program-card">
+
+<div class="icon">🌳</div>
+
+<h3>Tree Plantation & Climate Action</h3>
+
+<p>
+Promoting tree plantation and environmental
+awareness as part of our climate action work
+in Beed district.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     IMPACT
+========================= -->
+
+<section class="section impact" id="impact">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>OUR IMPACT</small>
+
+<h2>Reaching Communities</h2>
+
+<p>
+Our current programs are creating opportunities
+for children, women, farmers and young people.
+</p>
+
+</div>
+
+
+<div class="impact-grid">
+
+
+<div class="impact-card">
+
+<h3>750+</h3>
+
+<p>Mission Education beneficiaries</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>3,250+</h3>
+
+<p>SHG members</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>350+</h3>
+
+<p>Farmers currently involved in organic farming</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>60</h3>
+
+<p>Driving school students trained</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>35</h3>
+
+<p>Driving trainees who gained employment</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>10</h3>
+
+<p>Villages covered under organic farming</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>7</h3>
+
+<p>Major program areas represented in our gallery</p>
+
+</div>
+
+
+<div class="impact-card">
+
+<h3>2000</h3>
+
+<p>Year WLVM was established</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     STEP
+========================= -->
+
+<section class="section step-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>STEP PROJECT</small>
+
+<h2>Skill Training for Young People</h2>
+
+</div>
+
+
+<div class="step-box">
+
+<h3>Free Training for Ages 18–30</h3>
+
+<p>
+Under the STEP project, WLVM provides completely
+free skill training for young people aged 18–30.
+</p>
+
+<p>
+Current training centres are located in:
+<strong>Bhosri, Dapodi and Dighi, Pune.</strong>
+</p>
+
+<p>
+Current training areas include:
+</p>
+
+<ul>
+
+<li>Retail Management</li>
+
+<li>Grocery Service Management</li>
+
+<li>Office Executive</li>
+
+</ul>
+
+<p>
+<strong>Partner:</strong>
+Smile Foundation, New Delhi
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PARTNERS
+========================= -->
+
+<section class="section partners" id="partners">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>COLLABORATION</small>
+
+<h2>Our Partners</h2>
+
+<p>
+Working together with partners to create
+stronger and more sustainable impact.
+</p>
+
+</div>
+
+
+<div class="partner-grid">
+
+
+<div class="partner">
+
+<h3>Smile Foundation</h3>
+
+<p>
+New Delhi — STEP project and Mission Education
+support.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Him Reality Pvt. Limited</h3>
+
+<p>
+Support for centre development through
+assets and infrastructure.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Azim Premji Foundation</h3>
+
+<p>
+Bangalore — Clean Drinking Water project.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Vatsalya Trust</h3>
+
+<p>
+Mumbai — Motor Driving School project.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Lok Manch</h3>
+
+<p>
+New Delhi — Organic Farming, Women Empowerment
+and SHG initiatives.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>TDSS</h3>
+
+<p>
+Pune — Organic Farming project.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Social Center</h3>
+
+<p>
+Ahmednagar — Watershed Development program.
+</p>
+
+</div>
+
+
+<div class="partner">
+
+<h3>Lighthouse Foundation</h3>
+
+<p>
+Pune — Skill Development program.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOUNDER MESSAGE
+========================= -->
+
+<section class="section message">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>FROM OUR FOUNDER</small>
+
+<h2>A Message of Empowerment</h2>
+
+</div>
+
+
+<div class="message-box">
+
+<p>
+“For more than two decades, Wadmavli Lok Vikas Manch
+has remained committed to working with communities
+and creating pathways towards dignity, opportunity
+and self-reliance.
+</p>
+
+<p>
+Our journey is built on the belief that true development
+comes when people are empowered with knowledge, skills,
+resources and opportunities to shape their own future.
+</p>
+
+<p>
+We will continue working with communities, partners
+and supporters to strengthen education, livelihoods,
+women's empowerment, sustainable agriculture,
+water security and environmental action.”
+</p>
+
+<p class="signature">
+— Mr. Bhaskar Annasaheb Munde<br>
+Founder Director & Secretary
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     VOLUNTEER
+========================= -->
+
+<section class="section volunteer" id="volunteer">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>JOIN OUR JOURNEY</small>
+
+<h2>Volunteer With Us</h2>
+
+</div>
+
+
+<div class="volunteer-box">
+
+<p>
+Your time, skills and ideas can contribute to
+meaningful community development. If you would
+like to volunteer with Wadmavli Lok Vikas Manch,
+we would be happy to hear from you.
+</p>
+
+
+<a
+href="mailto:wadmavlikaij.org@gmail.com?subject=Volunteer%20with%20WLVM"
+class="button secondary">
+
+Become a Volunteer
+
 </a>
 
 </div>
@@ -1395,17 +1464,121 @@ Donate via UPI
 </section>
 
 
-<!-- CONTACT -->
 
-<section class="contact" id="contact">
+<!-- =========================
+     DONATE
+========================= -->
+
+<section class="section donate" id="donate">
 
 <div class="container">
 
-<div class="section-label">GET IN TOUCH</div>
+<div class="section-title">
 
-<h2 class="section-title">Contact Us</h2>
+<small>SUPPORT OUR WORK</small>
+
+<h2>Donate Now</h2>
+
+<p>
+Your contribution can help strengthen our
+community development initiatives.
+</p>
+
+</div>
+
+
+<div class="donate-box">
+
+<h3>Support Wadmavli Lok Vikas Manch</h3>
+
+<p>
+Donations can support our work in education,
+women empowerment, livelihoods, agriculture,
+water and community development.
+</p>
+
+
+<div class="bank-details">
+
+<p>
+<strong>Account Name:</strong>
+Wadmavli Lok Vikas Manch
+</p>
+
+<p>
+<strong>Bank:</strong>
+State Bank of India (SBI)
+</p>
+
+<p>
+<strong>Branch:</strong>
+Neknoor, Tq. Dist. Beed
+</p>
+
+<p>
+<strong>Account Number:</strong>
+62450125458
+</p>
+
+<p>
+<strong>IFSC:</strong>
+SBIN0020406
+</p>
+
+<p>
+<strong>UPI:</strong>
+9011352544@ptsbi
+</p>
+
+</div>
+
+
+<p>
+For donation-related queries, please contact us
+using the details below.
+</p>
+
+
+<a
+href="mailto:wadmavlikaij.org@gmail.com?subject=Donation%20Enquiry"
+class="button secondary">
+
+Donate / Enquire
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="section contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>GET IN TOUCH</small>
+
+<h2>Contact WLVM</h2>
+
+<p>
+We welcome enquiries, partnerships, volunteers
+and support for our work.
+</p>
+
+</div>
+
 
 <div class="contact-grid">
+
 
 <div class="contact-card">
 
@@ -1418,7 +1591,8 @@ Dhanora Road, Beed,<br>
 Maharashtra – 431122
 </p>
 
-<h3 style="margin-top:25px;">Registered Address</h3>
+
+<h3>Registered Address</h3>
 
 <p>
 At. Post Dahiphal (Wad),<br>
@@ -1428,43 +1602,66 @@ Maharashtra – 431123
 
 </div>
 
+
 <div class="contact-card">
 
-<h3>Contact Information</h3>
+<h3>Contact Details</h3>
 
 <p>
-📞 <a href="tel:9011352549">9011352549</a>
+<strong>Phone:</strong><br>
+
+<a href="tel:9011352549">
+9011352549
+</a>
+
+<br>
+
+<a href="tel:9011353544">
+9011353544
+</a>
+
 </p>
 
-<p>
-📞 <a href="tel:9011353544">9011353544</a>
-</p>
 
 <p>
-✉️ <a href="mailto:wadmavlilokvikasmanch@gmail.com">
+<strong>Email:</strong><br>
+
+<a href="mailto:wadmavlilokvikasmanch@gmail.com">
 wadmavlilokvikasmanch@gmail.com
 </a>
-</p>
 
-<p>
-✉️ <a href="mailto:wadmavlikaij.org@gmail.com">
+<br>
+
+<a href="mailto:wadmavlikaij.org@gmail.com">
 wadmavlikaij.org@gmail.com
 </a>
+
 </p>
 
-<div class="social">
 
-<a href="https://www.instagram.com/wadmavli_lok_vikas_manch/" target="_blank">
+<div class="social-links">
+
+<a
+href="https://www.instagram.com/wadmavli_lok_vikas_manch/"
+target="_blank">
+
 Instagram
+
 </a>
 
-<a href="https://www.facebook.com/share/19E1mR717e/" target="_blank">
+
+<a
+href="https://www.facebook.com/share/19E1mR717e/"
+target="_blank">
+
 Facebook
+
 </a>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -1473,43 +1670,31 @@ Facebook
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="container">
-
 <h2>Wadmavli Lok Vikas Manch</h2>
 
-<div class="tagline">Towards Empowerment</div>
+<div class="tagline">
+Towards Empowerment
+</div>
 
-<p style="margin-top:10px;">
+<p>
 Established 19 June 2000
 </p>
 
-<div class="social">
-
-<a href="https://www.instagram.com/wadmavli_lok_vikas_manch/" target="_blank">
-Instagram
-</a>
-
-<a href="https://www.facebook.com/share/19E1mR717e/" target="_blank">
-Facebook
-</a>
-
-<a href="mailto:wadmavlikaij.org@gmail.com">
-Email Us
-</a>
-
-</div>
-
-<div class="copyright">
-© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.
-</div>
-
-</div>
+<p>
+© 2026 Wadmavli Lok Vikas Manch.
+All Rights Reserved.
+</p>
 
 </footer>
 
+
 </body>
+
 </html>
