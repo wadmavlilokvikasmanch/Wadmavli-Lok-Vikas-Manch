@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://wadmavlilokvikasmanch.github.io/sitemap.xml
