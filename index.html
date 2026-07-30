@@ -712,35 +712,22 @@ nav a:hover{
     border-radius:15px;
     text-align:center;
     border:1px solid #e4ecef;
+    transition:.3s ease;
 }
 
-   .partner img{
+.partner:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.partner img{
     width:90px;
     height:90px;
     object-fit:contain;
+    display:block;
     margin:0 auto 15px;
 }
 
-.partner.no-logo{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.partner-placeholder{
-    width:90px;
-    height:90px;
-    margin:0 auto 15px;
-    border-radius:50%;
-    background:#e9eef3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    color:#4d6475;
-    font-weight:bold;
-}
-   
 .partner h3{
     color:var(--blue);
     font-size:15px;
@@ -751,7 +738,6 @@ nav a:hover{
     color:var(--muted);
     font-size:11px;
 }
-
 
 /* =========================
    VOLUNTEER + DONATE
@@ -1962,17 +1948,10 @@ to create meaningful community impact.
     <p>New Delhi — STEP project and Mission Education support.</p>
 </div>
 
-
 <div class="partner">
-
-<h3>
-Him Reality Pvt. Limited
-</h3>
-
-<p>
-Centre development, assets and infrastructure support.
-</p>
-
+    <img src="him-reality.png" alt="Him Reality Pvt. Ltd. Logo">
+    <h3>Him Reality Pvt. Limited</h3>
+    <p>Centre development, assets and infrastructure support.</p>
 </div>
 
 
@@ -1997,15 +1976,9 @@ Centre development, assets and infrastructure support.
 
 
 <div class="partner">
-
-<h3>
-TDSS
-</h3>
-
-<p>
-Pune — Organic Farming project.
-</p>
-
+    <img src="tdss.png" alt="TDSS Logo">
+    <h3>TDSS</h3>
+    <p>Pune — Organic Farming project.</p>
 </div>
 
 
