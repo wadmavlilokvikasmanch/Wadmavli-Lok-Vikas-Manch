@@ -186,9 +186,13 @@ form.addEventListener("submit", function(e){
         "service_4c85wrw",
         "template_n1ndfiv",
         {
-            person: form.person.value,
-            email: form.email.value
+            person: form.querySelector(`[name="person"].value,
+            email: form.querySelector(`[name="email"].value
         }
+        )
+     ,then (() => console.log("Auto reply sent"))
+     .catch(err =>
+         console.log(err));
     );
 
     alert("✅ Thank you! Your partnership enquiry has been submitted successfully.");
