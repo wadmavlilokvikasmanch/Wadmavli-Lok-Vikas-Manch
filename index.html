@@ -875,8 +875,9 @@ nav a:hover{
 
 .contact-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
+    grid-template-columns:1fr 1fr 1.2fr;
+    gap:25px;
+    align-items:start;
 }
 
 .contact-card{
@@ -903,19 +904,47 @@ nav a:hover{
 
 .socials{
     display:flex;
-    gap:10px;
+    gap:15px;
     flex-wrap:wrap;
-    margin-top:18px;
+    margin-top:20px;
 }
 
 .socials a{
-    background:var(--blue);
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     color:white;
-    padding:8px 15px;
-    border-radius:20px;
-    font-size:12px;
+    font-size:22px;
+    transition:.3s;
 }
 
+.socials a:nth-child(1){
+    background:#E4405F;
+}
+
+.socials a:nth-child(2){
+    background:#1877F2;
+}
+
+.socials a:nth-child(3){
+    background:#0A66C2;
+}
+
+.socials a:nth-child(4){
+    background:#000;
+}
+
+.socials a:nth-child(5){
+    background:#25D366;
+}
+
+.socials a:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
 
 /* =========================
    FOOTER
@@ -1040,7 +1069,10 @@ footer p{
 }
 
 </style>
-
+  
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
 </head>
 
 
@@ -2267,23 +2299,29 @@ wadmavlikaij.org@gmail.com
 
 <div class="socials">
 
-<a
-href="https://www.instagram.com/wadmavli_lok_vikas_manch/"
-target="_blank"
-rel="noopener">
-
-Instagram
-
+<a href="https://www.instagram.com/wadmavli_lok_vikas_manch/"
+target="_blank">
+<i class="fab fa-instagram"></i>
 </a>
 
+<a href="https://www.facebook.com/share/19E1mR717e/"
+target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-<a
-href="https://www.facebook.com/share/19E1mR717e/"
-target="_blank"
-rel="noopener">
+<a href="https://www.linkedin.com/in/wadmavli-lok-vikas-manch-0359a841a"
+target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
 
-Facebook
+<a href="https://x.com/wadmavli_beed"
+target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
 
+<a href="https://wa.me/919011352549"
+target="_blank">
+<i class="fab fa-whatsapp"></i>
 </a>
 
 </div>
