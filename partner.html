@@ -14,11 +14,10 @@ header{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.0
 nav a{text-decoration:none;color:#344b5b;margin-left:18px;font-weight:bold}
 .hero{padding:80px 0;background:linear-gradient(135deg,#f8fcff,#fff5f8)}
 .hero-grid{
-    display:flex;
-    flex-direction:column;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
     align-items:center;
-    gap:30px;
-    text-align:center;
+    gap:60px;
 }
 h1{font-size:56px;color:var(--dark)}
 h1 span{color:var(--pink)}
@@ -39,7 +38,30 @@ p{color:var(--muted);line-height:1.7}
 input,select,textarea{width:100%;padding:12px;border:1px solid #d9e2e8;border-radius:10px;margin-top:12px}
 button{margin-top:16px;padding:13px;border:none;background:var(--pink);color:#fff;border-radius:30px;font-weight:bold;width:100%}
 footer{background:#062f50;color:#fff;text-align:center;padding:35px}
-@media(max-width:900px){.hero-grid,.enquiry,.grid4{grid-template-columns:1fr}h1{font-size:40px}.navbar{flex-direction:column}}
+@media(max-width:900px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.grid4{
+    grid-template-columns:1fr;
+}
+
+.enquiry{
+    max-width:100%;
+}
+
+h1{
+    font-size:40px;
+}
+
+.navbar{
+    flex-direction:column;
+}
+
+}
 </style>
 </head>
 <body>
@@ -57,24 +79,30 @@ footer{background:#062f50;color:#fff;text-align:center;padding:35px}
 <div class="container hero-grid">
 <div style="text-align:center; max-width:700px; margin:auto;">
 
-<h2 style="color:#063b67; margin-bottom:15px;">
-Partnership Enquiry
-</h2>
+<h1>
+Partner <span>With Us</span>
+</h1>
 
 <p>
-We welcome collaborations with CSR teams, foundations,
-educational institutions, government agencies and organizations
-that share our vision. Complete the form below and our team will
-contact you shortly.
+Join hands with <strong>Wadmavli Lok Vikas Manch</strong> to create sustainable
+social impact. We collaborate with CSR companies, NGOs, educational
+institutions, foundations, and government organizations to transform
+communities through meaningful development initiatives.
 </p>
+
+<a href="#form" class="btn">Become a Partner</a>
 
 </div>
 <div class="card">
-<h2 style="color:#063b67">Collaboration Opportunities</h2>
-<p>✔ CSR Projects</p>
-<p>✔ NGO Partnerships</p>
-<p>✔ Government Collaboration</p>
-<p>✔ Educational Institutions</p>
+    <h2 style="color:#063b67; margin-bottom:15px;">
+        Collaboration Opportunities
+    </h2>
+
+    <p>🤝 CSR Partnerships</p>
+    <p>🏛 Government Projects</p>
+    <p>🎓 Educational Institutions</p>
+    <p>🌱 Community Development</p>
+    <p>🌍 NGO Collaborations</p>
 </div>
 </div>
 </section>
