@@ -180,13 +180,22 @@ form.addEventListener("submit", function(e){
         "template_qchpu2v",
         this
     )
-    .then(function(){
+ .then(function(){
 
-        alert("✅ Thank you! Your partnership enquiry has been submitted successfully.");
+    emailjs.send(
+        "service_4c85wrw",
+        "template_n1ndfiv",
+        {
+            person: form.person.value,
+            email: form.email.value
+        }
+    );
 
-        form.reset();
+    alert("✅ Thank you! Your partnership enquiry has been submitted successfully.");
 
-    })
+    form.reset();
+
+})
     .catch(function(error){
 
         console.error(error);
