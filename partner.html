@@ -23,7 +23,13 @@ p{color:var(--muted);line-height:1.7}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .small{padding:22px;text-align:center}
 .small h3{color:var(--dark);margin:12px 0}
-.enquiry{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.enquiry{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    max-width:800px;
+    margin:auto;
+}
 input,select,textarea{width:100%;padding:12px;border:1px solid #d9e2e8;border-radius:10px;margin-top:12px}
 button{margin-top:16px;padding:13px;border:none;background:var(--pink);color:#fff;border-radius:30px;font-weight:bold;width:100%}
 footer{background:#062f50;color:#fff;text-align:center;padding:35px}
@@ -43,10 +49,19 @@ footer{background:#062f50;color:#fff;text-align:center;padding:35px}
 
 <section class="hero">
 <div class="container hero-grid">
-<div>
-<h1>Partner <span>With Us</span></h1>
-<p>Join hands with Wadmavli Lok Vikas Manch to create sustainable impact through CSR initiatives, institutional collaborations, foundations and community development projects.</p>
-<a class="btn" href="#form">Become a Partner</a>
+<div style="text-align:center; max-width:700px; margin:auto;">
+
+<h2 style="color:#063b67; margin-bottom:15px;">
+Partnership Enquiry
+</h2>
+
+<p>
+We welcome collaborations with CSR teams, foundations,
+educational institutions, government agencies and organizations
+that share our vision. Complete the form below and our team will
+contact you shortly.
+</p>
+
 </div>
 <div class="card">
 <h2 style="color:#063b67">Collaboration Opportunities</h2>
