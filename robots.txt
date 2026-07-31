@@ -1,5 +1,4 @@
 User-agent: *
-
 Allow: /
 
-Sitemap: https://wadmavlilokvikasmanch.github.io/sitemap.xml
+Sitemap: https://wadmavlibeed.org/sitemap.xml
