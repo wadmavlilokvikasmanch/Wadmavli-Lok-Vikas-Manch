@@ -814,7 +814,7 @@ nav a:hover{
 
 .action-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(3,1fr);
     gap:22px;
 }
 
@@ -973,7 +973,7 @@ footer p{
    TABLET
 ========================= */
 
-@media(max-width:950px){
+@media (max-width:950px){
 
     nav{
         display:none;
@@ -981,24 +981,47 @@ footer p{
 
     .hero-grid,
     .about-grid,
-    .highlight-grid{
+    .highlight-grid,
+    .founder-content{
         grid-template-columns:1fr;
+        display:grid;
+    }
+
+    .founder-content{
+        text-align:center;
+    }
+
+    .founder-image{
+        margin:auto;
     }
 
     .program-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .gallery-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .partner-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .impact-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    /* Three cards become two per row */
+    .action-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -1008,7 +1031,7 @@ footer p{
    MOBILE
 ========================= */
 
-@media(max-width:650px){
+@media (max-width:650px){
 
     .navbar{
         min-height:68px;
@@ -1041,17 +1064,15 @@ footer p{
 
     .program-grid,
     .gallery-grid,
+    .partner-grid,
     .action-grid,
-    .contact-grid{
+    .contact-grid,
+    .trust-grid{
         grid-template-columns:1fr;
     }
 
     .impact-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .partner-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .highlight-list{
@@ -1061,6 +1082,23 @@ footer p{
     .gallery-card img{
         height:230px;
     }
+
+    .founder-content{
+        display:block;
+        text-align:center;
+    }
+
+    .founder-image{
+        margin-bottom:25px;
+    }
+
+    .founder-image img{
+        width:220px;
+        height:auto;
+        margin:auto;
+    }
+
+}
 
 }
 
