@@ -886,16 +886,19 @@ nav a:hover{
 }
 
 .contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr 1.2fr;
-    gap:25px;
-    align-items:start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 25px;
+    align-items: stretch;
 }
 
 .contact-card{
     background:#f8fbfc;
     border-radius:21px;
     padding:30px;
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .contact-card h3{
