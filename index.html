@@ -805,7 +805,7 @@ nav a:hover{
 }
 
 /* =========================
-   VOLUNTEER + DONATE
+   VOLUNTEER + PARTNER + DONATE
 ========================= */
 
 .action-section{
@@ -821,10 +821,16 @@ nav a:hover{
 .action-card{
     padding:32px;
     border-radius:23px;
+    display:flex;
+    flex-direction:column;
 }
 
 .volunteer-card{
     background:var(--light-green);
+}
+
+.partner-card{
+    background:var(--light-blue);
 }
 
 .donate-card{
@@ -846,6 +852,12 @@ nav a:hover{
     font-size:14px;
     margin-bottom:18px;
 }
+
+.action-card .btn{
+    margin-top:auto;
+}
+
+/* Optional (only keep if used on donate.html) */
 
 .bank-details{
     background:white;
@@ -2134,73 +2146,81 @@ to create meaningful community impact.
 
 
 <!-- =================================
-     VOLUNTEER + DONATE
+     VOLUNTEER + PARTNER + DONATE
 ================================= -->
 
 <section class="section action-section">
 
 <div class="container">
 
-
 <div class="action-grid">
-
 
 <!-- VOLUNTEER -->
 
 <div class="action-card volunteer-card">
 
-<div class="action-icon">
-🤝
-</div>
+    <div class="action-icon">
+        🤝
+    </div>
 
-<h2>
-Volunteer With Us
-</h2>
+    <h2>Volunteer With Us</h2>
 
-<p>
-Your time, skills and ideas can contribute to
-meaningful community development. Get in touch
-if you would like to volunteer with WLVM.
-</p>
+    <p>
+        Your time, skills and ideas can contribute to meaningful community
+        development. Join us in creating lasting impact for communities.
+    </p>
 
-<a href="volunteer.html" class="btn btn-blue">
-    Become a Volunteer
-</a>
+    <a href="volunteer.html" class="btn btn-blue">
+        Become a Volunteer
+    </a>
 
 </div>
 
+
+<!-- PARTNER -->
+
+<div class="action-card partner-card">
+
+    <div class="action-icon">
+        🤝🏽
+    </div>
+
+    <h2>Partner With Us</h2>
+
+    <p>
+        Collaborate with WLVM through CSR initiatives, institutional
+        partnerships, funding support, technical expertise or joint
+        community development projects.
+    </p>
+
+    <a href="partner.html" class="btn btn-blue">
+        Partner With Us
+    </a>
+
+</div>
 
 
 <!-- DONATE -->
 
 <div class="action-card donate-card" id="donate">
 
-<div class="action-icon">
-❤️
+    <div class="action-icon">
+        ❤️
+    </div>
+
+    <h2>Support Our Work</h2>
+
+    <p>
+        Your contribution helps strengthen our work in education,
+        livelihoods, women empowerment, agriculture, water conservation
+        and community development.
+    </p>
+
+    <a href="donate.html" class="btn btn-pink">
+        Donate Now
+    </a>
+
 </div>
-
-<h2>
-Support Our Work
-</h2>
-
-<p>
-Your contribution can help strengthen our work
-in education, livelihoods, women empowerment,
-agriculture, water and community development.
-</p>
-   
-<a href="donate.html" class="btn btn-pink">
-    Donate Now
-</a>
-   
-</div>
-
-
-
-</a>
-   
-</div>
-
 
 </div>
 
