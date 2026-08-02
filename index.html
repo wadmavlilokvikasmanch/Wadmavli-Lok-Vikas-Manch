@@ -762,46 +762,83 @@ nav a:hover{
 ========================= */
 
 .partners{
-    background:white;
+    background:#fff;
+    overflow:hidden;
 }
 
-.partner-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
+.partner-slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    margin-top:40px;
+}
+
+.partner-track{
+    display:flex;
+    align-items:center;
+    width:max-content;
+    animation:scrollPartners 35s linear infinite;
+}
+
+.partner-track:hover{
+    animation-play-state:paused;
 }
 
 .partner{
-    background:#f8fbfc;
-    padding:20px 15px;
-    border-radius:15px;
-    text-align:center;
-    border:1px solid #e4ecef;
-    transition:.3s ease;
+    flex:0 0 auto;
+    width:180px;
+    height:130px;
+    margin:0 15px;
+    background:#fff;
+    border:1px solid #e8ecef;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
 
 .partner:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.10);
 }
 
 .partner img{
-    width:90px;
-    height:90px;
+    max-width:130px;
+    max-height:70px;
+    width:auto;
+    height:auto;
     object-fit:contain;
-    display:block;
-    margin:0 auto 15px;
 }
 
-.partner h3{
-    color:var(--blue);
-    font-size:15px;
-    margin-bottom:5px;
+@keyframes scrollPartners{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
 }
 
-.partner p{
-    color:var(--muted);
-    font-size:11px;
+@media(max-width:768px){
+
+    .partner{
+        width:150px;
+        height:110px;
+        margin:0 10px;
+    }
+
+    .partner img{
+        max-width:100px;
+        max-height:55px;
+    }
+
+    .partner-track{
+        animation-duration:25s;
+    }
+
 }
 
 /* =========================
@@ -2085,60 +2122,137 @@ to create meaningful community impact.
 </div>
 
 
-<div class="partner-grid">
+<div class="partner-slider">
 
+    <div class="partner-track">
 
-<div class="partner">
-    <img src="smile-foundation.png" alt="Smile Foundation Logo">
-    <h3>Smile Foundation</h3>
-    <p>New Delhi — STEP project and Mission Education support.</p>
-</div>
+        <!-- Existing Partners -->
 
-<div class="partner">
-    <img src="him-reality.png" alt="Him Reality Pvt. Ltd. Logo">
-    <h3>Him Reality Pvt. Limited</h3>
-    <p>Centre development, assets and infrastructure support.</p>
-</div>
+        <div class="partner">
+            <img src="smile-foundation.png" alt="Smile Foundation Logo">
+        </div>
 
+        <div class="partner">
+            <img src="him-reality.png" alt="Him Reality Pvt. Ltd. Logo">
+        </div>
 
-<div class="partner">
-    <img src="azim-premji.png" alt="Azim Premji Foundation Logo">
-    <h3>Azim Premji Foundation</h3>
-    <p>Bangalore — Clean Drinking Water project.</p>
-</div>
+        <div class="partner">
+            <img src="azim-premji.png" alt="Azim Premji Foundation Logo">
+        </div>
 
-   
-<div class="partner">
-    <img src="vatsalya.jpg" alt="Vatsalya Trust Logo">
-    <h3>Vatsalya Trust</h3>
-    <p>Mumbai — Motor Driving School project.</p>
-</div>
+        <div class="partner">
+            <img src="vatsalya.jpg" alt="Vatsalya Trust Logo">
+        </div>
 
-<div class="partner">
-    <img src="lokmanch.png" alt="Lok Manch Logo">
-    <h3>Lok Manch</h3>
-    <p>New Delhi — Organic Farming, Women Empowerment and SHGs.</p>
-</div>
+        <div class="partner">
+            <img src="lokmanch.png" alt="Lok Manch Logo">
+        </div>
 
+        <div class="partner">
+            <img src="tdss.png" alt="TDSS Logo">
+        </div>
 
-<div class="partner">
-    <img src="tdss.png" alt="TDSS Logo">
-    <h3>TDSS</h3>
-    <p>Pune — Organic Farming project.</p>
-</div>
+        <div class="partner">
+            <img src="social-center.jpg" alt="Social Center Logo">
+        </div>
 
+        <div class="partner">
+            <img src="lighthouse.png" alt="Lighthouse Foundation Logo">
+        </div>
 
-<div class="partner">
-    <img src="social-center.jpg" alt="Social Center Logo">
-    <h3>Social Center</h3>
-    <p>Ahmednagar — Watershed Development program.</p>
-</div>
-   
-<div class="partner">
-    <img src="lighthouse.png" alt="Lighthouse Foundation Logo">
-    <h3>Lighthouse Foundation</h3>
-    <p>Pune — Skill Development program.</p>
-</div>
+        <!-- New Partners -->
+
+        <div class="partner">
+            <img src="tata-trusts.png" alt="Tata Trusts Logo">
+        </div>
+
+        <div class="partner">
+            <img src="baif.png" alt="BAIF Logo">
+        </div>
+
+        <div class="partner">
+            <img src="wotr.png" alt="Watershed Organisation Trust Logo">
+        </div>
+
+        <div class="partner">
+            <img src="sampada-trust.png" alt="Sampada Trust Logo">
+        </div>
+
+        <div class="partner">
+            <img src="dogoodnow.png" alt="Do Good Now Logo">
+        </div>
+
+        <div class="partner">
+            <img src="dilasa.png" alt="Dilasa Sanstha Logo">
+        </div>
+
+        <div class="partner">
+            <img src="thinksharp.png" alt="Think Sharp Foundation Logo">
+        </div>
+
+        <!-- Duplicate for Infinite Loop -->
+
+        <div class="partner">
+            <img src="smile-foundation.png" alt="Smile Foundation Logo">
+        </div>
+
+        <div class="partner">
+            <img src="him-reality.png" alt="Him Reality Pvt. Ltd. Logo">
+        </div>
+
+        <div class="partner">
+            <img src="azim-premji.png" alt="Azim Premji Foundation Logo">
+        </div>
+
+        <div class="partner">
+            <img src="vatsalya.jpg" alt="Vatsalya Trust Logo">
+        </div>
+
+        <div class="partner">
+            <img src="lokmanch.png" alt="Lok Manch Logo">
+        </div>
+
+        <div class="partner">
+            <img src="tdss.png" alt="TDSS Logo">
+        </div>
+
+        <div class="partner">
+            <img src="social-center.jpg" alt="Social Center Logo">
+        </div>
+
+        <div class="partner">
+            <img src="lighthouse.png" alt="Lighthouse Foundation Logo">
+        </div>
+
+        <div class="partner">
+            <img src="tata-trusts.png" alt="Tata Trusts Logo">
+        </div>
+
+        <div class="partner">
+            <img src="baif.png" alt="BAIF Logo">
+        </div>
+
+        <div class="partner">
+            <img src="wotr.png" alt="Watershed Organisation Trust Logo">
+        </div>
+
+        <div class="partner">
+            <img src="sampada-trust.png" alt="Sampada Trust Logo">
+        </div>
+
+        <div class="partner">
+            <img src="dogoodnow.png" alt="Do Good Now Logo">
+        </div>
+
+        <div class="partner">
+            <img src="dilasa.png" alt="Dilasa Sanstha Logo">
+        </div>
+
+        <div class="partner">
+            <img src="thinksharp.png" alt="Think Sharp Foundation Logo">
+        </div>
+
+    </div>
 
 </div>
 
