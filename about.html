@@ -995,7 +995,312 @@ transition:.4s;
 border-color:white;
 
 }
+ /*==========================
+FOUNDER
+===========================*/
 
+.founder-section{
+padding:120px 7%;
+background:white;
+}
+
+.founder-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+}
+
+.founder-image{
+position:relative;
+}
+
+.founder-image img{
+width:100%;
+border-radius:30px;
+box-shadow:0 30px 70px rgba(0,0,0,.15);
+}
+
+.experience-box{
+position:absolute;
+bottom:-20px;
+right:-20px;
+background:linear-gradient(135deg,var(--blue),#1a8ad5);
+color:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 20px 40px rgba(7,91,154,.35);
+}
+
+.experience-box h2{
+font-size:42px;
+margin:0;
+}
+
+.section-tag{
+color:var(--blue);
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.founder-content h2{
+font-size:46px;
+margin:15px 0 8px;
+color:var(--dark);
+}
+
+.founder-content h4{
+color:var(--pink);
+margin-bottom:25px;
+}
+
+.founder-content p{
+line-height:2;
+color:var(--muted);
+margin-bottom:18px;
+}
+
+.quote-box{
+margin-top:25px;
+padding:25px;
+border-left:5px solid var(--pink);
+background:#f8fbff;
+border-radius:15px;
+}
+
+.quote-box i{
+font-size:28px;
+color:var(--pink);
+margin-bottom:10px;
+}
+
+/*==========================
+VALUES
+===========================*/
+
+.values-section{
+padding:120px 7%;
+background:linear-gradient(180deg,#eef8ff,#fff);
+}
+
+.values-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.value-card{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.value-card:hover{
+transform:translateY(-10px);
+}
+
+.value-icon{
+font-size:50px;
+margin-bottom:20px;
+}
+
+/*==========================
+REGISTRATION
+===========================*/
+
+.registration-section{
+padding:120px 7%;
+background:#f7fbff;
+}
+
+.registration-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.reg-card{
+background:white;
+padding:35px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+border-top:5px solid var(--blue);
+transition:.3s;
+}
+
+.reg-card:hover{
+transform:translateY(-8px);
+}
+
+.reg-card h3{
+color:var(--dark);
+margin-bottom:15px;
+font-size:22px;
+}
+
+.reg-card p{
+line-height:1.8;
+color:var(--muted);
+}
+
+@media(max-width:991px){
+
+.founder-grid{
+grid-template-columns:1fr;
+}
+
+.experience-box{
+position:static;
+margin-top:20px;
+display:inline-block;
+}
+
+}
+/*==========================
+TESTIMONIALS
+===========================*/
+
+.testimonial-section{
+padding:120px 7%;
+background:white;
+}
+
+.testimonial-slider{
+max-width:850px;
+margin:60px auto 0;
+}
+
+.testimonial-card{
+background:white;
+padding:45px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.testimonial-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:25px;
+border:6px solid #eef7ff;
+}
+
+.testimonial-card p{
+line-height:2;
+font-style:italic;
+margin-bottom:20px;
+color:var(--muted);
+}
+
+.testimonial-card h3{
+color:var(--dark);
+}
+
+.testimonial-card span{
+color:var(--blue);
+}
+
+/*==========================
+FUTURE
+===========================*/
+
+.future{
+padding:120px 7%;
+background:#eef8ff;
+}
+
+.future-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.future-card{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+text-align:center;
+font-size:50px;
+transition:.4s;
+}
+
+.future-card:hover{
+transform:translateY(-10px);
+}
+
+.future-card h3{
+font-size:26px;
+margin:20px 0;
+color:var(--dark);
+}
+
+.future-card p{
+font-size:16px;
+line-height:1.8;
+color:var(--muted);
+}
+
+/*==========================
+CTA
+===========================*/
+
+.join-us{
+padding:120px 7%;
+background:linear-gradient(135deg,#075b9a,#063b67);
+color:white;
+text-align:center;
+}
+
+.join-us h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.join-us p{
+max-width:750px;
+margin:0 auto 40px;
+line-height:2;
+color:#eef5ff;
+}
+
+.join-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+/*==========================
+FOOTER
+===========================*/
+
+.about-footer{
+background:#052f52;
+color:white;
+padding:60px 7%;
+text-align:center;
+}
+
+.about-footer h3{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.about-footer p{
+color:#cfd9e4;
+line-height:1.8;
+}
 </style>
 
 </head>
@@ -1879,7 +2184,460 @@ Tree plantation and environmental awareness programmes promoting sustainable liv
 
 </section>
 
-  
+  <!-- =====================================
+FOUNDER SECTION
+===================================== -->
+
+<section class="founder-section">
+
+<div class="container founder-grid">
+
+<div class="founder-image" data-aos="fade-right">
+
+<img src="images/founder.jpg" alt="Founder">
+
+<div class="experience-box">
+<h2>27+</h2>
+<p>Years of Social Service</p>
+</div>
+
+</div>
+
+<div class="founder-content" data-aos="fade-left">
+
+<span class="section-tag">Founder</span>
+
+<h2>Bhaskar Annasaheb Munde</h2>
+
+<h4>Founder & Secretary</h4>
+
+<p>
+
+Wadmavli Lok Vikas Manch was founded on <strong>19 June 2000</strong> by
+<strong>Mr. Bhaskar Annasaheb Munde</strong>, a Post Graduate in Master of
+Social Work with over <strong>27 years of experience</strong> in rural and
+community development.
+
+</p>
+
+<p>
+
+His vision has always been simple yet powerful —
+to create opportunities where none existed and empower communities to
+become self-reliant with dignity, confidence and hope.
+
+</p>
+
+<p>
+
+Today, under his leadership, the organisation continues to transform
+thousands of lives through education, women empowerment, sustainable
+agriculture, livelihood generation, water conservation and disaster relief.
+
+</p>
+
+<div class="quote-box">
+
+<i class="fa-solid fa-quote-left"></i>
+
+<p>
+
+"Towards Empowerment is not just our tagline —
+it is our commitment to every individual we serve."
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+CORE VALUES
+===================================== -->
+
+<section class="values-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Our Values</span>
+
+<h2>The Principles That Guide Us</h2>
+
+</div>
+
+<div class="values-grid">
+
+<div class="value-card">
+<div class="value-icon">🤝</div>
+<h3>Integrity</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">🌍</div>
+<h3>Equality</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">💙</div>
+<h3>Compassion</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">🌱</div>
+<h3>Sustainability</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">✨</div>
+<h3>Innovation</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">👥</div>
+<h3>Community Participation</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">📋</div>
+<h3>Accountability</h3>
+</div>
+
+<div class="value-card">
+<div class="value-icon">🙌</div>
+<h3>Empowerment</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================
+REGISTRATION
+===================================== -->
+
+<section class="registration-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Recognition</span>
+
+<h2>Registration & Legal Compliance</h2>
+
+<p>
+
+Registered with statutory authorities to ensure transparency,
+credibility and accountability.
+
+</p>
+
+</div>
+
+<div class="registration-grid">
+
+<div class="reg-card">
+
+<h3>Societies Registration Act, 1860</h3>
+
+<p>
+
+Registration No.<br>
+
+<strong>MAH-331/2000 (Beed)</strong><br>
+
+19 June 2000
+
+</p>
+
+</div>
+
+<div class="reg-card">
+
+<h3>Bombay Public Trust Act, 1950</h3>
+
+<p>
+
+Trust No.<br>
+
+<strong>F-6939 Beed</strong><br>
+
+08 August 2000
+
+</p>
+
+</div>
+
+<div class="reg-card">
+
+<h3>Income Tax Registration</h3>
+
+<p>
+
+80G & 12A Registered
+
+<br><br>
+
+PAN : AAATW0751C
+
+</p>
+
+</div>
+
+<div class="reg-card">
+
+<h3>NITI Aayog</h3>
+
+<p>
+
+Unique ID
+
+<br>
+
+<strong>MH/2017/0159193</strong>
+
+</p>
+
+</div>
+
+<div class="reg-card">
+
+<h3>CSR Registration</h3>
+
+<p>
+
+CSR Registration Number
+
+<br>
+
+<strong>CSR00006497</strong>
+
+</p>
+
+</div>
+
+<div class="reg-card">
+
+<h3>TAN</h3>
+
+<p>
+
+<strong>NSKW01256D</strong>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+ <!-- ======================================
+TESTIMONIALS
+======================================= -->
+
+<section class="testimonial-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Success Stories</span>
+
+<h2>Voices of Change</h2>
+
+<p>
+Real stories from the people whose lives have been transformed through our initiatives.
+</p>
+
+</div>
+
+<div class="testimonial-slider">
+
+<div class="testimonial-card active">
+
+<img src="images/testimonial1.jpg" alt="Ashabai Giri">
+
+<p>
+
+"The support I received through our Self-Help Group gave my family a new beginning.
+Today, our dairy farming provides a steady income and hope for a better future.
+I am grateful to Wadmavli Lok Vikas Manch."
+
+</p>
+
+<h3>Mrs. Ashabai Navnath Giri</h3>
+
+<span>Self Help Group Member</span>
+
+</div>
+
+<div class="testimonial-card">
+
+<img src="images/testimonial2.jpg" alt="Lankabai Humbe">
+
+<p>
+
+"With the support of Wadmavli Lok Vikas Manch and our Self-Help Group,
+I started goat farming and transformed my family's livelihood."
+
+</p>
+
+<h3>Mrs. Lankabai Sonaji Humbe</h3>
+
+<span>Beneficiary</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+FUTURE VISION
+======================================= -->
+
+<section class="future">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Looking Ahead</span>
+
+<h2>Our Vision For The Future</h2>
+
+</div>
+
+<div class="future-grid">
+
+<div class="future-card">
+🌸
+<h3>Women Empowerment</h3>
+<p>
+Expand Self Help Groups, entrepreneurship opportunities and financial independence.
+</p>
+</div>
+
+<div class="future-card">
+💧
+<h3>Water Conservation</h3>
+<p>
+Create sustainable water resources across drought-prone villages of Beed district.
+</p>
+</div>
+
+<div class="future-card">
+🌾
+<h3>Organic Farming</h3>
+<p>
+Support more farmers in adopting environmentally friendly agricultural practices.
+</p>
+</div>
+
+<div class="future-card">
+💼
+<h3>Youth Employment</h3>
+<p>
+Provide vocational training and employment opportunities for rural youth.
+</p>
+</div>
+
+<div class="future-card">
+🏠
+<h3>Our Dream Ashram</h3>
+<p>
+Establish an ashram that provides shelter, education, guidance and hope for people in need.
+</p>
+</div>
+
+<div class="future-card">
+❤️
+<h3>Towards Empowerment</h3>
+<p>
+Continue building an inclusive society where every individual can live with dignity and confidence.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+CALL TO ACTION
+======================================= -->
+
+<section class="join-us">
+
+<div class="container">
+
+<h2>Together We Can Build A Better Tomorrow</h2>
+
+<p>
+
+Every donation, every volunteer and every partnership helps create
+lasting change in the lives of thousands of families.
+
+</p>
+
+<div class="join-buttons">
+
+<a href="donate.html" class="btn btn-primary">
+Donate Now
+</a>
+
+<a href="volunteer.html" class="btn btn-outline">
+Become A Volunteer
+</a>
+
+<a href="partner.html" class="btn btn-primary">
+Partner With Us
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="about-footer">
+
+<div class="container">
+
+<h3>Wadmavli Lok Vikas Manch</h3>
+
+<p>
+
+Working across Beed & Pune districts since 2000 to empower communities through
+education, women empowerment, livelihood, sustainable agriculture and environmental conservation.
+
+</p>
+
+<p>
+
+© 2026 Wadmavli Lok Vikas Manch • Towards Empowerment
+
+</p>
+
+</div>
+
+</footer>
+ 
 <script>
 const counters=document.querySelectorAll(".counter");
 
