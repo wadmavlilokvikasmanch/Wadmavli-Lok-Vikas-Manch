@@ -1165,6 +1165,83 @@ footer p{
 }
 
 }
+  /* =========================
+   MOBILE MENU BUTTON
+   ========================= */
+
+.mobile-menu-btn{
+    display:none;
+    border:none;
+    background:transparent;
+    color:#063b67;
+    font-size:32px;
+    font-weight:bold;
+    line-height:1;
+    cursor:pointer;
+    padding:5px 10px;
+    width:44px;
+    height:44px;
+    align-items:center;
+    justify-content:center;
+}
+
+/* =========================
+   MOBILE NAVIGATION BUTTON
+   ========================= */
+
+@media (max-width:950px){
+
+    .mobile-menu-btn{
+        display:flex;
+        flex-shrink:0;
+    }
+
+}
+  /* =========================
+   OPEN MOBILE NAVIGATION
+   ========================= */
+
+@media (max-width:950px){
+
+    .navbar{
+        position:relative;
+    }
+
+    .navbar.mobile-open nav{
+        display:flex;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:220px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:white;
+        padding:10px 0;
+        border-radius:0 0 16px 16px;
+        box-shadow:0 12px 30px rgba(0,0,0,.15);
+        z-index:2000;
+    }
+
+    .navbar.mobile-open nav a{
+        display:block;
+        width:100%;
+        padding:13px 20px;
+        text-align:left;
+        box-sizing:border-box;
+    }
+
+    .navbar.mobile-open nav a:hover{
+        background:#f1f7fb;
+    }
+
+    .navbar.mobile-open .nav-donate{
+        margin:8px 12px;
+        width:auto;
+        text-align:center;
+    }
+
+}
 
 </style>
   
@@ -1222,7 +1299,14 @@ class="logo-image">
     <a href="donate.html" class="nav-donate">Donate</a>
 
 </nav>
-
+  
+<button class="mobile-menu-btn"
+        onclick="toggleMobileMenu()"
+        aria-label="Open navigation menu"
+        aria-expanded="false">
+    ⋮
+</button>
+  
 </div>
 
 </header>
@@ -2631,7 +2715,21 @@ const observer = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => observer.observe(counter));
 </script>
+<script>
+function toggleMobileMenu(){
 
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+
+    if(!navbar || !button) return;
+
+    navbar.classList.toggle("mobile-open");
+
+    const isOpen = navbar.classList.contains("mobile-open");
+
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+</script>
 </body>
 
 </html>
