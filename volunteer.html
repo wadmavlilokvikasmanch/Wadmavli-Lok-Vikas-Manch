@@ -3,23 +3,1254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer With Us</title>
+
+    <title>Volunteer With Us | Wadmavli Lok Vikas Manch</title>
+
+    <meta name="description"
+          content="Volunteer with Wadmavli Lok Vikas Manch and contribute your time, skills and support towards meaningful community development.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root{
+            --blue:#075b9a;
+            --dark:#063b67;
+            --pink:#e85b88;
+            --light:#f6faf8;
+            --white:#ffffff;
+            --text:#263746;
+            --muted:#667985;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Poppins',Arial,sans-serif;
+            background:var(--light);
+            color:var(--text);
+            overflow-x:hidden;
+        }
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+
+.navbar{
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-image{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+.logo-text h2{
+    font-size:18px;
+    color:var(--dark);
+    line-height:1.2;
+}
+
+.logo-text span{
+    display:block;
+    color:var(--pink);
+    font-size:9px;
+    letter-spacing:2px;
+    font-weight:600;
+    margin-top:4px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+nav a{
+    color:var(--dark);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--blue);
+}
+
+.nav-donate{
+    background:var(--blue);
+    color:white !important;
+    padding:10px 18px;
+    border-radius:25px;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+   ========================= */
+
+.mobile-menu-btn{
+    display:none;
+    border:none;
+    background:transparent;
+    color:var(--dark);
+    font-size:32px;
+    font-weight:bold;
+    line-height:1;
+    cursor:pointer;
+    padding:5px 10px;
+    width:44px;
+    height:44px;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+   ========================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-menu-btn{
+        display:flex;
+        flex-shrink:0;
+    }
+
+    .navbar{
+        position:relative;
+    }
+
+    .navbar.mobile-open nav{
+        display:flex;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:220px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:white;
+        padding:10px 0;
+        border-radius:0 0 16px 16px;
+        box-shadow:0 12px 30px rgba(0,0,0,.15);
+        z-index:2000;
+    }
+
+    .navbar.mobile-open nav a{
+        display:block;
+        width:100%;
+        padding:13px 20px;
+        text-align:left;
+        box-sizing:border-box;
+    }
+
+    .navbar.mobile-open nav a:hover{
+        background:#f1f7fb;
+    }
+
+    .navbar.mobile-open .nav-donate{
+        margin:8px 12px;
+        width:auto;
+        text-align:center;
+    }
+
+}
+      /* =========================
+   VOLUNTEER HERO
+   ========================= */
+
+.volunteer-hero{
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:90px 20px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+        linear-gradient(135deg,#eef8ff,#ffffff);
+}
+
+.volunteer-hero::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:rgba(232,91,136,.08);
+    top:-100px;
+    left:-80px;
+}
+
+.volunteer-hero::after{
+    content:"";
+    position:absolute;
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    background:rgba(7,91,154,.07);
+    bottom:-160px;
+    right:-100px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    margin:auto;
+}
+
+.section-tag{
+    display:inline-block;
+    color:var(--pink);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+
+.hero-content h1{
+    color:var(--dark);
+    font-size:52px;
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    max-width:680px;
+    margin:0 auto 32px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    border-radius:30px;
+    padding:13px 28px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    box-shadow:0 10px 25px rgba(7,91,154,.20);
+}
+
+.btn-primary:hover{
+    background:var(--dark);
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(7,91,154,.25);
+}
+.btn-primary:hover{
+    background:var(--dark);
+    transform:translateY(-2px);
+}
+        @media(max-width:768px){
+
+    .volunteer-hero{
+        min-height:500px;
+        padding:70px 20px;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+        line-height:1.25;
+    }
+
+    .hero-content p{
+        font-size:14px;
+        line-height:1.8;
+        margin-bottom:26px;
+    }
+
+    .hero-content .btn{
+        width:100%;
+        max-width:300px;
+    }
+
+}
+     /* =========================
+   WHY VOLUNTEER
+   ========================= */
+
+.why-volunteer{
+    padding:100px 20px;
+    background:#ffffff;
+}
+
+.why-volunteer .section-heading{
+    max-width:750px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.section-heading h2{
+    color:var(--dark);
+    font-size:40px;
+    line-height:1.25;
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.8;
+}
+
+.volunteer-benefits{
+    width:90%;
+    max-width:1100px;
+    margin:55px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.benefit-card{
+    background:#ffffff;
+    padding:35px 28px;
+    border-radius:25px;
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    border-top:4px solid var(--blue);
+
+    transition:.3s;
+}
+
+.benefit-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(7,91,154,.13);
+}
+
+.benefit-icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#eef8ff;
+
+    font-size:32px;
+}
+
+.benefit-card h3{
+    color:var(--dark);
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.benefit-card p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.8;
+}
+        @media(max-width:768px){
+
+    .why-volunteer{
+        padding:70px 20px;
+    }
+
+    .section-heading h2{
+        font-size:28px;
+    }
+
+    .section-heading p{
+        font-size:14px;
+        line-height:1.75;
+    }
+
+    .volunteer-benefits{
+        width:100%;
+        margin-top:35px;
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+    }
+
+    .benefit-card{
+        padding:28px 22px;
+        border-radius:22px;
+    }
+
+    .benefit-icon{
+        width:62px;
+        height:62px;
+        font-size:28px;
+        margin-bottom:15px;
+    }
+
+    .benefit-card h3{
+        font-size:19px;
+    }
+
+    .benefit-card p{
+        font-size:14px;
+        line-height:1.75;
+    }
+
+}
+        /* =========================
+   HOW YOU CAN CONTRIBUTE
+   ========================= */
+
+.contribute-section{
+    padding:100px 20px;
+    background:#f6faf8;
+}
+
+.contribute-section .section-heading{
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.contribute-grid{
+    width:90%;
+    max-width:1100px;
+    margin:55px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.contribute-card{
+    background:white;
+    padding:30px 22px;
+    border-radius:22px;
+    text-align:center;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.07);
+
+    transition:.3s;
+}
+
+.contribute-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 18px 40px rgba(7,91,154,.12);
+}
+
+.contribute-icon{
+    width:62px;
+    height:62px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:#eef8ff;
+
+    font-size:28px;
+}
+
+.contribute-card h3{
+    color:var(--dark);
+    font-size:18px;
+    line-height:1.4;
+    margin-bottom:10px;
+}
+
+.contribute-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.75;
+}
+       @media(max-width:768px){
+
+    .contribute-section{
+        padding:70px 20px;
+    }
+
+    .contribute-grid{
+        width:100%;
+        margin-top:35px;
+
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .contribute-card{
+        padding:26px 22px;
+        border-radius:20px;
+    }
+
+    .contribute-icon{
+        width:58px;
+        height:58px;
+        font-size:26px;
+        margin-bottom:15px;
+    }
+
+    .contribute-card h3{
+        font-size:18px;
+    }
+
+    .contribute-card p{
+        font-size:14px;
+        line-height:1.75;
+    }
+
+} 
+       /* =========================
+   VOLUNTEER CTA
+   ========================= */
+
+.volunteer-cta{
+    padding:100px 20px;
+    background:linear-gradient(
+        135deg,
+        var(--blue),
+        var(--dark)
+    );
+    color:white;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.volunteer-cta::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+    top:-150px;
+    left:-100px;
+}
+
+.volunteer-cta::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(232,91,136,.12);
+    bottom:-200px;
+    right:-100px;
+}
+
+.cta-content{
+    position:relative;
+    z-index:2;
+    max-width:750px;
+    margin:auto;
+}
+
+.volunteer-cta .section-tag{
+    color:#ffd1df;
+}
+
+.volunteer-cta h2{
+    font-size:42px;
+    line-height:1.25;
+    margin-bottom:18px;
+}
+
+.volunteer-cta p{
+    max-width:680px;
+    margin:0 auto 30px;
+    color:#eef5ff;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.cta-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 30px;
+
+    background:white;
+    color:var(--blue);
+
+    border-radius:30px;
+
+    text-decoration:none;
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.cta-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+        @media(max-width:768px){
+
+    .volunteer-cta{
+        padding:70px 20px;
+    }
+
+    .volunteer-cta h2{
+        font-size:30px;
+        line-height:1.3;
+    }
+
+    .volunteer-cta p{
+        font-size:14px;
+        line-height:1.8;
+        margin-bottom:25px;
+    }
+
+    .cta-button{
+        width:100%;
+        max-width:300px;
+        box-sizing:border-box;
+    }
+
+}
+        /* =========================
+   FOOTER
+   ========================= */
+
+.site-footer{
+    background:#063b67;
+    color:white;
+    padding:65px 20px 0;
+}
+
+.footer-content{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+
+    padding-bottom:45px;
+}
+
+.footer-brand{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.footer-brand img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+.footer-brand h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.footer-brand p{
+    color:#ffd1df;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.footer-links h4{
+    color:white;
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.footer-links a{
+    color:#dceaf5;
+    text-decoration:none;
+    font-size:13px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#ffd1df;
+    transform:translateX(3px);
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.15);
+    padding:20px 10px;
+    text-align:center;
+}
+
+.footer-bottom p{
+    color:#c9dbe8;
+    font-size:12px;
+}
+        @media(max-width:768px){
+
+    .site-footer{
+        padding:50px 20px 0;
+    }
+
+    .footer-content{
+        width:100%;
+        grid-template-columns:1fr;
+        gap:35px;
+        padding-bottom:35px;
+    }
+
+    .footer-brand{
+        align-items:center;
+    }
+
+    .footer-brand img{
+        width:52px;
+        height:52px;
+    }
+
+    .footer-brand h3{
+        font-size:17px;
+    }
+
+    .footer-links{
+        gap:10px;
+    }
+
+    .footer-links h4{
+        font-size:15px;
+    }
+
+    .footer-links a{
+        font-size:13px;
+    }
+
+    .footer-bottom{
+        padding:18px 5px;
+    }
+
+    .footer-bottom p{
+        font-size:11px;
+        line-height:1.6;
+    }
+
+}
+        /* =========================================
+   FINAL VOLUNTEER MOBILE CLEANUP
+   ========================================= */
+
+@media(max-width:768px){
+
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
+    section{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    img{
+        max-width:100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p{
+        max-width:100%;
+        overflow-wrap:break-word;
+    }
+
+    /* Header */
+    .navbar{
+        width:calc(100% - 30px);
+        min-height:72px;
+        margin:auto;
+    }
+
+    .logo-area{
+        min-width:0;
+        gap:8px;
+    }
+
+    .logo-image{
+        width:48px;
+        height:48px;
+        flex-shrink:0;
+    }
+
+    .logo-text{
+        min-width:0;
+    }
+
+    .logo-text h2{
+        font-size:14px;
+        line-height:1.25;
+    }
+
+    .logo-text span{
+        font-size:7px;
+        letter-spacing:1.3px;
+    }
+
+    .mobile-menu-btn{
+        flex-shrink:0;
+    }
+
+    /* Hero */
+    .volunteer-hero{
+        width:100%;
+        min-height:470px;
+        padding:65px 18px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+    }
+
+    .hero-content p{
+        width:100%;
+        font-size:14px;
+    }
+
+    /* Section headings */
+    .section-heading{
+        width:100%;
+    }
+
+    .section-heading h2{
+        font-size:27px;
+    }
+
+    /* Cards */
+    .benefit-card,
+    .contribute-card{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    /* CTA */
+    .volunteer-cta{
+        width:100%;
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .cta-content{
+        width:100%;
+    }
+
+    .volunteer-cta h2{
+        font-size:29px;
+    }
+
+    /* Footer */
+    .site-footer{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .footer-content{
+        width:100%;
+    }
+
+}
+    </style>
 </head>
-<body style="font-family:Arial;text-align:center;padding:40px;background:#f6faf8;">
+<body>
 
-<h1>Volunteer With Us 🤝</h1>
+<header>
+    <div class="container navbar">
 
-<p>Thank you for your interest in volunteering with Wadmavli Lok Vikas Manch.</p>
+        <div class="logo-area">
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor"
-   target="_blank"
-   style="background:#075b9a;color:white;padding:12px 25px;text-decoration:none;border-radius:25px;">
-    Fill Volunteer Form
-</a>
+            <img
+                src="logo.png"
+                alt="Wadmavli Lok Vikas Manch Logo"
+                class="logo-image">
 
-<br><br>
+            <div class="logo-text">
 
-<a href="index.html">← Back to Home</a>
+                <h2>Wadmavli Lok Vikas Manch</h2>
+
+                <span>TOWARDS EMPOWERMENT</span>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="programs.html">Programs</a>
+
+            <a href="gallery.html">Gallery</a>
+
+            <a href="volunteer.html">Volunteer</a>
+
+            <a href="partner.html">Partner</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="donate.html" class="nav-donate">Donate</a>
+
+        </nav>
+
+        <button class="mobile-menu-btn"
+                onclick="toggleMobileMenu()"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ⋮
+        </button>
+
+    </div>
+</header>
+
+
+<main>
+
+    <section class="volunteer-hero">
+
+        <div class="hero-content">
+
+            <span class="section-tag">JOIN OUR COMMUNITY</span>
+
+            <h1>Volunteer With Us 🤝</h1>
+
+            <p>
+                Be a part of meaningful change.
+                Your time, skills and support can help
+                create stronger and more empowered communities.
+            </p>
+
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor"
+                target="_blank"
+                class="btn btn-primary">
+                Fill Volunteer Form
+            </a>
+
+        </div>
+
+    </section>
+
+
+ <section class="why-volunteer">
+
+    <div class="section-heading">
+
+        <span class="section-tag">MAKE A DIFFERENCE</span>
+
+        <h2>Why Volunteer With Us?</h2>
+
+        <p>
+            Volunteering is an opportunity to contribute,
+            learn and work together towards positive change.
+        </p>
+
+    </div>
+
+
+    <div class="volunteer-benefits">
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">🤝</div>
+
+            <h3>Serve Your Community</h3>
+
+            <p>
+                Contribute your time and energy to initiatives
+                that support people and communities.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">💡</div>
+
+            <h3>Share Your Skills</h3>
+
+            <p>
+                Use your knowledge, creativity and abilities
+                to support meaningful community work.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">🌱</div>
+
+            <h3>Grow & Make an Impact</h3>
+
+            <p>
+                Learn through experience while becoming
+                part of positive and sustainable change.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+    <section class="contribute-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">YOUR CONTRIBUTION MATTERS</span>
+
+        <h2>How You Can Contribute</h2>
+
+        <p>
+            Every person has something valuable to offer.
+            Choose a way to contribute that matches your interests,
+            skills and availability.
+        </p>
+
+    </div>
+
+
+    <div class="contribute-grid">
+
+        <div class="contribute-card">
+            <div class="contribute-icon">📚</div>
+
+            <h3>Education Support</h3>
+
+            <p>
+                Support educational activities and help
+                children and young people learn and grow.
+            </p>
+        </div>
+
+
+        <div class="contribute-card">
+            <div class="contribute-icon">👩‍👩‍👧</div>
+
+            <h3>Community Activities</h3>
+
+            <p>
+                Participate in community initiatives and
+                activities that bring people together.
+            </p>
+        </div>
+
+
+        <div class="contribute-card">
+            <div class="contribute-icon">📣</div>
+
+            <h3>Awareness & Outreach</h3>
+
+            <p>
+                Help spread awareness about important
+                community initiatives and opportunities.
+            </p>
+        </div>
+
+
+        <div class="contribute-card">
+            <div class="contribute-icon">💻</div>
+
+            <h3>Skills & Digital Support</h3>
+
+            <p>
+                Contribute useful skills such as communication,
+                design, technology, documentation or administration.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+   <section class="volunteer-cta">
+
+    <div class="cta-content">
+
+        <span class="section-tag">TAKE THE NEXT STEP</span>
+
+        <h2>Ready to Make a Difference?</h2>
+
+        <p>
+            Join us in supporting meaningful community initiatives.
+            Your time, skills and willingness to contribute can help
+            create positive change.
+        </p>
+
+        <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button">
+            Fill Volunteer Form
+        </a>
+
+    </div>
+
+</section> 
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <img
+                src="logo.png"
+                alt="Wadmavli Lok Vikas Manch Logo">
+
+            <div>
+                <h3>Wadmavli Lok Vikas Manch</h3>
+
+                <p>
+                    Towards Empowerment
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Quick Links</h4>
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="programs.html">Programs</a>
+            <a href="gallery.html">Gallery</a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>Get Involved</h4>
+
+            <a href="volunteer.html">Volunteer</a>
+            <a href="partner.html">Partner With Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="donate.html">Donate</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Wadmavli Lok Vikas Manch.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMobileMenu(){
+
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+
+    if(!navbar || !button) return;
+
+    navbar.classList.toggle("mobile-open");
+
+    const isOpen = navbar.classList.contains("mobile-open");
+
+    button.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+    );
+
+}
+
+</script>
 
 </body>
 </html>
