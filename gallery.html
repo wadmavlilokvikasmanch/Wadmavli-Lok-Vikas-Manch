@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Gallery | Wadmavli Lok Vikas Manch</title>
 
-<meta name="description" content="Photo gallery of Wadmavli Lok Vikas Manch showcasing education, women empowerment, livelihood, organic farming, climate action, watershed development and community initiatives.">
+<meta name="description" content="Explore the photo gallery of Wadmavli Lok Vikas Manch showcasing our journey of empowering communities through education, women empowerment, water conservation, livelihood and humanitarian initiatives.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 
 <style>
 
 :root{
-
 --blue:#075b9a;
 --dark:#063b67;
 --pink:#e85b88;
---light:#f6fafc;
---text:#26333d;
---muted:#6a7b88;
-
+--light:#f7fbff;
+--text:#243340;
+--shadow:0 12px 35px rgba(0,0,0,.08);
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-
-font-family:Poppins,sans-serif;
 background:var(--light);
 color:var(--text);
 overflow-x:hidden;
-
 }
 
 .container{
-
-width:min(1300px,92%);
+width:min(1200px,92%);
 margin:auto;
-
 }
 
 a{
@@ -58,772 +50,274 @@ text-decoration:none;
 }
 
 img{
-max-width:100%;
 display:block;
+width:100%;
 }
-    /*=========================
-HEADER
-=========================*/
+
+/* HEADER */
 
 header{
-
 position:sticky;
 top:0;
-z-index:1000;
-
-background:rgba(255,255,255,.97);
-
-backdrop-filter:blur(12px);
-
-box-shadow:0 4px 20px rgba(0,0,0,.08);
-
+z-index:999;
+background:#fff;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .navbar{
-
 height:80px;
-
 display:flex;
+align-items:center;
 justify-content:space-between;
-align-items:center;
-
 }
 
-.logo-area{
-
+.logo{
 display:flex;
 align-items:center;
-gap:14px;
-
+gap:15px;
 }
 
-.logo-image{
-
+.logo img{
 width:58px;
 height:58px;
-
 border-radius:50%;
-
-object-fit:cover;
-
 }
 
-.logo-text h2{
-
-font-size:18px;
-
+.logo h2{
+font-size:19px;
 color:var(--dark);
-
-margin-bottom:4px;
-
 }
 
-.logo-text span{
-
-font-size:10px;
-
+.logo span{
+font-size:11px;
 font-weight:700;
-
 letter-spacing:2px;
-
 color:var(--pink);
-
 }
 
-.main-nav{
-
+nav{
 display:flex;
-
+gap:30px;
 align-items:center;
-
-gap:28px;
-
 }
 
-.main-nav a{
-
-font-size:15px;
-
+nav a{
 font-weight:600;
-
-color:#3b4c58;
-
+color:#3d4b57;
 transition:.3s;
-
 }
 
-.main-nav a:hover{
-
+nav a:hover,
+nav .active{
 color:var(--pink);
-
 }
 
-.main-nav .active{
-
-color:var(--pink);
-
-}
-
-.nav-donate{
-
+.donate-btn{
 background:var(--pink);
-
-color:white !important;
-
-padding:11px 20px;
-
+padding:12px 22px;
 border-radius:30px;
-
+color:white;
 }
 
-.mobile-menu{
-
+.menu-btn{
 display:none;
-
+font-size:26px;
 background:none;
-
 border:none;
-
-font-size:25px;
-
 cursor:pointer;
-
-color:var(--dark);
-
 }
 
 @media(max-width:768px){
 
-.mobile-menu{
-
+.menu-btn{
 display:block;
-
 }
 
-.main-nav{
-
+nav{
 display:none;
-
 position:absolute;
-
 top:80px;
-
 left:0;
-
 width:100%;
-
 background:white;
-
 flex-direction:column;
-
 padding:20px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.12);
-
+box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-.main-nav.active{
-
+nav.active{
 display:flex;
-
-}
-
-.main-nav a{
-
-width:100%;
-
-padding:14px;
-
-text-align:center;
-
 }
 
 }
-    /*=========================
-HERO SECTION
-=========================*/
+
+/* HERO */
 
 .hero{
-
-position:relative;
-
-height:88vh;
-
+height:80vh;
+background:
+linear-gradient(rgba(7,91,154,.72),rgba(6,59,103,.82)),
+url("gallery-banner.jpg") center/cover;
 display:flex;
-
 align-items:center;
-
-background:
-linear-gradient(rgba(7,91,154,.72),
-rgba(6,59,103,.82)),
-url("gallery-banner.jpg");
-
-background-size:cover;
-
-background-position:center;
-
-overflow:hidden;
-
-}
-
-.hero-overlay{
-
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(circle at top right,
-rgba(255,255,255,.08),
-transparent 45%);
-
+color:white;
 }
 
 .hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:750px;
-
-color:white;
-
+max-width:720px;
 }
 
 .hero-tag{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:10px;
-
-padding:12px 22px;
-
-background:rgba(255,255,255,.15);
-
-backdrop-filter:blur(15px);
-
-border-radius:40px;
-
-margin-bottom:25px;
-
-font-weight:600;
-
+display:inline-block;
+background:rgba(255,255,255,.18);
+padding:10px 18px;
+border-radius:30px;
+margin-bottom:20px;
 }
 
 .hero h1{
-
-font-size:68px;
-
-font-weight:800;
-
-line-height:1.1;
-
-margin-bottom:25px;
-
+font-size:64px;
+margin-bottom:20px;
 }
 
 .hero p{
-
-font-size:20px;
-
-line-height:1.9;
-
-color:#eef5ff;
-
-margin-bottom:40px;
-
+font-size:19px;
+line-height:1.8;
+margin-bottom:35px;
 }
 
 .hero-buttons{
-
 display:flex;
-
 gap:20px;
-
 flex-wrap:wrap;
+}
 
+.btn{
+padding:15px 28px;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
 }
 
 .btn-primary{
-
 background:var(--pink);
-
 color:white;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.35s;
-
 }
 
 .btn-primary:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 15px 35px rgba(232,91,136,.4);
-
+transform:translateY(-4px);
 }
 
 .btn-secondary{
-
-border:2px solid rgba(255,255,255,.45);
-
+border:2px solid white;
 color:white;
-
-padding:16px 34px;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.35s;
-
 }
 
 .btn-secondary:hover{
-
 background:white;
-
 color:var(--blue);
-
 }
-    @media(max-width:768px){
+
+@media(max-width:768px){
 
 .hero{
-
-height:75vh;
-
+height:70vh;
 text-align:center;
-
-}
-
-.hero-content{
-
-max-width:100%;
-
 }
 
 .hero h1{
-
-font-size:42px;
-
+font-size:40px;
 }
 
 .hero p{
-
 font-size:15px;
-
-line-height:1.8;
-
 }
 
 .hero-buttons{
-
 justify-content:center;
-
-}
-
-.btn-primary,
-.btn-secondary{
-
-width:100%;
-
-text-align:center;
-
 }
 
 }
-    /*=========================
-GALLERY TITLE
-=========================*/
 
-.gallery-section{
+/* SECTION TITLE */
 
-padding:100px 0;
-
-background:#f8fbff;
-
+.section{
+padding:90px 0;
 }
 
 .section-title{
-
 text-align:center;
-
-max-width:760px;
-
-margin:0 auto 70px;
-
+margin-bottom:60px;
 }
 
 .section-title span{
-
 color:var(--pink);
-
 font-weight:700;
-
 letter-spacing:2px;
-
-text-transform:uppercase;
-
 }
 
 .section-title h2{
-
-font-size:48px;
-
-margin:18px 0;
-
+font-size:44px;
+margin:15px 0;
 color:var(--dark);
-
 }
 
 .section-title p{
-
-color:var(--muted);
-
-font-size:17px;
-
-line-height:1.9;
-
-}
-    
-@media(max-width:768px){
-
-.gallery-section{
-
-padding:70px 20px;
-
-}
-
-.section-title{
-
-margin-bottom:45px;
-
-}
-
-.section-title h2{
-
-font-size:32px;
-
-}
-
-.section-title p{
-
-font-size:14px;
-
+max-width:760px;
+margin:auto;
 line-height:1.8;
-
+color:#6c7a86;
 }
-
-}
-    /*=========================
-PROGRAM SECTION
-=========================*/
-
-.program-section{
-
-margin-bottom:100px;
-
-}
-
-.program-heading{
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
-
-margin-bottom:35px;
-
-}
-
-.program-heading span{
-
-width:70px;
-
-height:70px;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,var(--blue),#1d8cd6);
-
-color:white;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:24px;
-
-font-weight:700;
-
-flex-shrink:0;
-
-}
-
-.program-heading h2{
-
-font-size:38px;
-
-color:var(--dark);
-
-margin-bottom:10px;
-
-}
-
-.program-heading p{
-
-color:var(--muted);
-
-line-height:1.8;
-
-max-width:700px;
-
-}
-
-/*=========================
-GALLERY GRID
-=========================*/
 
 .gallery-grid{
-
 display:grid;
-
-grid-template-columns:2fr 1fr 1fr;
-
-grid-auto-rows:260px;
-
-gap:18px;
-
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 .gallery-item{
-
+border-radius:18px;
 overflow:hidden;
-
-border-radius:22px;
-
+box-shadow:var(--shadow);
+transition:.3s;
 cursor:pointer;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-transition:.35s;
-
+background:white;
 }
 
 .gallery-item img{
-
-width:100%;
-
-height:100%;
-
+height:250px;
 object-fit:cover;
-
-transition:.6s;
-
+transition:.5s;
 }
 
 .gallery-item:hover img{
-
 transform:scale(1.08);
-
 }
 
 .gallery-item:hover{
-
 transform:translateY(-6px);
-
 }
 
-.large{
-
-grid-row:span 2;
-
-}
-    @media(max-width:768px){
-
-.program-heading{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-gap:18px;
-
-}
-
-.program-heading span{
-
-width:55px;
-
-height:55px;
-
-font-size:20px;
-
-}
-
-.program-heading h2{
-
-font-size:28px;
-
-}
-
-.program-heading p{
-
-font-size:14px;
-
-}
-
-.gallery-grid{
-
-grid-template-columns:1fr;
-
-grid-auto-rows:220px;
-
-}
-
-.large{
-
-grid-row:auto;
-
-}
-
-}
-    /*=========================
-IMAGE HOVER
-=========================*/
-
-.gallery-item{
-
-position:relative;
-
-overflow:hidden;
-
-border-radius:22px;
-
-cursor:pointer;
-
-}
-
-.image-overlay{
-
-position:absolute;
-
-inset:0;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
+.gallery-caption{
+padding:18px;
 text-align:center;
-
-background:linear-gradient(
-
-rgba(7,91,154,.15),
-
-rgba(6,59,103,.88)
-
-);
-
-opacity:0;
-
-transition:.45s;
-
-color:white;
-
+font-weight:600;
 }
 
-.gallery-item:hover .image-overlay{
-
-opacity:1;
-
-}
-
-.image-overlay i{
-
-font-size:34px;
-
-margin-bottom:15px;
-
-transform:translateY(20px);
-
-transition:.4s;
-
-}
-
-.image-overlay h3{
-
-font-size:22px;
-
-margin-bottom:8px;
-
-transform:translateY(20px);
-
-transition:.5s;
-
-}
-
-.image-overlay p{
-
-font-size:14px;
-
-letter-spacing:1px;
-
-transform:translateY(20px);
-
-transition:.6s;
-
-}
-
-.gallery-item:hover i,
-
-.gallery-item:hover h3,
-
-.gallery-item:hover p{
-
-transform:translateY(0);
-
-}
-
-.gallery-item img{
-
-transition:.6s;
-
-}
-
-.gallery-item:hover img{
-
-transform:scale(1.12);
-
-}
 </style>
-
 </head>
 
 <body>
+
 <header>
 
 <div class="container navbar">
 
-<div class="logo-area">
+<div class="logo">
 
-<img src="logo.png" class="logo-image" alt="WLVM Logo">
+<img src="logo.png" alt="WLVM">
 
-<div class="logo-text">
+<div>
 
 <h2>Wadmavli Lok Vikas Manch</h2>
 
@@ -833,13 +327,13 @@ transform:scale(1.12);
 
 </div>
 
-<button class="mobile-menu" id="menuBtn">
+<button class="menu-btn" id="menuBtn">
 
 <i class="fa-solid fa-bars"></i>
 
 </button>
 
-<nav class="main-nav" id="navMenu">
+<nav id="navMenu">
 
 <a href="index.html">Home</a>
 
@@ -851,211 +345,463 @@ transform:scale(1.12);
 
 <a href="contact.html">Contact</a>
 
-<a href="donate.html" class="nav-donate">Donate</a>
+<a href="donate.html" class="donate-btn">Donate</a>
 
 </nav>
 
 </div>
+
 </header>
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-    <div class="hero-overlay"></div>
+<div class="container hero-content">
 
-    <div class="container hero-content">
+<div class="hero-tag">
+📸 Capturing Our Journey
+</div>
 
-        <span class="hero-tag">
-            <i class="fa-solid fa-camera-retro"></i>
-            Capturing Our Journey
-        </span>
+<h1>Every Picture Tells a Story</h1>
 
-        <h1>
-            Our Gallery
-        </h1>
+<p>
+For over 26 years, Wadmavli Lok Vikas Manch has been transforming lives through education, women empowerment, sustainable livelihoods, environmental conservation and humanitarian service.
+</p>
 
-        <p>
-            Every photograph reflects our commitment towards education,
-            women empowerment, sustainable livelihoods, environmental
-            conservation and building stronger rural communities.
-        </p>
+<div class="hero-buttons">
 
-        <div class="hero-buttons">
+<a href="#gallery" class="btn btn-primary">
+Explore Gallery
+</a>
 
-            <a href="#gallery" class="btn-primary">
-                Explore Gallery
-            </a>
+<a href="index.html" class="btn btn-secondary">
+Back Home
+</a>
 
-            <a href="index.html" class="btn-secondary">
-                Back Home
-            </a>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 </section>
-    
-</header>
-    <!--=========================
-GALLERY
-==========================-->
 
-<section class="gallery-section" id="gallery">
+<section class="section" id="gallery">
 
 <div class="container">
 
 <div class="section-title">
 
-<span>OUR PROGRAMS</span>
+<span>OUR GALLERY</span>
 
 <h2>Moments of Change</h2>
 
 <p>
+Explore inspiring moments from our programs, community activities, and the positive impact created across villages over the past 26 years.
+</p>
 
-Explore photographs capturing our journey of empowering
-communities through education, livelihood, women empowerment,
-environmental conservation and humanitarian initiatives.
+</div>
+<!-- =========================
+MISSION EDUCATION
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">📚 Mission Education</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="mission1.jpg" alt="Mission Education">
+<div class="gallery-caption">Mission Education</div>
+</div>
+
+<div class="gallery-item">
+<img src="mission2.jpg" alt="Mission Education">
+<div class="gallery-caption">Learning Together</div>
+</div>
+
+<div class="gallery-item">
+<img src="mission3.jpg" alt="Mission Education">
+<div class="gallery-caption">School Activities</div>
+</div>
+
+<div class="gallery-item">
+<img src="mission4.jpg" alt="Mission Education">
+<div class="gallery-caption">Student Support</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+WOMEN EMPOWERMENT
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">👩 Women Empowerment</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="women1.jpg" alt="">
+<div class="gallery-caption">Self Help Groups</div>
+</div>
+
+<div class="gallery-item">
+<img src="women2.jpg" alt="">
+<div class="gallery-caption">Women's Meetings</div>
+</div>
+
+<div class="gallery-item">
+<img src="women3.jpg" alt="">
+<div class="gallery-caption">Leadership Development</div>
+</div>
+
+<div class="gallery-item">
+<img src="women4.jpg" alt="">
+<div class="gallery-caption">Community Empowerment</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+SKILL DEVELOPMENT
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">💼 Skill Development</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="skill1.jpg" alt="">
+<div class="gallery-caption">Vocational Training</div>
+</div>
+
+<div class="gallery-item">
+<img src="skill2.jpg" alt="">
+<div class="gallery-caption">Healthcare Training</div>
+</div>
+
+<div class="gallery-item">
+<img src="skill3.jpg" alt="">
+<div class="gallery-caption">Driving School Project</div>
+</div>
+
+<div class="gallery-item">
+<img src="skill4.jpg" alt="">
+<div class="gallery-caption">Employment Support</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+WATER CONSERVATION
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">💧 Water Conservation</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="water1.jpg" alt="">
+<div class="gallery-caption">Watershed Development</div>
+</div>
+
+<div class="gallery-item">
+<img src="water2.jpg" alt="">
+<div class="gallery-caption">Safe Drinking Water</div>
+</div>
+
+<div class="gallery-item">
+<img src="water3.jpg" alt="">
+<div class="gallery-caption">Community Participation</div>
+</div>
+
+<div class="gallery-item">
+<img src="water4.jpg" alt="">
+<div class="gallery-caption">Water Structures</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+ORGANIC FARMING
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">🌱 Organic Farming</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="organic1.jpg" alt="">
+<div class="gallery-caption">Farmer Training</div>
+</div>
+
+<div class="gallery-item">
+<img src="organic2.jpg" alt="">
+<div class="gallery-caption">Organic Agriculture</div>
+</div>
+
+<div class="gallery-item">
+<img src="organic3.jpg" alt="">
+<div class="gallery-caption">Sustainable Farming</div>
+</div>
+
+<div class="gallery-item">
+<img src="organic4.jpg" alt="">
+<div class="gallery-caption">Field Demonstration</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+HEALTH & NUTRITION
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">🏥 Health & Nutrition</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="health1.jpg" alt="">
+<div class="gallery-caption">Health Awareness</div>
+</div>
+
+<div class="gallery-item">
+<img src="health2.jpg" alt="">
+<div class="gallery-caption">Nutrition Program</div>
+</div>
+
+<div class="gallery-item">
+<img src="health3.jpg" alt="">
+<div class="gallery-caption">Medical Camp</div>
+</div>
+
+<div class="gallery-item">
+<img src="health4.jpg" alt="">
+<div class="gallery-caption">Community Health</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+DISASTER RELIEF
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">🤝 Disaster Relief</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="relief1.jpg" alt="">
+<div class="gallery-caption">Relief Distribution</div>
+</div>
+
+<div class="gallery-item">
+<img src="relief2.jpg" alt="">
+<div class="gallery-caption">COVID-19 Support</div>
+</div>
+
+<div class="gallery-item">
+<img src="relief3.jpg" alt="">
+<div class="gallery-caption">Emergency Response</div>
+</div>
+
+<div class="gallery-item">
+<img src="relief4.jpg" alt="">
+<div class="gallery-caption">Helping Families</div>
+</div>
+
+</div>
+
+<br><br><br>
+
+<!-- =========================
+COMMUNITY DEVELOPMENT
+========================= -->
+
+<h2 style="margin-bottom:25px;color:#075b9a;">🏡 Community Development</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="community1.jpg" alt="">
+<div class="gallery-caption">Village Development</div>
+</div>
+
+<div class="gallery-item">
+<img src="community2.jpg" alt="">
+<div class="gallery-caption">Community Meetings</div>
+</div>
+
+<div class="gallery-item">
+<img src="community3.jpg" alt="">
+<div class="gallery-caption">Awareness Campaign</div>
+</div>
+
+<div class="gallery-item">
+<img src="community4.jpg" alt="">
+<div class="gallery-caption">Together We Grow</div>
+</div>
+
+</div>
+<!-- =========================
+FOOTER
+========================= -->
+
+</div>
+</section>
+
+<footer style="background:#063b67;color:white;padding:70px 0 30px;">
+
+<div class="container">
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;">
+
+<div>
+
+<h2 style="margin-bottom:18px;">Wadmavli Lok Vikas Manch</h2>
+
+<p style="line-height:1.8;color:#d7e6f2;">
+
+Working since 2000 to empower rural communities through
+education, women empowerment, livelihood promotion,
+water conservation, climate action and humanitarian services.
 
 </p>
 
 </div>
 
-<!-- Mission Education starts below -->
+<div>
+
+<h3 style="margin-bottom:20px;">Quick Links</h3>
+
+<p><a href="index.html" style="color:white;">Home</a></p>
+<p><a href="about.html" style="color:white;">About</a></p>
+<p><a href="programs.html" style="color:white;">Programs</a></p>
+<p><a href="gallery.html" style="color:white;">Gallery</a></p>
+<p><a href="contact.html" style="color:white;">Contact</a></p>
 
 </div>
 
-</section>
-    <!--=========================
-MISSION EDUCATION
-==========================-->
+<div>
 
-<div class="program-section">
+<h3 style="margin-bottom:20px;">Contact</h3>
 
-    <div class="program-heading">
+<p><i class="fa-solid fa-location-dot"></i> Beed, Maharashtra</p>
 
-        <span>01</span>
+<p style="margin-top:10px;">
+<i class="fa-solid fa-envelope"></i>
+info@wadmavlibeed.org
+</p>
 
-        <div>
-
-            <h2>Mission Education</h2>
-
-            <p>
-                Supporting children's education and creating better learning
-                opportunities through community participation.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="gallery-grid">
-
-       <div class="gallery-item">
-
-    <img src="mission1.jpg" alt="Mission Education">
-
-    <div class="image-overlay">
-
-        <i class="fa-solid fa-camera"></i>
-
-        <h3>Mission Education</h3>
-
-        <p>Click to View</p>
-
-    </div>
-
-</div>
-
-        <div class="gallery-item">
-
-    <img src="mission2.jpg" alt="Mission Education">
-
-    <div class="image-overlay">
-
-        <i class="fa-solid fa-camera"></i>
-
-        <h3>Mission Education</h3>
-
-        <p>Click to View</p>
-
-    </div>
-
-</div>
-
-     <div class="gallery-item">
-
-    <img src="mission3.jpg" alt="Mission Education">
-
-    <div class="image-overlay">
-
-        <i class="fa-solid fa-camera"></i>
-
-        <h3>Mission Education</h3>
-
-        <p>Click to View</p>
-
-    </div>
-
-</div>
-
-        <div class="gallery-item">
-
-    <img src="mission4.jpg" alt="Mission Education">
-
-    <div class="image-overlay">
-
-        <i class="fa-solid fa-camera"></i>
-
-        <h3>Mission Education</h3>
-
-        <p>Click to View</p>
-
-    </div>
-
-</div>
-
-      <div class="gallery-item">
-
-    <img src="mission5.jpg" alt="Mission Education">
-
-    <div class="image-overlay">
-
-        <i class="fa-solid fa-camera"></i>
-
-        <h3>Mission Education</h3>
-
-        <p>Click to View</p>
-
-    </div>
+<p style="margin-top:10px;">
+<i class="fa-solid fa-phone"></i>
++91 XXXXXXXXXX
+</p>
 
 </div>
 
 </div>
-    
-    <script>
 
-const menu=document.getElementById("menuBtn");
+<hr style="
+margin:45px 0;
+border:none;
+height:1px;
+background:rgba(255,255,255,.15);
+">
 
+<p style="text-align:center;color:#d7e6f2;">
+
+© 2026 Wadmavli Lok Vikas Manch.
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- =========================
+LIGHTBOX
+========================= -->
+
+<div id="lightbox"
+style="
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;">
+
+<img id="lightbox-img"
+style="
+max-width:95%;
+max-height:90%;
+border-radius:10px;">
+
+</div>
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
 const nav=document.getElementById("navMenu");
 
-menu.onclick=function(){
+menuBtn.onclick=function(){
 
 nav.classList.toggle("active");
 
 if(nav.classList.contains("active")){
 
-menu.innerHTML='<i class="fa-solid fa-xmark"></i>';
+menuBtn.innerHTML='<i class="fa-solid fa-xmark"></i>';
 
 }else{
 
-menu.innerHTML='<i class="fa-solid fa-bars"></i>';
+menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
 
 }
+
+}
+
+// Lightbox
+
+const images=document.querySelectorAll(".gallery-item img");
+
+const lightbox=document.getElementById("lightbox");
+
+const lightboxImg=document.getElementById("lightbox-img");
+
+images.forEach(img=>{
+
+img.onclick=function(){
+
+lightbox.style.display="flex";
+
+lightboxImg.src=this.src;
+
+}
+
+})
+
+lightbox.onclick=function(){
+
+lightbox.style.display="none";
 
 }
 
 </script>
-</body>
 
+</body>
 </html>
