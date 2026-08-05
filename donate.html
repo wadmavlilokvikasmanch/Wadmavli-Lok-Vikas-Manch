@@ -29,7 +29,7 @@
       display: block;
     }
     .container {
-      width: min(1200px, 92%);
+      width: min(1100px, 92%);
       margin: auto;
     }
     :root {
@@ -43,7 +43,7 @@
     }
 
     /* =========================
-       HEADER — matches other pages
+       HEADER
     ========================= */
     header {
       background: white;
@@ -221,6 +221,8 @@
       font-weight: 600;
       transition: .3s;
       gap: 8px;
+      border: none;
+      cursor: pointer;
     }
     .btn-primary {
       background: var(--blue);
@@ -280,22 +282,25 @@
       line-height: 1.8;
     }
 
-    .donate-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
+    /* Single Column Layout */
+    .donate-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
     }
     .donate-card {
       background: white;
-      padding: 40px 32px;
+      padding: 45px 40px;
       border-radius: 28px;
       box-shadow: 0 15px 45px rgba(0,0,0,.08);
+      margin-bottom: 30px;
+    }
+    .donate-card:last-child {
+      margin-bottom: 0;
     }
     .donate-card h3 {
       color: var(--dark);
-      font-size: 24px;
-      margin-bottom: 18px;
+      font-size: 22px;
+      margin-bottom: 16px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -304,26 +309,140 @@
       color: var(--pink);
     }
 
-    /* QR Code */
+    /* QR Code - Bigger & Clickable */
     .qr-container {
       text-align: center;
-      padding: 20px 0;
+      padding: 15px 0;
     }
-    .qr-container img {
-      max-width: 220px;
-      margin: 0 auto 12px;
+    .qr-container .qr-wrapper {
+      display: inline-block;
+      cursor: pointer;
+      transition: .3s;
+      border-radius: 20px;
+      padding: 10px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+    .qr-container .qr-wrapper:hover {
+      transform: scale(1.04);
+      box-shadow: 0 15px 40px rgba(0,0,0,.15);
+    }
+    .qr-container .qr-wrapper img {
+      max-width: 320px;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.10);
-      border: 4px solid #f0f4f8;
+      border: 3px solid #f0f4f8;
     }
-    .qr-container p {
+    .qr-container .click-hint {
       color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    .qr-container .click-hint i {
+      color: var(--pink);
+    }
+
+    /* QR Lightbox */
+    .qr-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 30px;
+      backdrop-filter: blur(6px);
+    }
+    .qr-lightbox.active {
+      display: flex;
+    }
+    .qr-lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.5);
+      animation: zoomIn 0.3s ease;
+    }
+    .qr-lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      background: rgba(255,255,255,.12);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .3s;
+      border: 2px solid rgba(255,255,255,.15);
+    }
+    .qr-lightbox .close-lightbox:hover {
+      background: var(--pink);
+      transform: rotate(90deg);
+      border-color: var(--pink);
+    }
+    .qr-lightbox .lightbox-label {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.5);
       font-size: 14px;
+      letter-spacing: 1px;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @media(max-width:600px) {
+      .qr-lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      .qr-container .qr-wrapper img { max-width: 220px; }
+      .donate-card { padding: 28px 18px; }
+    }
+
+    /* UPI Box */
+    .upi-box {
+      background: linear-gradient(135deg, #f0f7ff, #e3f0fa);
+      padding: 16px 22px;
+      border-radius: 14px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border: 1px solid rgba(7,91,154,.08);
+    }
+    .upi-box span {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 16px;
+    }
+    .upi-box .upi-label {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 13px;
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--blue);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 4px 10px;
+      transition: .2s;
+      border-radius: 20px;
+    }
+    .copy-btn:hover {
+      background: var(--blue);
+      color: white;
     }
 
     /* Bank Details */
     .bank-details {
-      margin-top: 10px;
+      margin-top: 12px;
     }
     .bank-row {
       display: flex;
@@ -343,60 +462,65 @@
       color: var(--dark);
       font-weight: 600;
       text-align: right;
-    }
-    .bank-row .value i {
-      color: var(--pink);
-      margin-right: 6px;
-    }
-
-    .copy-btn {
-      background: none;
-      border: none;
-      color: var(--blue);
-      cursor: pointer;
-      font-size: 14px;
-      padding: 0 6px;
-      transition: .2s;
-    }
-    .copy-btn:hover {
-      color: var(--pink);
-    }
-
-    /* UPI */
-    .upi-box {
-      background: #f0f7ff;
-      padding: 16px 20px;
-      border-radius: 14px;
-      margin-top: 16px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 6px;
     }
-    .upi-box span {
-      font-weight: 600;
-      color: var(--dark);
-      font-size: 16px;
-    }
-    .upi-box .upi-label {
-      color: var(--muted);
-      font-weight: 400;
+    .bank-row .value .copy-btn {
       font-size: 13px;
+      padding: 2px 8px;
+    }
+
+    /* Why Donate List */
+    .why-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+    }
+    .why-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #edf1f4;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .why-list li i {
+      color: var(--pink);
+      font-size: 18px;
+      flex-shrink: 0;
+      width: 22px;
+    }
+    .why-list li strong {
+      color: var(--dark);
+    }
+    @media(max-width:600px) {
+      .why-list { grid-template-columns: 1fr; }
     }
 
     /* Impact Stats */
     .impact-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 25px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 18px;
     }
     .stat-item {
       background: #f6faf8;
-      padding: 18px 14px;
+      padding: 18px 12px;
       border-radius: 16px;
       text-align: center;
+      transition: .3s;
+      border-bottom: 3px solid var(--pink);
+    }
+    .stat-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.06);
     }
     .stat-item h4 {
       color: var(--blue);
@@ -408,34 +532,13 @@
       font-size: 12px;
       margin-top: 2px;
     }
-
-    /* Why Donate */
-    .why-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
+    @media(max-width:768px) {
+      .impact-stats { grid-template-columns: repeat(2, 1fr); }
     }
-    .why-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid #edf1f4;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .why-list li:last-child {
-      border-bottom: 0;
-    }
-    .why-list li i {
-      color: var(--pink);
-      font-size: 18px;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-    .why-list li strong {
-      color: var(--dark);
+    @media(max-width:480px) {
+      .impact-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-item { padding: 14px 10px; }
+      .stat-item h4 { font-size: 22px; }
     }
 
     /* Footer */
@@ -468,24 +571,36 @@
       .footer-brand { align-items: center; }
       .footer-brand img { width: 52px; height: 52px; }
       .footer-links h4 { font-size: 15px; }
-
-      .donate-grid { grid-template-columns: 1fr; gap: 25px; }
-      .donate-card { padding: 28px 20px; }
-      .bank-row { flex-direction: column; align-items: flex-start; gap: 4px; }
-      .bank-row .value { text-align: left; }
-      .impact-stats { grid-template-columns: 1fr 1fr; }
-      .upi-box { flex-direction: column; align-items: stretch; text-align: center; }
     }
-    @media(max-width:480px) {
-      .impact-stats { grid-template-columns: 1fr; }
+
+    /* Decorative Elements */
+    .deco-line {
+      width: 60px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 20px;
+      border-radius: 10px;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #f0f7ff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+    .trust-badge i {
+      color: var(--pink);
     }
   </style>
 </head>
 <body>
 
-<!-- =================================
-     HEADER
-================================= -->
+<!-- HEADER -->
 <header>
   <div class="container navbar">
     <div class="logo-area">
@@ -511,9 +626,7 @@
   </div>
 </header>
 
-<!-- =================================
-     HERO
-================================= -->
+<!-- HERO -->
 <section class="volunteer-hero">
   <div class="hero-content">
     <span class="section-tag">SUPPORT OUR WORK</span>
@@ -523,24 +636,26 @@
   </div>
 </section>
 
-<!-- =================================
-     DONATE SECTION
-================================= -->
+<!-- DONATE SECTION -->
 <section class="section" id="donate-section" style="background:white;">
   <div class="container">
     <div class="section-heading">
       <span class="section-tag">WAYS TO GIVE</span>
       <h2>Support Our Mission</h2>
+      <div class="deco-line"></div>
       <p>Choose the most convenient way to donate. Every rupee makes a difference in someone's life.</p>
     </div>
 
-    <div class="donate-grid">
-      <!-- LEFT: QR + Bank Details -->
+    <div class="donate-wrapper">
+
+      <!-- QR Code Card -->
       <div class="donate-card">
         <h3><i class="fas fa-qrcode"></i> Scan & Donate</h3>
         <div class="qr-container">
-          <img src="donate-qr.jpeg" alt="Donate QR Code">
-          <p>Scan this QR code with any UPI app</p>
+          <div class="qr-wrapper" onclick="openQRLightbox()">
+            <img src="donate-qr.jpeg" alt="Donate QR Code">
+          </div>
+          <p class="click-hint"><i class="fas fa-hand-pointer"></i> Click the QR code to enlarge</p>
         </div>
 
         <div class="upi-box">
@@ -548,7 +663,14 @@
           <button class="copy-btn" onclick="copyText('9011352544@ptsbi')"><i class="fas fa-copy"></i> Copy</button>
         </div>
 
-        <h3 style="margin-top:28px;font-size:20px;"><i class="fas fa-university"></i> Bank Transfer</h3>
+        <div style="text-align:center;margin-top:12px;">
+          <span class="trust-badge"><i class="fas fa-check-circle"></i> 80G & 12A Registered • CSR-1 Compliant</span>
+        </div>
+      </div>
+
+      <!-- Bank Details Card -->
+      <div class="donate-card">
+        <h3><i class="fas fa-university"></i> Bank Transfer</h3>
         <div class="bank-details">
           <div class="bank-row"><span class="label">Account Name</span><span class="value">Wadmavli Lok Vikas Manch</span></div>
           <div class="bank-row"><span class="label">Bank</span><span class="value">State Bank of India (SBI)</span></div>
@@ -556,21 +678,17 @@
           <div class="bank-row"><span class="label">Account No.</span><span class="value">62450125458 <button class="copy-btn" onclick="copyText('62450125458')"><i class="fas fa-copy"></i></button></span></div>
           <div class="bank-row"><span class="label">IFSC Code</span><span class="value">SBIN0020406 <button class="copy-btn" onclick="copyText('SBIN0020406')"><i class="fas fa-copy"></i></button></span></div>
         </div>
-
-        <div style="margin-top:20px;padding:16px;background:#f0f7ff;border-radius:14px;text-align:center;">
-          <p style="font-size:13px;color:var(--muted);"><i class="fas fa-check-circle" style="color:var(--pink);"></i> 80G & 12A Registered • CSR-1 Compliant</p>
-        </div>
       </div>
 
-      <!-- RIGHT: Why Donate + Impact -->
+      <!-- Why Donate + Impact Card -->
       <div class="donate-card">
         <h3><i class="fas fa-heart" style="color:var(--pink);"></i> Why Donate?</h3>
         <ul class="why-list">
-          <li><i class="fas fa-graduation-cap"></i> <div><strong>Education</strong> — Support Mission Education for 750+ children</div></li>
-          <li><i class="fas fa-female"></i> <div><strong>Women Empowerment</strong> — Strengthen 3,250+ SHG members</div></li>
-          <li><i class="fas fa-seedling"></i> <div><strong>Organic Farming</strong> — Help 350+ farmers adopt sustainable practices</div></li>
-          <li><i class="fas fa-tint"></i> <div><strong>Water Conservation</strong> — Provide clean drinking water to villages</div></li>
-          <li><i class="fas fa-hand-holding-heart"></i> <div><strong>Disaster Relief</strong> — Support 17,000+ families in crisis</div></li>
+          <li><i class="fas fa-graduation-cap"></i> <div><strong>Education</strong> — 750+ children</div></li>
+          <li><i class="fas fa-female"></i> <div><strong>Women Empowerment</strong> — 3,250+ SHG members</div></li>
+          <li><i class="fas fa-seedling"></i> <div><strong>Organic Farming</strong> — 350+ farmers</div></li>
+          <li><i class="fas fa-tint"></i> <div><strong>Water Conservation</strong> — Clean drinking water</div></li>
+          <li><i class="fas fa-hand-holding-heart"></i> <div><strong>Disaster Relief</strong> — 17,000+ families</div></li>
         </ul>
 
         <h3 style="margin-top:28px;font-size:20px;"><i class="fas fa-chart-line"></i> Your Impact</h3>
@@ -581,25 +699,31 @@
           <div class="stat-item"><h4>CSR</h4><p>CSR-1 Registered</p></div>
         </div>
 
-        <div style="margin-top:22px;padding:18px;background:linear-gradient(135deg,#075b9a,#063b67);border-radius:16px;text-align:center;color:white;">
+        <div style="margin-top:22px;padding:18px 22px;background:linear-gradient(135deg,#075b9a,#063b67);border-radius:16px;text-align:center;color:white;">
           <p style="font-size:14px;line-height:1.7;color:#eef5ff;"><i class="fas fa-quote-left" style="color:var(--pink);"></i> "Towards Empowerment is not just our tagline — it is our commitment to every individual we serve."</p>
           <p style="font-size:12px;margin-top:6px;color:#b8d4e8;">— Mr. Bhaskar Annasaheb Munde, Founder</p>
         </div>
       </div>
-    </div>
 
-    <!-- CTA Buttons -->
-    <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="volunteer.html" class="btn btn-outline"><i class="fas fa-hands-helping"></i> Volunteer With Us</a>
-      <a href="partner.html" class="btn btn-pink"><i class="fas fa-handshake"></i> Partner With Us</a>
-      <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+      <!-- CTA Buttons -->
+      <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="volunteer.html" class="btn btn-outline"><i class="fas fa-hands-helping"></i> Volunteer With Us</a>
+        <a href="partner.html" class="btn btn-pink"><i class="fas fa-handshake"></i> Partner With Us</a>
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- =================================
-     FOOTER
-================================= -->
+<!-- QR LIGHTBOX -->
+<div class="qr-lightbox" id="qrLightbox" onclick="closeQRLightbox(event)">
+  <button class="close-lightbox" onclick="closeQRLightbox(event)"><i class="fas fa-times"></i></button>
+  <img src="donate-qr.jpeg" alt="Donate QR Code - Enlarged">
+  <span class="lightbox-label">Scan to donate</span>
+</div>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-brand">
@@ -651,6 +775,27 @@
       alert('Copy: ' + text);
     });
   }
+
+  // QR Lightbox
+  function openQRLightbox() {
+    document.getElementById('qrLightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQRLightbox(e) {
+    if (e.target === document.getElementById('qrLightbox') || e.target.closest('.close-lightbox')) {
+      document.getElementById('qrLightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // Close lightbox with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('qrLightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
 </script>
 
 </body>
