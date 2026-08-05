@@ -1,74 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - Wadmavli Lok Vikas Manch</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Support Wadmavli Lok Vikas Manch. Donate to help us empower communities through education, women empowerment, skill development, water conservation and sustainable livelihoods." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6faf8;
+      color: #263746;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+    :root {
+      --blue: #075b9a;
+      --dark: #063b67;
+      --pink: #e85b88;
+      --light: #f6faf8;
+      --white: #ffffff;
+      --text: #263746;
+      --muted: #667985;
+    }
 
-    <style>
-        body{
-            font-family:Arial,sans-serif;
-            background:#f6faf8;
-            text-align:center;
-            padding:40px;
-        }
+    /* =========================
+       HEADER — matches other pages
+    ========================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: var(--pink);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: var(--blue);
+    }
+    .nav-donate {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
 
-        .card{
-            max-width:600px;
-            margin:auto;
-            background:white;
-            padding:30px;
-            border-radius:15px;
-            box-shadow:0 5px 20px rgba(0,0,0,.1);
-        }
+    /* =========================
+       HERO
+    ========================= */
+    .volunteer-hero {
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                  radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                  linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+    .volunteer-hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      top: -100px;
+      left: -80px;
+    }
+    .volunteer-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(7,91,154,.07);
+      bottom: -160px;
+      right: -100px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .hero-content h1 {
+      color: var(--dark);
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-content p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 13px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 25px rgba(7,91,154,.20);
+    }
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(7,91,154,.25);
+    }
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 10px 25px rgba(232,91,136,.25);
+    }
+    .btn-pink:hover {
+      background: #d14a75;
+      transform: translateY(-3px);
+    }
+    .btn-outline {
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--blue);
+      color: white;
+      transform: translateY(-3px);
+    }
+    @media(max-width:768px) {
+      .volunteer-hero { min-height: 300px; padding: 40px 20px; }
+      .hero-content h1 { font-size: 32px; }
+      .hero-content p { font-size: 14px; margin-bottom: 22px; }
+    }
 
-        img{
-            width:250px;
-            margin:20px auto;
-        }
+    /* =========================
+       DONATE SECTION
+    ========================= */
+    .section {
+      padding: 70px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+    .section-heading h2 {
+      color: var(--dark);
+      font-size: 36px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
 
-        .bank-details{
-            text-align:left;
-            margin-top:20px;
-        }
+    .donate-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .donate-card {
+      background: white;
+      padding: 40px 32px;
+      border-radius: 28px;
+      box-shadow: 0 15px 45px rgba(0,0,0,.08);
+    }
+    .donate-card h3 {
+      color: var(--dark);
+      font-size: 24px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .donate-card h3 i {
+      color: var(--pink);
+    }
 
-        .bank-details p{
-            margin:10px 0;
-        }
+    /* QR Code */
+    .qr-container {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .qr-container img {
+      max-width: 220px;
+      margin: 0 auto 12px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+      border: 4px solid #f0f4f8;
+    }
+    .qr-container p {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .btn{
-            display:inline-block;
-            margin-top:20px;
-            padding:12px 25px;
-            background:#075b9a;
-            color:white;
-            text-decoration:none;
-            border-radius:25px;
-        }
-    </style>
+    /* Bank Details */
+    .bank-details {
+      margin-top: 10px;
+    }
+    .bank-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf1f4;
+      font-size: 14px;
+    }
+    .bank-row:last-child {
+      border-bottom: 0;
+    }
+    .bank-row .label {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .bank-row .value {
+      color: var(--dark);
+      font-weight: 600;
+      text-align: right;
+    }
+    .bank-row .value i {
+      color: var(--pink);
+      margin-right: 6px;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--blue);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 0 6px;
+      transition: .2s;
+    }
+    .copy-btn:hover {
+      color: var(--pink);
+    }
+
+    /* UPI */
+    .upi-box {
+      background: #f0f7ff;
+      padding: 16px 20px;
+      border-radius: 14px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .upi-box span {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 16px;
+    }
+    .upi-box .upi-label {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    /* Impact Stats */
+    .impact-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .stat-item {
+      background: #f6faf8;
+      padding: 18px 14px;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .stat-item h4 {
+      color: var(--blue);
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .stat-item p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* Why Donate */
+    .why-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .why-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #edf1f4;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .why-list li:last-child {
+      border-bottom: 0;
+    }
+    .why-list li i {
+      color: var(--pink);
+      font-size: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .why-list li strong {
+      color: var(--dark);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+
+      .donate-grid { grid-template-columns: 1fr; gap: 25px; }
+      .donate-card { padding: 28px 20px; }
+      .bank-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .bank-row .value { text-align: left; }
+      .impact-stats { grid-template-columns: 1fr 1fr; }
+      .upi-box { flex-direction: column; align-items: stretch; text-align: center; }
+    }
+    @media(max-width:480px) {
+      .impact-stats { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="card">
+<!-- =================================
+     HEADER
+================================= -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
 
-    <h1>Support Our Work ❤️</h1>
+<!-- =================================
+     HERO
+================================= -->
+<section class="volunteer-hero">
+  <div class="hero-content">
+    <span class="section-tag">SUPPORT OUR WORK</span>
+    <h1>Every Contribution Counts ❤️</h1>
+    <p>Your donation helps us empower communities through education, women empowerment, skill development, water conservation and sustainable livelihoods. Together, we can build a better tomorrow.</p>
+    <a href="#donate-section" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</section>
 
-    <p>Scan the QR Code to donate.</p>
-
-    <img src="donate-qr.jpeg" alt="Donate QR Code">
-
-    <div class="bank-details">
-        <p><strong>Account Name:</strong> Wadmavli Lok Vikas Manch</p>
-        <p><strong>Bank:</strong> State Bank of India (SBI)</p>
-        <p><strong>Branch:</strong> Neknoor, Beed</p>
-        <p><strong>Account No:</strong> 62450125458</p>
-        <p><strong>IFSC:</strong> SBIN0020406</p>
-        <p><strong>UPI:</strong> 9011352544@ptsbi</p>
+<!-- =================================
+     DONATE SECTION
+================================= -->
+<section class="section" id="donate-section" style="background:white;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">WAYS TO GIVE</span>
+      <h2>Support Our Mission</h2>
+      <p>Choose the most convenient way to donate. Every rupee makes a difference in someone's life.</p>
     </div>
 
-    <a href="index.html" class="btn">← Back to Home</a>
+    <div class="donate-grid">
+      <!-- LEFT: QR + Bank Details -->
+      <div class="donate-card">
+        <h3><i class="fas fa-qrcode"></i> Scan & Donate</h3>
+        <div class="qr-container">
+          <img src="donate-qr.jpeg" alt="Donate QR Code">
+          <p>Scan this QR code with any UPI app</p>
+        </div>
 
-</div>
+        <div class="upi-box">
+          <span><span class="upi-label">UPI ID:</span> 9011352544@ptsbi</span>
+          <button class="copy-btn" onclick="copyText('9011352544@ptsbi')"><i class="fas fa-copy"></i> Copy</button>
+        </div>
+
+        <h3 style="margin-top:28px;font-size:20px;"><i class="fas fa-university"></i> Bank Transfer</h3>
+        <div class="bank-details">
+          <div class="bank-row"><span class="label">Account Name</span><span class="value">Wadmavli Lok Vikas Manch</span></div>
+          <div class="bank-row"><span class="label">Bank</span><span class="value">State Bank of India (SBI)</span></div>
+          <div class="bank-row"><span class="label">Branch</span><span class="value">Neknoor, Beed</span></div>
+          <div class="bank-row"><span class="label">Account No.</span><span class="value">62450125458 <button class="copy-btn" onclick="copyText('62450125458')"><i class="fas fa-copy"></i></button></span></div>
+          <div class="bank-row"><span class="label">IFSC Code</span><span class="value">SBIN0020406 <button class="copy-btn" onclick="copyText('SBIN0020406')"><i class="fas fa-copy"></i></button></span></div>
+        </div>
+
+        <div style="margin-top:20px;padding:16px;background:#f0f7ff;border-radius:14px;text-align:center;">
+          <p style="font-size:13px;color:var(--muted);"><i class="fas fa-check-circle" style="color:var(--pink);"></i> 80G & 12A Registered • CSR-1 Compliant</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Why Donate + Impact -->
+      <div class="donate-card">
+        <h3><i class="fas fa-heart" style="color:var(--pink);"></i> Why Donate?</h3>
+        <ul class="why-list">
+          <li><i class="fas fa-graduation-cap"></i> <div><strong>Education</strong> — Support Mission Education for 750+ children</div></li>
+          <li><i class="fas fa-female"></i> <div><strong>Women Empowerment</strong> — Strengthen 3,250+ SHG members</div></li>
+          <li><i class="fas fa-seedling"></i> <div><strong>Organic Farming</strong> — Help 350+ farmers adopt sustainable practices</div></li>
+          <li><i class="fas fa-tint"></i> <div><strong>Water Conservation</strong> — Provide clean drinking water to villages</div></li>
+          <li><i class="fas fa-hand-holding-heart"></i> <div><strong>Disaster Relief</strong> — Support 17,000+ families in crisis</div></li>
+        </ul>
+
+        <h3 style="margin-top:28px;font-size:20px;"><i class="fas fa-chart-line"></i> Your Impact</h3>
+        <div class="impact-stats">
+          <div class="stat-item"><h4>50,000+</h4><p>Families Supported</p></div>
+          <div class="stat-item"><h4>26+</h4><p>Years of Service</p></div>
+          <div class="stat-item"><h4>80G</h4><p>Tax Exemption</p></div>
+          <div class="stat-item"><h4>CSR</h4><p>CSR-1 Registered</p></div>
+        </div>
+
+        <div style="margin-top:22px;padding:18px;background:linear-gradient(135deg,#075b9a,#063b67);border-radius:16px;text-align:center;color:white;">
+          <p style="font-size:14px;line-height:1.7;color:#eef5ff;"><i class="fas fa-quote-left" style="color:var(--pink);"></i> "Towards Empowerment is not just our tagline — it is our commitment to every individual we serve."</p>
+          <p style="font-size:12px;margin-top:6px;color:#b8d4e8;">— Mr. Bhaskar Annasaheb Munde, Founder</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div style="text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="volunteer.html" class="btn btn-outline"><i class="fas fa-hands-helping"></i> Volunteer With Us</a>
+      <a href="partner.html" class="btn btn-pink"><i class="fas fa-handshake"></i> Partner With Us</a>
+      <a href="contact.html" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================================
+     FOOTER
+================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Copy to clipboard
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = event.target.closest('.copy-btn');
+      const original = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check" style="color:#28a745;"></i> Copied!';
+      setTimeout(() => { btn.innerHTML = original; }, 2000);
+    }).catch(() => {
+      alert('Copy: ' + text);
+    });
+  }
+</script>
 
 </body>
 </html>
