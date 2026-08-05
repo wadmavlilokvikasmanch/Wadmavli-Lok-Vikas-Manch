@@ -1,216 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Partner With Us | Wadmavli Lok Vikas Manch</title>
-<style>
-:root{--blue:#075b9a;--dark:#063b67;--pink:#e85b88;--muted:#667985;--bg:#f6faf8;}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:var(--bg);color:#263746}
-.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;background:#fff;box-shadow:0 2px 15px rgba(0,0,0,.08)}
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-nav a{text-decoration:none;color:#344b5b;margin-left:18px;font-weight:bold}
-.hero{padding:80px 0;background:linear-gradient(135deg,#f8fcff,#fff5f8)}
-.hero-grid{
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-    align-items:center;
-    gap:60px;
-}
-h1{font-size:56px;color:var(--dark)}
-h1 span{color:var(--pink)}
-p{color:var(--muted);line-height:1.7}
-.btn{display:inline-block;margin-top:24px;padding:12px 22px;border-radius:30px;background:var(--blue);color:#fff;text-decoration:none}
-.card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
-.section{padding:70px 0}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.small{padding:22px;text-align:center}
-.small h3{color:var(--dark);margin:12px 0}
-.enquiry{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-    max-width:800px;
-    margin:auto;
-}
-input,select,textarea{width:100%;padding:12px;border:1px solid #d9e2e8;border-radius:10px;margin-top:12px}
-button{margin-top:16px;padding:13px;border:none;background:var(--pink);color:#fff;border-radius:30px;font-weight:bold;width:100%}
-footer{background:#062f50;color:#fff;text-align:center;padding:35px}
-@media(max-width:900px){
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner With Us | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Partner with Wadmavli Lok Vikas Manch for CSR initiatives, community development, education, women empowerment, and sustainable impact in Maharashtra." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6faf8;
+      color: #263746;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+    :root {
+      --blue: #075b9a;
+      --dark: #063b67;
+      --pink: #e85b88;
+      --light: #f6faf8;
+      --white: #ffffff;
+      --text: #263746;
+      --muted: #667985;
+    }
 
-.hero-grid{
-    grid-template-columns:1fr;
-    text-align:center;
-}
+    /* HEADER */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: var(--pink);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: var(--blue);
+    }
+    .nav-donate {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
 
-.grid4{
-    grid-template-columns:1fr;
-}
+    /* HERO */
+    .hero {
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                  radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                  linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      top: -100px;
+      left: -80px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(7,91,154,.07);
+      bottom: -160px;
+      right: -100px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .hero-content h1 {
+      color: var(--dark);
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-content h1 span {
+      color: var(--pink);
+    }
+    .hero-content p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 25px rgba(7,91,154,.20);
+    }
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+    }
+    .btn-pink:hover {
+      background: #d14a75;
+      transform: translateY(-3px);
+    }
+    .btn-outline {
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--blue);
+      color: white;
+    }
+    @media(max-width:768px) {
+      .hero { min-height: 300px; padding: 40px 20px; }
+      .hero-content h1 { font-size: 30px; }
+      .hero-content p { font-size: 14px; }
+    }
 
-.enquiry{
-    max-width:100%;
-}
+    /* SECTION */
+    .section {
+      padding: 50px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .section-heading h2 {
+      color: var(--dark);
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .deco-line {
+      width: 50px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 16px;
+      border-radius: 10px;
+    }
 
-h1{
-    font-size:40px;
-}
+    /* PARTNER CARDS - 2 columns */
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .partner-card {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+      transition: .3s;
+      border-bottom: 3px solid var(--pink);
+    }
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 35px rgba(7,91,154,.10);
+    }
+    .partner-card .icon {
+      font-size: 36px;
+      margin-bottom: 8px;
+    }
+    .partner-card h3 {
+      color: var(--dark);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+    .partner-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    @media(max-width:600px) {
+      .partner-grid { grid-template-columns: 1fr; }
+    }
 
-.navbar{
-    flex-direction:column;
-}
+    /* COLLAB - 3 columns */
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .collab-card {
+      background: white;
+      padding: 20px 16px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+      transition: .3s;
+      border: 2px solid transparent;
+    }
+    .collab-card:hover {
+      border-color: var(--pink);
+      transform: translateY(-3px);
+    }
+    .collab-card .icon {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+    .collab-card h3 {
+      color: var(--dark);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+    .collab-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    @media(max-width:768px) {
+      .collab-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:480px) {
+      .collab-grid { grid-template-columns: 1fr; }
+    }
 
-}
-</style>
+    /* STATS - 4 columns */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .stat-item {
+      background: white;
+      padding: 18px 12px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+    }
+    .stat-item h4 {
+      color: var(--blue);
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .stat-item p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    @media(max-width:600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* FORM */
+    .form-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .form-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+    }
+    .form-card h3 {
+      color: var(--dark);
+      font-size: 22px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .form-card .sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+    .form-group label .required {
+      color: var(--pink);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #e8edf0;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: .3s;
+      background: #fafcfd;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(7,91,154,.08);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-card .btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+    @media(max-width:600px) {
+      .form-card { padding: 24px 16px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #075b9a, #063b67);
+      color: white;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 22px;
+      color: #eef5ff;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .cta-section .btn {
+      margin: 0 6px;
+    }
+    .btn-white {
+      background: white;
+      color: var(--blue);
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-weight: 600;
+    }
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    }
+    @media(max-width:600px) {
+      .cta-section .btn { margin: 6px 0; width: 100%; justify-content: center; }
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 50px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 6px; }
+    .footer-links a { color: #526b7a; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 18px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 40px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    .partner-note {
+      text-align: center;
+      margin-top: 18px;
+      padding: 14px;
+      background: #f6faf8;
+      border-radius: 14px;
+    }
+    .partner-note p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .partner-note i {
+      color: var(--pink);
+    }
+  </style>
 </head>
 <body>
-<header><div class="container navbar">
-<div><strong>Wadmavli Lok Vikas Manch</strong></div>
-<nav>
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
-<a href="volunteer.html">Volunteer</a>
-<a href="donate.html">Donate</a>
-</nav>
-</div></header>
 
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
 <section class="hero">
-<div class="container hero-grid">
-<div style="text-align:center; max-width:700px; margin:auto;">
-
-<h1>
-Partner <span>With Us</span>
-</h1>
-
-<p>
-Join hands with <strong>Wadmavli Lok Vikas Manch</strong> to create sustainable
-social impact. We collaborate with CSR companies, NGOs, educational
-institutions, foundations, and government organizations to transform
-communities through meaningful development initiatives.
-</p>
-
-<a href="#form" class="btn">Become a Partner</a>
-
-</div>
-<div class="card">
-    <h2 style="color:#063b67; margin-bottom:15px;">
-        Collaboration Opportunities
-    </h2>
-
-    <p>🤝 CSR Partnerships</p>
-    <p>🏛 Government Projects</p>
-    <p>🎓 Educational Institutions</p>
-    <p>🌱 Community Development</p>
-    <p>🌍 NGO Collaborations</p>
-</div>
-</div>
+  <div class="hero-content">
+    <span class="section-tag">COLLABORATE WITH US</span>
+    <h1>Partner <span>With Us</span></h1>
+    <p>Join hands with Wadmavli Lok Vikas Manch to create sustainable social impact through CSR initiatives, community development, and meaningful partnerships.</p>
+    <a href="#partner-form" class="btn btn-primary"><i class="fas fa-handshake"></i> Become a Partner</a>
+  </div>
 </section>
 
-<section class="section">
-<div class="container">
-<h2 style="text-align:center;color:#063b67;margin-bottom:30px">Why Partner With Us</h2>
-<div class="grid4">
-<div class="card small"><div>🤝</div><h3>CSR Projects</h3><p>Implement meaningful CSR initiatives.</p></div>
-<div class="card small"><div>🌱</div><h3>Sustainable Impact</h3><p>Community-focused development programmes.</p></div>
-<div class="card small"><div>📊</div><h3>Transparency</h3><p>Regular reporting and accountability.</p></div>
-<div class="card small"><div>❤️</div><h3>Shared Vision</h3><p>Create lasting social impact together.</p></div>
-</div>
-</div>
+<!-- WHY PARTNER -->
+<section class="section" style="background:white;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">WHY PARTNER</span>
+      <h2>Why Partner With Us</h2>
+      <div class="deco-line"></div>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="icon">🤝</div>
+        <h3>CSR Projects</h3>
+        <p>Implement meaningful CSR initiatives with measurable impact.</p>
+      </div>
+      <div class="partner-card">
+        <div class="icon">🌱</div>
+        <h3>Sustainable Impact</h3>
+        <p>Community-focused programmes that create lasting change.</p>
+      </div>
+      <div class="partner-card">
+        <div class="icon">📊</div>
+        <h3>Transparency</h3>
+        <p>Regular reporting and complete accountability.</p>
+      </div>
+      <div class="partner-card">
+        <div class="icon">❤️</div>
+        <h3>Shared Vision</h3>
+        <p>Work together to empower communities.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="form">
-<div class="container enquiry">
-<div>
-<h2 style="color:#063b67">Partnership Enquiry</h2>
-<p>We welcome collaborations with CSR teams, foundations, educational institutions and organizations. Complete the form and our team will contact you.</p>
-</div>
-<div class="card">
-<form id="partnerForm">
-<input
-type="text"
-name="organization"
-placeholder="Organization Name"
-required>
-<input
-type="text"
-name="person"
-placeholder="Contact Person"
-required>
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-<input
-type="text"
-name="phone"
-placeholder="Phone Number">
-<select name="type"> <option>CSR Company</option><option>Foundation</option><option>NGO</option><option>Government</option><option>Educational Institution</option></select>
-<textarea
-name="message"
-rows="5"
-placeholder="Tell us about your partnership interest"></textarea>
-<button type="submit">Submit Partnership Request</button>
-</form>
-</div>
-</div>
+<!-- COLLABORATION -->
+<section class="section" style="background:#f6faf8;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">OPPORTUNITIES</span>
+      <h2>Collaboration Opportunities</h2>
+      <div class="deco-line"></div>
+    </div>
+    <div class="collab-grid">
+      <div class="collab-card"><div class="icon">🏢</div><h3>CSR Partnerships</h3><p>Corporate social responsibility initiatives</p></div>
+      <div class="collab-card"><div class="icon">🏛️</div><h3>Government Projects</h3><p>Development programmes & schemes</p></div>
+      <div class="collab-card"><div class="icon">🎓</div><h3>Educational Institutions</h3><p>Research & community development</p></div>
+      <div class="collab-card"><div class="icon">🌍</div><h3>NGO Collaborations</h3><p>Amplify impact together</p></div>
+      <div class="collab-card"><div class="icon">🌱</div><h3>Community Development</h3><p>Sustainable livelihood programmes</p></div>
+      <div class="collab-card"><div class="icon">💼</div><h3>Skill Development</h3><p>Vocational training & employment</p></div>
+    </div>
+  </div>
 </section>
 
-<footer>
-<h2>Wadmavli Lok Vikas Manch</h2>
-<p>Towards Empowerment</p>
+<!-- STATS -->
+<section class="section" style="background:white;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">OUR PARTNERS</span>
+      <h2>Trusted Partners</h2>
+      <div class="deco-line"></div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item"><h4>25+</h4><p>Partner Organizations</p></div>
+      <div class="stat-item"><h4>50,000+</h4><p>Lives Impacted</p></div>
+      <div class="stat-item"><h4>26+</h4><p>Years of Service</p></div>
+      <div class="stat-item"><h4>10+</h4><p>CSR Partners</p></div>
+    </div>
+    <div class="partner-note">
+      <p><i class="fas fa-handshake"></i> Partners include: Smile Foundation, Tata Trusts, Azim Premji Foundation, BAIF, WOTR & more.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section" id="partner-form" style="background:#f6faf8;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">GET STARTED</span>
+      <h2>Partnership Enquiry</h2>
+      <div class="deco-line"></div>
+      <p>Complete the form and our team will contact you.</p>
+    </div>
+    <div class="form-wrapper">
+      <div class="form-card">
+        <h3><i class="fas fa-handshake" style="color:var(--pink);"></i> Let's Work Together</h3>
+        <p class="sub">Fill in the details below and our team will reach out.</p>
+        <form id="partnerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Organization Name <span class="required">*</span></label>
+              <input type="text" name="organization" placeholder="Organization name" required>
+            </div>
+            <div class="form-group">
+              <label>Contact Person <span class="required">*</span></label>
+              <input type="text" name="person" placeholder="Contact person" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email <span class="required">*</span></label>
+              <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text" name="phone" placeholder="Phone number">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Organization Type <span class="required">*</span></label>
+            <select name="type" required>
+              <option value="">Select type</option>
+              <option value="CSR Company">CSR Company</option>
+              <option value="Foundation">Foundation</option>
+              <option value="NGO">NGO / Non-Profit</option>
+              <option value="Government">Government</option>
+              <option value="Educational Institution">Educational Institution</option>
+              <option value="Corporate">Corporate</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message <span class="required">*</span></label>
+            <textarea name="message" rows="4" placeholder="Tell us about your partnership interest..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit Request</button>
+        </form>
+        <div style="text-align:center;margin-top:14px;padding:10px;background:#f0f7ff;border-radius:10px;">
+          <p style="font-size:12px;color:var(--muted);"><i class="fas fa-check-circle" style="color:var(--pink);"></i> Your information is safe with us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Make a Difference?</h2>
+    <p>Join us in our mission to empower communities through meaningful partnerships.</p>
+    <a href="#partner-form" class="btn btn-pink"><i class="fas fa-handshake"></i> Partner With Us</a>
+    <a href="contact.html" class="btn btn-white">Contact Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
 </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-emailjs.init({
-    publicKey: "N8B-uOw-emAzOCu1f"
-});
-</script>
-  <script>
-const form = document.getElementById("partnerForm");
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
 
-form.addEventListener("submit", function(e){
+  emailjs.init({ publicKey: "N8B-uOw-emAzOCu1f" });
 
+  const form = document.getElementById("partnerForm");
+  form.addEventListener("submit", function(e) {
     e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
 
-    emailjs.sendForm(
-        "service_4c85wrw",
-        "template_qchpu2v",
-        this
-    )
- .then(function(){
-
-   emailjs.send(
-    "service_4c85wrw",
-    "template_n1ndfiv",
-    {
-        person: form.querySelector('[name="person"]').value,
-        email: form.querySelector('[name="email"]').value
-    }
-)
-.then(() => {
-    console.log("Auto reply sent");
-})
-.catch((err) => {
-    console.log(err);
-});
-
-    alert("✅ Thank you! Your partnership enquiry has been submitted successfully.");
-
-    form.reset();
-
-})
-    .catch(function(error){
-
-        console.error(error);
-
+    emailjs.sendForm("service_4c85wrw", "template_qchpu2v", this)
+      .then(function() {
+        emailjs.send("service_4c85wrw", "template_n1ndfiv", {
+          person: form.querySelector('[name="person"]').value,
+          email: form.querySelector('[name="email"]').value
+        });
+        alert("✅ Thank you! Your partnership enquiry has been submitted successfully.");
+        form.reset();
+        btn.innerHTML = original;
+        btn.disabled = false;
+      })
+      .catch(function() {
         alert("❌ Something went wrong. Please try again.");
-
-    });
-
-});
+        btn.innerHTML = original;
+        btn.disabled = false;
+      });
+  });
 </script>
 </body>
 </html>
