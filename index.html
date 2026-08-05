@@ -167,6 +167,11 @@ header{
     height:58px;
     object-fit:contain;
     border-radius:50%;
+    transition:transform .3s;
+}
+
+.logo-image:hover{
+    transform:scale(1.05);
 }
 
 .logo-text h2{
@@ -192,6 +197,23 @@ nav a{
     color:#344b5b;
     font-size:13px;
     font-weight:bold;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--pink);
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
 }
 
 nav a:hover{
@@ -205,32 +227,118 @@ nav a:hover{
     border-radius:25px;
 }
 
+.nav-donate::after{
+    display:none;
+}
+
+.nav-donate:hover{
+    background:var(--dark-blue);
+    transform:translateY(-2px);
+}
+
 
 /* =========================
-   HERO
+   MOBILE MENU
+========================= */
+
+.mobile-menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:#063b67;
+    font-size:24px;
+    cursor:pointer;
+    padding:8px;
+}
+
+@media (max-width:768px){
+    .mobile-menu-btn{
+        display:flex;
+    }
+}
+
+@media (min-width:769px){
+    .mobile-menu-btn{
+        display:none !important;
+    }
+}
+
+@media (max-width:950px){
+    nav{display:none;}
+    .navbar{position:relative;}
+    .navbar.mobile-open nav{
+        display:flex;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:220px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        background:white;
+        padding:10px 0;
+        border-radius:0 0 16px 16px;
+        box-shadow:0 12px 30px rgba(0,0,0,.15);
+        z-index:2000;
+    }
+    .navbar.mobile-open nav a{
+        display:block;
+        width:100%;
+        padding:13px 20px;
+        text-align:left;
+        box-sizing:border-box;
+    }
+    .navbar.mobile-open nav a:hover{
+        background:#f1f7fb;
+    }
+    .navbar.mobile-open .nav-donate{
+        margin:8px 12px;
+        width:auto;
+        text-align:center;
+    }
+}
+
+
+/* =========================
+   HERO - with gentle animations
 ========================= */
 
 .hero{
     padding:85px 0 75px;
-
+    position:relative;
+    overflow:hidden;
     background:
-        radial-gradient(
-            circle at 8% 15%,
-            rgba(232,91,136,.15),
-            transparent 25%
-        ),
+        radial-gradient(circle at 8% 15%, rgba(232,91,136,.15), transparent 25%),
+        radial-gradient(circle at 92% 75%, rgba(7,91,154,.14), transparent 30%),
+        linear-gradient(135deg, #f8fcff, #fff5f8);
+}
 
-        radial-gradient(
-            circle at 92% 75%,
-            rgba(7,91,154,.14),
-            transparent 30%
-        ),
+/* Floating decorative elements - gentle */
+.hero-float{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(232,91,136,.06);
+    top:-100px;
+    right:-100px;
+    animation: floatSlow 20s ease-in-out infinite;
+}
 
-        linear-gradient(
-            135deg,
-            #f8fcff,
-            #fff5f8
-        );
+.hero-float2{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:rgba(7,91,154,.05);
+    bottom:-80px;
+    left:-80px;
+    animation: floatSlow 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatSlow{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-30px,20px);}
 }
 
 .hero-grid{
@@ -238,13 +346,21 @@ nav a:hover{
     grid-template-columns:1.15fr .85fr;
     align-items:center;
     gap:55px;
+    position:relative;
+    z-index:2;
 }
 
+/* Fade-in animations for hero */
 .hero-label{
     color:var(--pink);
     font-size:11px;
     font-weight:bold;
     letter-spacing:2.5px;
+    display:inline-block;
+    background:rgba(232,91,136,.1);
+    padding:6px 16px;
+    border-radius:20px;
+    animation: fadeSlideUp .8s ease;
 }
 
 .hero h1{
@@ -252,10 +368,30 @@ nav a:hover{
     font-size:clamp(42px,6vw,68px);
     line-height:1.05;
     margin:14px 0;
+    animation: fadeSlideUp .8s ease .2s both;
 }
 
 .hero h1 span{
     color:var(--pink);
+    position:relative;
+    display:inline-block;
+}
+
+.hero h1 span::after{
+    content:'';
+    position:absolute;
+    bottom:2px;
+    left:0;
+    width:100%;
+    height:3px;
+    background:var(--pink);
+    border-radius:2px;
+    animation: underlineGrow 1s ease .6s both;
+}
+
+@keyframes underlineGrow{
+    from{width:0;}
+    to{width:100%;}
 }
 
 .tagline{
@@ -263,12 +399,14 @@ nav a:hover{
     font-size:22px;
     font-weight:bold;
     margin-bottom:15px;
+    animation: fadeSlideUp .8s ease .4s both;
 }
 
 .hero-description{
     color:var(--muted);
     font-size:17px;
     max-width:650px;
+    animation: fadeSlideUp .8s ease .6s both;
 }
 
 .buttons{
@@ -276,6 +414,12 @@ nav a:hover{
     flex-wrap:wrap;
     gap:10px;
     margin-top:27px;
+    animation: fadeSlideUp .8s ease .8s both;
+}
+
+@keyframes fadeSlideUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
 .btn{
@@ -284,11 +428,12 @@ nav a:hover{
     border-radius:30px;
     font-size:14px;
     font-weight:bold;
-    transition:.25s;
+    transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
 .btn-blue{
@@ -313,10 +458,19 @@ nav a:hover{
 ========================= */
 
 .hero-card{
-    background:white;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
     padding:28px;
     border-radius:25px;
     box-shadow:0 18px 45px rgba(6,59,103,.13);
+    border:1px solid rgba(255,255,255,.3);
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
+    animation: fadeSlideUp .8s ease .4s both;
+}
+
+.hero-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 60px rgba(6,59,103,.2);
 }
 
 .hero-card-top{
@@ -353,6 +507,12 @@ nav a:hover{
     background:#f7fafb;
     padding:15px;
     border-radius:14px;
+    transition:.3s;
+}
+
+.hero-point:hover{
+    background:var(--light-pink);
+    transform:scale(1.02);
 }
 
 .hero-point strong{
@@ -399,6 +559,20 @@ nav a:hover{
     color:var(--muted);
 }
 
+.deco-line{
+    width:60px;
+    height:3px;
+    background:var(--pink);
+    margin:10px auto;
+    border-radius:10px;
+    animation: pulseWidth 2s infinite;
+}
+
+@keyframes pulseWidth{
+    0%,100%{width:60px;}
+    50%{width:100px;}
+}
+
 
 /* =========================
    ABOUT
@@ -419,6 +593,11 @@ nav a:hover{
     padding:32px;
     border-radius:22px;
     border-left:5px solid var(--blue);
+    transition:.3s;
+}
+
+.about-main:hover{
+    transform:translateX(5px);
 }
 
 .about-main h3{
@@ -433,15 +612,16 @@ nav a:hover{
 }
 
 .about-facts{
-    background:linear-gradient(
-        145deg,
-        var(--dark-blue),
-        var(--blue)
-    );
-
+    background:linear-gradient(145deg, var(--dark-blue), var(--blue));
     color:white;
     padding:32px;
     border-radius:22px;
+    transition:.3s;
+}
+
+.about-facts:hover{
+    transform:scale(1.01);
+    box-shadow:0 10px 30px rgba(7,91,154,.2);
 }
 
 .about-facts h3{
@@ -467,7 +647,7 @@ nav a:hover{
 
 
 /* =========================
-   PROGRAMS
+   PROGRAMS - with hover effects and arrow
 ========================= */
 
 .programs{
@@ -486,12 +666,50 @@ nav a:hover{
     border-radius:19px;
     border:1px solid #e5edf0;
     box-shadow:0 5px 18px rgba(0,0,0,.04);
-    transition:.25s;
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
+    cursor:pointer;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    position:relative;
+}
+
+.program-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+    opacity:0;
+    transition:.4s;
+    border-radius:19px;
+}
+
+.program-card:hover::before{
+    opacity:1;
+}
+
+.program-card .arrow{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    color:var(--pink);
+    opacity:0;
+    transition:.4s;
+    font-size:18px;
+}
+
+.program-card:hover .arrow{
+    opacity:1;
+    transform:translateX(6px);
 }
 
 .program-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(0,0,0,.09);
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    border-color:var(--pink);
 }
 
 .program-icon{
@@ -504,11 +722,22 @@ nav a:hover{
     background:var(--light-pink);
     font-size:24px;
     margin-bottom:14px;
+    transition:.3s;
 }
 
-.program-card:nth-child(even)
-.program-icon{
+.program-card:hover .program-icon{
+    transform:scale(1.08) rotate(-3deg);
+    background:var(--pink);
+    color:white;
+}
+
+.program-card:nth-child(even) .program-icon{
     background:var(--light-green);
+}
+
+.program-card:nth-child(even):hover .program-icon{
+    background:var(--green);
+    color:white;
 }
 
 .program-card h3{
@@ -520,6 +749,7 @@ nav a:hover{
 .program-card p{
     color:var(--muted);
     font-size:13px;
+    padding-right:20px;
 }
 
 
@@ -543,18 +773,23 @@ nav a:hover{
     overflow:hidden;
     border:1px solid #e4ecef;
     box-shadow:0 5px 18px rgba(0,0,0,.05);
-    transition:.25s;
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
 }
 
 .gallery-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(0,0,0,.10);
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
 .gallery-card img{
     width:100%;
     height:215px;
     object-fit:cover;
+    transition:.4s;
+}
+
+.gallery-card:hover img{
+    transform:scale(1.04);
 }
 
 .gallery-card h3{
@@ -575,14 +810,22 @@ nav a:hover{
 
 .highlight{
     padding:55px 0;
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--dark-blue)
-        );
-
+    background:linear-gradient(135deg, var(--blue), var(--dark-blue));
     color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.highlight::before{
+    content:'';
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:rgba(255,255,255,.03);
+    top:-200px;
+    right:-100px;
+    animation: floatSlow 20s ease-in-out infinite;
 }
 
 .highlight-grid{
@@ -590,6 +833,8 @@ nav a:hover{
     grid-template-columns:1fr 1fr;
     gap:35px;
     align-items:center;
+    position:relative;
+    z-index:2;
 }
 
 .highlight h2{
@@ -614,6 +859,12 @@ nav a:hover{
     padding:14px;
     border-radius:13px;
     font-size:13px;
+    transition:.3s;
+}
+
+.highlight-item:hover{
+    background:rgba(255,255,255,.18);
+    transform:translateY(-3px);
 }
 
 
@@ -637,18 +888,31 @@ nav a:hover{
     border-radius:18px;
     padding:23px 12px;
     border-bottom:3px solid var(--pink);
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
+}
+
+.impact-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(7,91,154,.12);
+    border-bottom-color:var(--blue);
 }
 
 .impact-card strong{
     display:block;
     color:var(--blue);
     font-size:29px;
+    transition:.3s;
+}
+
+.impact-card:hover strong{
+    color:var(--pink);
 }
 
 .impact-card span{
     color:var(--muted);
     font-size:12px;
 }
+
 
 /* ===========================
    TRUST SECTION
@@ -672,16 +936,23 @@ nav a:hover{
     text-align:center;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
     border-bottom:4px solid var(--pink);
-    transition:.3s ease;
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
 }
 
 .trust-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(7,91,154,.15);
+    border-bottom-color:var(--blue);
 }
 
 .trust-icon{
     font-size:40px;
     margin-bottom:15px;
+    transition:.3s;
+}
+
+.trust-card:hover .trust-icon{
+    transform:scale(1.1) rotate(-5deg);
 }
 
 .trust-card h3{
@@ -690,23 +961,7 @@ nav a:hover{
     font-size:18px;
 }
 
-/* Responsive */
 
-@media (max-width:900px){
-
-.trust-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media (max-width:600px){
-
-.trust-grid{
-    grid-template-columns:1fr;
-}
-
-}
 /* =========================
    FOUNDER MESSAGE
 ========================= */
@@ -722,6 +977,12 @@ nav a:hover{
     padding:38px;
     border-radius:23px;
     box-shadow:0 8px 28px rgba(0,0,0,.06);
+    transition:.4s;
+}
+
+.founder-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 45px rgba(0,0,0,.1);
 }
 
 .quote-mark{
@@ -739,6 +1000,7 @@ nav a:hover{
     color:var(--blue)!important;
     font-weight:bold;
 }
+
 .founder-content{
     display:flex;
     align-items:center;
@@ -751,11 +1013,17 @@ nav a:hover{
     object-fit:cover;
     border-radius:18px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.founder-image img:hover{
+    transform:scale(1.02);
 }
 
 .founder-text{
     flex:1;
 }
+
 
 /* =========================
    PARTNERS
@@ -824,37 +1092,14 @@ nav a:hover{
     text-align:center;
 }
 
-  
 @keyframes scrollPartners{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-50%);
-    }
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
 }
 
-@media(max-width:768px){
-
-    .partner{
-        width:150px;
-        height:110px;
-        margin:0 10px;
-    }
-
-    .partner img{
-        max-width:100px;
-        max-height:55px;
-    }
-
-    .partner-track{
-        animation-duration:25s;
-    }
-
-}
 
 /* =========================
-   VOLUNTEER + PARTNER + DONATE
+   ACTION SECTION
 ========================= */
 
 .action-section{
@@ -872,23 +1117,22 @@ nav a:hover{
     border-radius:23px;
     display:flex;
     flex-direction:column;
+    transition:.4s cubic-bezier(0.23,1,0.32,1);
 }
 
-.volunteer-card{
-    background:var(--light-green);
-}
-
-.partner-card{
-    background:var(--light-blue);
-}
-
-.donate-card{
-    background:var(--light-pink);
+.action-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
 .action-icon{
-    font-size:30px;
+    font-size:35px;
     margin-bottom:8px;
+    transition:.3s;
+}
+
+.action-card:hover .action-icon{
+    transform:scale(1.1);
 }
 
 .action-card h2{
@@ -906,23 +1150,16 @@ nav a:hover{
     margin-top:auto;
 }
 
-/* Optional (only keep if used on donate.html) */
-
-.bank-details{
-    background:white;
-    padding:18px;
-    border-radius:15px;
-    margin:15px 0;
+.volunteer-card{
+    background:var(--light-green);
 }
 
-.bank-details p{
-    color:#263746;
-    font-size:12px;
-    margin:5px 0;
+.partner-card{
+    background:var(--light-blue);
 }
 
-.bank-details strong{
-    color:var(--blue);
+.donate-card{
+    background:var(--light-pink);
 }
 
 
@@ -935,10 +1172,10 @@ nav a:hover{
 }
 
 .contact-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr;
-    gap: 25px;
-    align-items: stretch;
+    display:grid;
+    grid-template-columns:1fr 1fr 1.2fr;
+    gap:25px;
+    align-items:stretch;
 }
 
 .contact-card{
@@ -948,6 +1185,12 @@ nav a:hover{
     display:flex;
     flex-direction:column;
     height:100%;
+    transition:.3s;
+}
+
+.contact-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
 .contact-card h3{
@@ -964,6 +1207,11 @@ nav a:hover{
 .contact-card a{
     color:var(--blue);
     font-weight:bold;
+    transition:.3s;
+}
+
+.contact-card a:hover{
+    color:var(--pink);
 }
 
 .socials{
@@ -985,26 +1233,16 @@ nav a:hover{
     transition:.3s;
 }
 
-.socials a:nth-child(1){
-    background:#E4405F;
-}
-
-.socials a:nth-child(2){
-    background:#1877F2;
-}
-
-.socials a:nth-child(3){
-    background:#000;
-}
-
-.socials a:nth-child(4){
-    background:#25D366;
-}
+.socials a:nth-child(1){background:#E4405F;}
+.socials a:nth-child(2){background:#1877F2;}
+.socials a:nth-child(3){background:#000;}
+.socials a:nth-child(4){background:#25D366;}
 
 .socials a:hover{
     transform:translateY(-5px);
     box-shadow:0 8px 20px rgba(0,0,0,.2);
 }
+
 
 /* =========================
    FOOTER
@@ -1034,212 +1272,79 @@ footer p{
 
 
 /* =========================
-   TABLET
+   SCROLL TOP BUTTON
+========================= */
+
+.scroll-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:var(--pink);
+    color:white;
+    border:none;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(232,91,136,.3);
+    transition:.3s;
+    opacity:0;
+    transform:translateY(20px);
+    z-index:999;
+}
+
+.scroll-top.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.scroll-top:hover{
+    background:var(--dark-blue);
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   RESPONSIVE
 ========================= */
 
 @media (max-width:950px){
-
-    nav{
-        display:none;
-    }
-
-    .hero-grid,
-    .about-grid,
-    .highlight-grid,
-    .founder-content{
+    nav{display:none;}
+    .hero-grid,.about-grid,.highlight-grid,.founder-content{
         grid-template-columns:1fr;
         display:grid;
     }
-
-    .founder-content{
-        text-align:center;
-    }
-
-    .founder-image{
-        margin:auto;
-    }
-
-    .program-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .gallery-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .partner-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .trust-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    /* Three cards become two per row */
-    .action-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
+    .founder-content{text-align:center;}
+    .founder-image{margin:auto;}
+    .program-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .impact-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-grid{grid-template-columns:repeat(2,1fr);}
+    .action-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width:650px){
-
-    .navbar{
-        min-height:68px;
-    }
-
-    .logo-image{
-        width:46px;
-        height:46px;
-    }
-
-    .logo-text h2{
-        font-size:14px;
-    }
-
-    .hero{
-        padding:60px 0;
-    }
-
-    .hero h1{
-        font-size:41px;
-    }
-
-    .section{
-        padding:55px 0;
-    }
-
-    .section-heading h2{
-        font-size:29px;
-    }
-
-    .program-grid,
-    .gallery-grid,
-    .partner-grid,
-    .action-grid,
-    .contact-grid,
-    .trust-grid{
+    .navbar{min-height:68px;}
+    .logo-image{width:46px;height:46px;}
+    .logo-text h2{font-size:14px;}
+    .hero{padding:60px 0;}
+    .hero h1{font-size:41px;}
+    .section{padding:55px 0;}
+    .section-heading h2{font-size:29px;}
+    .program-grid,.gallery-grid,.action-grid,.contact-grid,.trust-grid{
         grid-template-columns:1fr;
     }
-
-    .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .highlight-list{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-card img{
-        height:230px;
-    }
-
-    .founder-content{
-        display:block;
-        text-align:center;
-    }
-
-    .founder-image{
-        margin-bottom:25px;
-    }
-
-    .founder-image img{
-        width:220px;
-        height:auto;
-        margin:auto;
-    }
-
-}
-
-}
-/* =========================
-   MOBILE MENU BUTTON
-   ========================= */
-
-.mobile-menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    color:#063b67;
-    font-size:24px;
-    cursor:pointer;
-    padding:8px;
-}
-/* =========================
-   MOBILE NAVIGATION BUTTON
-   ========================= */
-
-@media (max-width:768px){
-
-    .mobile-menu-btn{
-        display:flex;
-    }
-
-}
-  @media (min-width:769px){
-
-    .mobile-menu-btn{
-        display:none !important;
-    }
-
-}
-  /* =========================
-   OPEN MOBILE NAVIGATION
-   ========================= */
-
-@media (max-width:950px){
-
-    .navbar{
-        position:relative;
-    }
-
-    .navbar.mobile-open nav{
-        display:flex;
-        position:absolute;
-        top:100%;
-        right:0;
-        width:220px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        background:white;
-        padding:10px 0;
-        border-radius:0 0 16px 16px;
-        box-shadow:0 12px 30px rgba(0,0,0,.15);
-        z-index:2000;
-    }
-
-    .navbar.mobile-open nav a{
-        display:block;
-        width:100%;
-        padding:13px 20px;
-        text-align:left;
-        box-sizing:border-box;
-    }
-
-    .navbar.mobile-open nav a:hover{
-        background:#f1f7fb;
-    }
-
-    .navbar.mobile-open .nav-donate{
-        margin:8px 12px;
-        width:auto;
-        text-align:center;
-    }
-
+    .impact-grid{grid-template-columns:repeat(2,1fr);}
+    .highlight-list{grid-template-columns:1fr;}
+    .gallery-card img{height:230px;}
+    .founder-content{display:block;text-align:center;}
+    .founder-image{margin-bottom:25px;}
+    .founder-image img{width:220px;height:auto;margin:auto;}
+    .partner{width:150px;height:110px;margin:0 10px;}
+    .partner img{max-width:100px;max-height:55px;}
+    .partner-track{animation-duration:25s;}
 }
 
 </style>
@@ -1318,6 +1423,9 @@ class="logo-image">
 
 <section class="hero" id="home">
 
+<div class="hero-float"></div>
+<div class="hero-float2"></div>
+
 <div class="container hero-grid">
 
 
@@ -1346,15 +1454,15 @@ conservation and environmental action.
 <div class="buttons">
 
 <a href="#about" class="btn btn-blue">
-Discover Our Work
+<i class="fas fa-arrow-right"></i> Discover Our Work
 </a>
 
 <a href="#gallery" class="btn btn-pink">
-View Gallery
+<i class="fas fa-images"></i> View Gallery
 </a>
 
 <a href="#donate" class="btn btn-white">
-Support Our Work
+<i class="fas fa-heart"></i> Support Our Work
 </a>
 
 </div>
@@ -1433,6 +1541,8 @@ WHO WE ARE
 <h2>
 Working Towards Empowerment
 </h2>
+
+<div class="deco-line"></div>
 
 <p>
 Creating opportunities and strengthening communities
@@ -1530,6 +1640,8 @@ OUR WORK
 Programs That Create Opportunity
 </h2>
 
+<div class="deco-line"></div>
+
 <p>
 Our initiatives focus on practical support,
 skills, livelihoods and stronger communities.
@@ -1540,165 +1652,70 @@ skills, livelihoods and stronger communities.
 
 <div class="program-grid">
 
+<!-- All program cards now link to individual program pages -->
 
-<div class="program-card">
+<a href="program-education.html" class="program-card">
+<div class="program-icon">📚</div>
+<h3>Mission Education</h3>
+<p>Supporting children's education for children aged 6–13 years in Kalepadal, Hadapsar, Pune.</p>
+<span class="arrow">→</span>
+</a>
 
-<div class="program-icon">
-📚
-</div>
+<a href="program-driving.html" class="program-card">
+<div class="program-icon">🚗</div>
+<h3>Motor Driving School</h3>
+<p>Driving training and licence support for people aged 18 years and above.</p>
+<span class="arrow">→</span>
+</a>
 
-<h3>
-Mission Education
-</h3>
+<a href="program-skill.html" class="program-card">
+<div class="program-icon">💼</div>
+<h3>Skill Development</h3>
+<p>Livelihood-oriented training to strengthen employment and self-employment opportunities.</p>
+<span class="arrow">→</span>
+</a>
 
-<p>
-Supporting children's education for children
-aged 6–13 years in Kalepadal, Hadapsar, Pune.
-</p>
+<a href="program-women.html" class="program-card">
+<div class="program-icon">👩</div>
+<h3>Women SHGs</h3>
+<p>Supporting women through Self Help Groups, bank linkage, self-employment and livelihoods.</p>
+<span class="arrow">→</span>
+</a>
 
-</div>
+<a href="program-organic.html" class="program-card">
+<div class="program-icon">🌾</div>
+<h3>Organic Farming</h3>
+<p>Supporting farmers through organic farming, scheme awareness and manure-making demonstrations.</p>
+<span class="arrow">→</span>
+</a>
 
+<a href="program-water.html" class="program-card">
+<div class="program-icon">💧</div>
+<h3>Clean Drinking Water</h3>
+<p>Working to improve access to clean drinking water for households in villages of Beed district.</p>
+<span class="arrow">→</span>
+</a>
 
-<div class="program-card">
+<a href="program-tree.html" class="program-card">
+<div class="program-icon">🌳</div>
+<h3>Tree Plantation</h3>
+<p>Promoting tree plantation and environmental awareness as part of climate action.</p>
+<span class="arrow">→</span>
+</a>
 
-<div class="program-icon">
-🚗
-</div>
+<a href="program-watershed.html" class="program-card">
+<div class="program-icon">🏞️</div>
+<h3>Watershed Development</h3>
+<p>Farm ponds, bunding, loose boulders, soil conservation and tree plantation activities.</p>
+<span class="arrow">→</span>
+</a>
 
-<h3>
-Motor Driving School
-</h3>
-
-<p>
-Driving training and licence support for
-people aged 18 years and above.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-💼
-</div>
-
-<h3>
-Skill Development
-</h3>
-
-<p>
-Livelihood-oriented training to strengthen
-employment and self-employment opportunities.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-👩
-</div>
-
-<h3>
-Women SHGs
-</h3>
-
-<p>
-Supporting women through Self Help Groups,
-bank linkage, self-employment and livelihoods.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-🌾
-</div>
-
-<h3>
-Organic Farming
-</h3>
-
-<p>
-Supporting farmers through organic farming,
-scheme awareness and manure-making demonstrations.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-💧
-</div>
-
-<h3>
-Clean Drinking Water
-</h3>
-
-<p>
-Working to improve access to clean drinking
-water for households in villages of Beed district.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-🌳
-</div>
-
-<h3>
-Tree Plantation
-</h3>
-
-<p>
-Promoting tree plantation and environmental
-awareness as part of climate action.
-</p>
-
-</div>
-
-
-<div class="program-card">
-
-<div class="program-icon">
-🏞️
-</div>
-
-<h3>
-Watershed Development
-</h3>
-
-<p>
-Farm ponds, bunding, loose boulders, soil
-conservation and tree plantation activities.
-</p>
-
-</div>
-<div class="program-card">
-
-<div class="program-icon">
-🚑
-</div>
-
-<h3>
-Disaster Relief
-</h3>
-
-<p>
-Undertaken major disaster relief initiatives during the
-2015–16 drought and the COVID-19 pandemic (2020–2022).
-</p>
-
-</div>
+<a href="program-disaster.html" class="program-card">
+<div class="program-icon">🚑</div>
+<h3>Disaster Relief</h3>
+<p>Undertaken major disaster relief initiatives during the 2015–16 drought and the COVID-19 pandemic (2020–2022).</p>
+<span class="arrow">→</span>
+</a>
 
 </div>
 
@@ -1726,6 +1743,8 @@ OUR WORK IN PICTURES
 <h2>
 Gallery
 </h2>
+
+<div class="deco-line"></div>
 
 <p>
 A glimpse of our programs and community initiatives.
@@ -1870,7 +1889,7 @@ COVID-19 Relief (2020–22)
 <div class="gallery-more">
 
 <a href="gallery.html" class="btn btn-blue">
-Open Full Gallery
+<i class="fas fa-images"></i> Open Full Gallery
 </a>
 
 </div>
@@ -1958,6 +1977,8 @@ OUR REACH
 <h2>
 Our Impact
 </h2>
+
+<div class="deco-line"></div>
 
 <p>
 The people and communities reached through
@@ -2080,6 +2101,8 @@ Students Trained under STEP Program
                 Registered & Recognised
             </h2>
 
+            <div class="deco-line"></div>
+
             <p>
                 Serving communities with transparency, accountability and
                 commitment since 2000.
@@ -2133,6 +2156,8 @@ FROM OUR FOUNDER
 <h2>
 A Message of Empowerment
 </h2>
+
+<div class="deco-line"></div>
 
 </div>
 
@@ -2208,6 +2233,8 @@ COLLABORATION
 <h2>
 Our Partners
 </h2>
+
+<div class="deco-line"></div>
 
 <p>
 Working together with organisations and partners
@@ -2413,7 +2440,7 @@ to create meaningful community impact.
     </p>
 
     <a href="volunteer.html" class="btn btn-blue">
-        Become a Volunteer
+        <i class="fas fa-hands-helping"></i> Become a Volunteer
     </a>
 
 </div>
@@ -2436,7 +2463,7 @@ to create meaningful community impact.
     </p>
 
     <a href="partner.html" class="btn btn-blue">
-        Partner With Us
+        <i class="fas fa-handshake"></i> Partner With Us
     </a>
 
 </div>
@@ -2459,7 +2486,7 @@ to create meaningful community impact.
     </p>
 
     <a href="donate.html" class="btn btn-pink">
-        Donate Now
+        <i class="fas fa-heart"></i> Donate Now
     </a>
 
 </div>
@@ -2490,6 +2517,8 @@ GET IN TOUCH
 <h2>
 Contact WLVM
 </h2>
+
+<div class="deco-line"></div>
 
 <p>
 For enquiries, partnerships, volunteering and
@@ -2670,6 +2699,11 @@ All Rights Reserved.
 </div>
 
 </footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
    
 <script>
 function showQR() {
@@ -2714,6 +2748,7 @@ const observer = new IntersectionObserver((entries) => {
 
 counters.forEach(counter => observer.observe(counter));
 </script>
+
 <script>
 function toggleMobileMenu(){
 
@@ -2728,7 +2763,18 @@ function toggleMobileMenu(){
 
     button.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
+
+// Scroll to Top Button
+const scrollBtn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+        scrollBtn.classList.add('visible');
+    } else {
+        scrollBtn.classList.remove('visible');
+    }
+});
 </script>
+
 </body>
 
 </html>
