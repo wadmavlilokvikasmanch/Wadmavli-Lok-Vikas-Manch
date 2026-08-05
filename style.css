@@ -133,3 +133,65 @@
         font-size: 16px;
     }
 }
+/* =========================
+   FORM SUCCESS/ERROR MESSAGES
+========================= */
+#formSuccess, #formError {
+    padding: 16px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    animation: slideDown 0.3s ease;
+    display: none;
+}
+
+#formSuccess {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+#formSuccess i {
+    color: #28a745;
+    margin-right: 10px;
+}
+
+#formError {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+#formError i {
+    color: #dc3545;
+    margin-right: 10px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   LOADING STATE FOR BUTTONS
+========================= */
+.btn-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.btn-loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
