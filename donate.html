@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -42,9 +43,7 @@
       --muted: #667985;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* HEADER */
     header {
       background: white;
       position: sticky;
@@ -149,7 +148,7 @@
     }
 
     /* =========================
-       HERO
+       HERO with particles & heart animation
     ========================= */
     .volunteer-hero {
       min-height: 380px;
@@ -173,6 +172,7 @@
       background: rgba(232,91,136,.08);
       top: -100px;
       left: -80px;
+      animation: floatBlob 8s ease-in-out infinite;
     }
     .volunteer-hero::after {
       content: "";
@@ -183,7 +183,55 @@
       background: rgba(7,91,154,.07);
       bottom: -160px;
       right: -100px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
     }
+    .volunteer-hero .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.15);
+      animation: floatParticle 15s infinite linear;
+    }
+    .volunteer-hero .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .volunteer-hero .particle:nth-child(2) { left: 25%; top: 70%; animation-delay: 2s; width: 10px; height: 10px; }
+    .volunteer-hero .particle:nth-child(3) { left: 70%; top: 15%; animation-delay: 4s; }
+    .volunteer-hero .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; width: 8px; height: 8px; }
+    .volunteer-hero .particle:nth-child(5) { left: 50%; top: 85%; animation-delay: 3s; }
+
+    /* Floating hearts for donate page */
+    .floating-heart {
+      position: absolute;
+      font-size: 20px;
+      color: rgba(232,91,136,.15);
+      animation: floatHeart 12s infinite linear;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .floating-heart:nth-child(6) { left: 5%; top: 10%; animation-delay: 0s; font-size: 16px; }
+    .floating-heart:nth-child(7) { left: 20%; top: 80%; animation-delay: 3s; font-size: 24px; }
+    .floating-heart:nth-child(8) { left: 60%; top: 5%; animation-delay: 5s; font-size: 18px; }
+    .floating-heart:nth-child(9) { left: 80%; top: 70%; animation-delay: 7s; font-size: 28px; }
+    .floating-heart:nth-child(10) { left: 45%; top: 90%; animation-delay: 9s; font-size: 14px; }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.3; }
+      25% { opacity: 0.8; }
+      50% { transform: translateY(-80px) rotate(20deg) scale(1.2); opacity: 0.5; }
+      75% { opacity: 0.8; }
+      100% { transform: translateY(-160px) rotate(40deg) scale(1); opacity: 0; }
+    }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-60px) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+    }
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
     .hero-content {
       position: relative;
       z-index: 2;
@@ -197,12 +245,44 @@
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 14px;
+      animation: fadeInDown 0.8s ease;
     }
     .hero-content h1 {
       color: var(--dark);
       font-size: 48px;
       line-height: 1.15;
       margin-bottom: 16px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .hero-content h1 .heart-icon {
+      display: inline-block;
+      animation: heartbeat 1.5s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      14% { transform: scale(1.2); }
+      28% { transform: scale(1); }
+      42% { transform: scale(1.15); }
+      56% { transform: scale(1); }
+    }
+    .hero-content h1 span {
+      color: var(--pink);
+      position: relative;
+    }
+    .hero-content h1 span::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--pink);
+      border-radius: 2px;
+      animation: underlineGrow 1s ease 0.5s both;
+    }
+    @keyframes underlineGrow {
+      from { width: 0; }
+      to { width: 100%; }
     }
     .hero-content p {
       max-width: 680px;
@@ -210,6 +290,7 @@
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.4s both;
     }
     .btn {
       display: inline-flex;
@@ -228,11 +309,12 @@
       background: var(--blue);
       color: white;
       box-shadow: 0 10px 25px rgba(7,91,154,.20);
+      animation: fadeInUp 0.8s ease 0.6s both;
     }
     .btn-primary:hover {
       background: var(--dark);
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(7,91,154,.25);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(7,91,154,.30);
     }
     .btn-pink {
       background: var(--pink);
@@ -253,6 +335,14 @@
       color: white;
       transform: translateY(-3px);
     }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @media(max-width:768px) {
       .volunteer-hero { min-height: 300px; padding: 40px 20px; }
       .hero-content h1 { font-size: 32px; }
@@ -260,7 +350,7 @@
     }
 
     /* =========================
-       DONATE SECTION
+       SECTION
     ========================= */
     .section {
       padding: 70px 0;
@@ -282,6 +372,19 @@
       line-height: 1.8;
     }
 
+    .deco-line {
+      width: 60px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 20px;
+      border-radius: 10px;
+      animation: pulseWidth 2s infinite;
+    }
+    @keyframes pulseWidth {
+      0%, 100% { width: 60px; }
+      50% { width: 100px; }
+    }
+
     /* Single Column Layout */
     .donate-wrapper {
       max-width: 780px;
@@ -293,6 +396,22 @@
       border-radius: 28px;
       box-shadow: 0 15px 45px rgba(0,0,0,.08);
       margin-bottom: 30px;
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: cardFadeIn 0.6s ease forwards;
+    }
+    .donate-card:nth-child(1) { animation-delay: 0.05s; }
+    .donate-card:nth-child(2) { animation-delay: 0.10s; }
+    .donate-card:nth-child(3) { animation-delay: 0.15s; }
+
+    @keyframes cardFadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .donate-card:hover {
+      transform: translateY(-4px) scale(1.005);
+      box-shadow: 0 20px 55px rgba(7,91,154,.12);
     }
     .donate-card:last-child {
       margin-bottom: 0;
@@ -307,6 +426,10 @@
     }
     .donate-card h3 i {
       color: var(--pink);
+      transition: .3s;
+    }
+    .donate-card:hover h3 i {
+      transform: scale(1.1) rotate(-5deg);
     }
 
     /* QR Code - Bigger & Clickable */
@@ -317,28 +440,52 @@
     .qr-container .qr-wrapper {
       display: inline-block;
       cursor: pointer;
-      transition: .3s;
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
       border-radius: 20px;
       padding: 10px;
       background: white;
       box-shadow: 0 8px 25px rgba(0,0,0,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .qr-container .qr-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(232,91,136,.05), transparent 60%);
+      opacity: 0;
+      transition: .4s;
+      border-radius: 20px;
+    }
+    .qr-container .qr-wrapper:hover::before {
+      opacity: 1;
     }
     .qr-container .qr-wrapper:hover {
-      transform: scale(1.04);
-      box-shadow: 0 15px 40px rgba(0,0,0,.15);
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 20px 50px rgba(7,91,154,.18);
     }
     .qr-container .qr-wrapper img {
       max-width: 320px;
       border-radius: 16px;
       border: 3px solid #f0f4f8;
+      transition: .4s;
+    }
+    .qr-container .qr-wrapper:hover img {
+      border-color: var(--pink);
     }
     .qr-container .click-hint {
       color: var(--muted);
       font-size: 13px;
       margin-top: 10px;
+      transition: .3s;
     }
     .qr-container .click-hint i {
       color: var(--pink);
+      animation: bounceHint 2s infinite;
+    }
+    @keyframes bounceHint {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(4px); }
     }
 
     /* QR Lightbox */
@@ -361,7 +508,7 @@
       max-height: 85vh;
       border-radius: 20px;
       box-shadow: 0 30px 60px rgba(0,0,0,.5);
-      animation: zoomIn 0.3s ease;
+      animation: zoomIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .qr-lightbox .close-lightbox {
       position: absolute;
@@ -382,7 +529,7 @@
     }
     .qr-lightbox .close-lightbox:hover {
       background: var(--pink);
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(1.05);
       border-color: var(--pink);
     }
     .qr-lightbox .lightbox-label {
@@ -391,6 +538,11 @@
       color: rgba(255,255,255,.5);
       font-size: 14px;
       letter-spacing: 1px;
+      animation: pulseLabel 2s infinite;
+    }
+    @keyframes pulseLabel {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
     }
     @keyframes zoomIn {
       from { transform: scale(0.8); opacity: 0; }
@@ -414,6 +566,11 @@
       flex-wrap: wrap;
       gap: 10px;
       border: 1px solid rgba(7,91,154,.08);
+      transition: .3s;
+    }
+    .upi-box:hover {
+      border-color: var(--pink);
+      box-shadow: 0 4px 15px rgba(232,91,136,.10);
     }
     .upi-box span {
       font-weight: 600;
@@ -438,6 +595,7 @@
     .copy-btn:hover {
       background: var(--blue);
       color: white;
+      transform: scale(1.05);
     }
 
     /* Bank Details */
@@ -450,6 +608,12 @@
       padding: 12px 0;
       border-bottom: 1px solid #edf1f4;
       font-size: 14px;
+      transition: .3s;
+    }
+    .bank-row:hover {
+      background: #f8fbfc;
+      padding-left: 8px;
+      border-radius: 8px;
     }
     .bank-row:last-child {
       border-bottom: 0;
@@ -489,12 +653,21 @@
       font-size: 14px;
       color: var(--muted);
       line-height: 1.5;
+      transition: .3s;
+    }
+    .why-list li:hover {
+      padding-left: 8px;
+      border-bottom-color: var(--pink);
     }
     .why-list li i {
       color: var(--pink);
       font-size: 18px;
       flex-shrink: 0;
       width: 22px;
+      transition: .3s;
+    }
+    .why-list li:hover i {
+      transform: scale(1.15) rotate(-5deg);
     }
     .why-list li strong {
       color: var(--dark);
@@ -515,22 +688,47 @@
       padding: 18px 12px;
       border-radius: 16px;
       text-align: center;
-      transition: .3s;
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
       border-bottom: 3px solid var(--pink);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: cardFadeIn 0.6s ease forwards;
     }
+    .stat-item:nth-child(1) { animation-delay: 0.05s; }
+    .stat-item:nth-child(2) { animation-delay: 0.10s; }
+    .stat-item:nth-child(3) { animation-delay: 0.15s; }
+    .stat-item:nth-child(4) { animation-delay: 0.20s; }
+
     .stat-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,.06);
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(7,91,154,.10);
+      border-bottom-color: var(--blue);
     }
     .stat-item h4 {
       color: var(--blue);
       font-size: 28px;
       font-weight: 700;
+      transition: .3s;
+    }
+    .stat-item:hover h4 {
+      color: var(--pink);
+      transform: scale(1.05);
     }
     .stat-item p {
       color: var(--muted);
       font-size: 12px;
       margin-top: 2px;
+    }
+    .stat-item .stat-icon {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 4px;
+      opacity: 0.5;
+      transition: .3s;
+    }
+    .stat-item:hover .stat-icon {
+      opacity: 1;
+      transform: scale(1.1) rotate(-5deg);
     }
     @media(max-width:768px) {
       .impact-stats { grid-template-columns: repeat(2, 1fr); }
@@ -573,15 +771,6 @@
       .footer-links h4 { font-size: 15px; }
     }
 
-    /* Decorative Elements */
-    .deco-line {
-      width: 60px;
-      height: 3px;
-      background: var(--pink);
-      margin: 0 auto 20px;
-      border-radius: 10px;
-    }
-
     .trust-badge {
       display: inline-flex;
       align-items: center;
@@ -592,9 +781,58 @@
       font-size: 13px;
       color: var(--muted);
       margin-top: 18px;
+      transition: .3s;
+    }
+    .trust-badge:hover {
+      background: var(--pink);
+      color: white;
+      transform: translateY(-2px);
     }
     .trust-badge i {
       color: var(--pink);
+      transition: .3s;
+    }
+    .trust-badge:hover i {
+      color: white;
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(232,91,136,.35);
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--blue);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(7,91,154,.35);
+    }
+
+    /* Floating heart pulse for donate page */
+    .heart-float {
+      display: inline-block;
+      animation: floatHeartBeat 2s infinite;
+    }
+    @keyframes floatHeartBeat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-6px) scale(1.05); }
     }
   </style>
 </head>
@@ -626,11 +864,21 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO with floating hearts -->
 <section class="volunteer-hero">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="floating-heart">❤️</div>
+  <div class="floating-heart">❤️</div>
+  <div class="floating-heart">❤️</div>
+  <div class="floating-heart">❤️</div>
+  <div class="floating-heart">❤️</div>
   <div class="hero-content">
     <span class="section-tag">SUPPORT OUR WORK</span>
-    <h1>Every Contribution Counts ❤️</h1>
+    <h1>Every Contribution Counts <span class="heart-icon">❤️</span></h1>
     <p>Your donation helps us empower communities through education, women empowerment, skill development, water conservation and sustainable livelihoods. Together, we can build a better tomorrow.</p>
     <a href="#donate-section" class="btn btn-primary"><i class="fas fa-heart"></i> Donate Now</a>
   </div>
@@ -639,7 +887,7 @@
 <!-- DONATE SECTION -->
 <section class="section" id="donate-section" style="background:white;">
   <div class="container">
-    <div class="section-heading">
+    <div class="section-heading" data-aos="fade-up">
       <span class="section-tag">WAYS TO GIVE</span>
       <h2>Support Our Mission</h2>
       <div class="deco-line"></div>
@@ -649,7 +897,7 @@
     <div class="donate-wrapper">
 
       <!-- QR Code Card -->
-      <div class="donate-card">
+      <div class="donate-card" data-aos="fade-up" data-aos-delay="50">
         <h3><i class="fas fa-qrcode"></i> Scan & Donate</h3>
         <div class="qr-container">
           <div class="qr-wrapper" onclick="openQRLightbox()">
@@ -669,7 +917,7 @@
       </div>
 
       <!-- Bank Details Card -->
-      <div class="donate-card">
+      <div class="donate-card" data-aos="fade-up" data-aos-delay="100">
         <h3><i class="fas fa-university"></i> Bank Transfer</h3>
         <div class="bank-details">
           <div class="bank-row"><span class="label">Account Name</span><span class="value">Wadmavli Lok Vikas Manch</span></div>
@@ -681,7 +929,7 @@
       </div>
 
       <!-- Why Donate + Impact Card -->
-      <div class="donate-card">
+      <div class="donate-card" data-aos="fade-up" data-aos-delay="150">
         <h3><i class="fas fa-heart" style="color:var(--pink);"></i> Why Donate?</h3>
         <ul class="why-list">
           <li><i class="fas fa-graduation-cap"></i> <div><strong>Education</strong> — 750+ children</div></li>
@@ -693,10 +941,10 @@
 
         <h3 style="margin-top:28px;font-size:20px;"><i class="fas fa-chart-line"></i> Your Impact</h3>
         <div class="impact-stats">
-          <div class="stat-item"><h4>50,000+</h4><p>Families Supported</p></div>
-          <div class="stat-item"><h4>26+</h4><p>Years of Service</p></div>
-          <div class="stat-item"><h4>80G</h4><p>Tax Exemption</p></div>
-          <div class="stat-item"><h4>CSR</h4><p>CSR-1 Registered</p></div>
+          <div class="stat-item"><span class="stat-icon">👨‍👩‍👧‍👦</span><h4>50,000+</h4><p>Families Supported</p></div>
+          <div class="stat-item"><span class="stat-icon">⭐</span><h4>26+</h4><p>Years of Service</p></div>
+          <div class="stat-item"><span class="stat-icon">📜</span><h4>80G</h4><p>Tax Exemption</p></div>
+          <div class="stat-item"><span class="stat-icon">🏢</span><h4>CSR</h4><p>CSR-1 Registered</p></div>
         </div>
 
         <div style="margin-top:22px;padding:18px 22px;background:linear-gradient(135deg,#075b9a,#063b67);border-radius:16px;text-align:center;color:white;">
@@ -720,7 +968,7 @@
 <div class="qr-lightbox" id="qrLightbox" onclick="closeQRLightbox(event)">
   <button class="close-lightbox" onclick="closeQRLightbox(event)"><i class="fas fa-times"></i></button>
   <img src="donate-qr.jpeg" alt="Donate QR Code - Enlarged">
-  <span class="lightbox-label">Scan to donate</span>
+  <span class="lightbox-label">❤️ Scan to donate</span>
 </div>
 
 <!-- FOOTER -->
@@ -753,7 +1001,20 @@
   </div>
 </footer>
 
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
   // Mobile Menu
   function toggleMobileMenu() {
     const navbar = document.querySelector(".navbar");
@@ -763,6 +1024,16 @@
     const isOpen = navbar.classList.contains("mobile-open");
     button.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
+
+  // Scroll to Top Button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
 
   // Copy to clipboard
   function copyText(text) {
@@ -797,6 +1068,5 @@
     }
   });
 </script>
-
 </body>
 </html>
