@@ -1,1 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Contact Wadmavli Lok Vikas Manch. Get in touch with us for partnerships, volunteering, donations, or any enquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6faf8;
+      color: #263746;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+    :root {
+      --blue: #075b9a;
+      --dark: #063b67;
+      --pink: #e85b88;
+      --light: #f6faf8;
+      --white: #ffffff;
+      --text: #263746;
+      --muted: #667985;
+    }
 
+    /* HEADER */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: var(--pink);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: var(--blue);
+    }
+    .nav-donate {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                  radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                  linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      top: -100px;
+      left: -80px;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(7,91,154,.07);
+      bottom: -160px;
+      right: -100px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
+    }
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .hero-content h1 {
+      color: var(--dark);
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .hero-content h1 span {
+      color: var(--pink);
+    }
+    .hero-content p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 25px rgba(7,91,154,.20);
+    }
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+    @media(max-width:768px) {
+      .hero { min-height: 300px; padding: 40px 20px; }
+      .hero-content h1 { font-size: 30px; }
+      .hero-content p { font-size: 14px; }
+    }
+
+    /* SECTION */
+    .section {
+      padding: 50px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .section-heading h2 {
+      color: var(--dark);
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .deco-line {
+      width: 50px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 16px;
+      border-radius: 10px;
+    }
+
+    /* QUICK CONTACT - Floating Icons */
+    .quick-contact {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    .quick-item {
+      background: white;
+      padding: 22px 16px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.06);
+      transition: .4s;
+      border-bottom: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .quick-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(7,91,154,.04), rgba(232,91,136,.04));
+      opacity: 0;
+      transition: .4s;
+    }
+    .quick-item:hover::before {
+      opacity: 1;
+    }
+    .quick-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(7,91,154,.12);
+    }
+    .quick-item .icon-wrap {
+      font-size: 32px;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: .4s;
+    }
+    .quick-item:hover .icon-wrap {
+      transform: scale(1.15) rotate(-5deg);
+    }
+    .quick-item h4 {
+      color: var(--dark);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+    .quick-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .quick-item a {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .quick-item a:hover {
+      color: var(--pink);
+    }
+    .quick-item .pink-border {
+      border-bottom-color: var(--pink);
+    }
+    .quick-item .blue-border {
+      border-bottom-color: var(--blue);
+    }
+    .quick-item .green-border {
+      border-bottom-color: #28a745;
+    }
+    .quick-item .orange-border {
+      border-bottom-color: #f39c12;
+    }
+    @media(max-width:768px) {
+      .quick-contact { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:480px) {
+      .quick-contact { grid-template-columns: 1fr; }
+    }
+
+    /* CONTACT GRID - 2 columns */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .contact-card {
+      background: white;
+      padding: 32px 28px;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+      transition: .3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(7,91,154,.10);
+    }
+    .contact-card h3 {
+      color: var(--dark);
+      font-size: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-card h3 i {
+      color: var(--pink);
+    }
+
+    /* Contact Details */
+    .detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf1f4;
+    }
+    .detail-row:last-child {
+      border-bottom: 0;
+    }
+    .detail-row .icon {
+      width: 36px;
+      height: 36px;
+      background: #f0f7ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 16px;
+      flex-shrink: 0;
+      transition: .3s;
+    }
+    .detail-row:hover .icon {
+      background: var(--pink);
+      color: white;
+      transform: rotate(-10deg) scale(1.05);
+    }
+    .detail-row .info {
+      flex: 1;
+    }
+    .detail-row .info strong {
+      display: block;
+      color: var(--dark);
+      font-size: 14px;
+    }
+    .detail-row .info p,
+    .detail-row .info a {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .detail-row .info a {
+      color: var(--blue);
+      transition: .3s;
+    }
+    .detail-row .info a:hover {
+      color: var(--pink);
+    }
+
+    /* Working Hours */
+    .hours-box {
+      background: #f8faff;
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      border-left: 4px solid var(--pink);
+    }
+    .hours-box .hour-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    .hours-box .hour-row .day {
+      color: var(--muted);
+    }
+    .hours-box .hour-row .time {
+      color: var(--dark);
+      font-weight: 600;
+    }
+    .hours-box .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #28a745;
+      color: white;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .hours-box .status.closed {
+      background: #dc3545;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+      animation: pulseDot 1.5s infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+
+    /* FORM */
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+    .form-group label .required {
+      color: var(--pink);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #e8edf0;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      transition: .3s;
+      background: #fafcfd;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(7,91,154,.08);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .contact-card .btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+    @media(max-width:768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* MAP */
+    .map-container {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
+      margin-top: 30px;
+      position: relative;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      display: block;
+    }
+    .map-overlay {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+      pointer-events: none;
+    }
+    .map-overlay i {
+      color: var(--pink);
+      animation: bouncePin 2s infinite;
+    }
+    @keyframes bouncePin {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* SOCIAL MEDIA */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 500px;
+      margin: 20px auto 0;
+    }
+    .social-item {
+      background: white;
+      padding: 18px 12px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+      transition: .4s;
+      border: 2px solid transparent;
+    }
+    .social-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 35px rgba(0,0,0,.10);
+    }
+    .social-item .icon {
+      font-size: 32px;
+      display: block;
+      transition: .3s;
+    }
+    .social-item:hover .icon {
+      transform: scale(1.15) rotate(-8deg);
+    }
+    .social-item span {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-top: 4px;
+    }
+    .social-item.instagram:hover { border-color: #E4405F; }
+    .social-item.facebook:hover { border-color: #1877F2; }
+    .social-item.twitter:hover { border-color: #000; }
+    .social-item.whatsapp:hover { border-color: #25D366; }
+    .social-item.instagram .icon { color: #E4405F; }
+    .social-item.facebook .icon { color: #1877F2; }
+    .social-item.twitter .icon { color: #000; }
+    .social-item.whatsapp .icon { color: #25D366; }
+    @media(max-width:600px) {
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #075b9a, #063b67);
+      color: white;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 22px;
+      color: #eef5ff;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .btn-white {
+      background: white;
+      color: var(--blue);
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: .3s;
+    }
+    .btn-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    }
+    @media(max-width:600px) {
+      .cta-section .btn-white { width: 100%; justify-content: center; }
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 50px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 6px; }
+    .footer-links a { color: #526b7a; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 18px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 40px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Floating animation for decorative elements */
+    .floating {
+      animation: floatY 6s ease-in-out infinite;
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="section-tag">GET IN TOUCH</span>
+    <h1>Contact <span>Us</span></h1>
+    <p>Have questions, partnership ideas, or want to volunteer? We'd love to hear from you. Reach out to us through any of the channels below.</p>
+    <a href="#contact-form" class="btn btn-primary"><i class="fas fa-envelope"></i> Send a Message</a>
+  </div>
+</section>
+
+<!-- QUICK CONTACT -->
+<section class="section" style="background:white;padding-top:30px;">
+  <div class="container">
+    <div class="quick-contact">
+      <div class="quick-item pink-border">
+        <div class="icon-wrap floating"><i class="fas fa-phone" style="color:var(--pink);"></i></div>
+        <h4>Call Us</h4>
+        <a href="tel:9011352549">9011352549</a><br>
+        <a href="tel:9011352544">9011352544</a>
+      </div>
+      <div class="quick-item blue-border">
+        <div class="icon-wrap floating" style="animation-delay:0.5s;"><i class="fas fa-envelope" style="color:var(--blue);"></i></div>
+        <h4>Email Us</h4>
+        <a href="mailto:wadmavlilokvikasmanch@gmail.com">wadmavlilokvikasmanch@gmail.com</a>
+      </div>
+      <div class="quick-item green-border">
+        <div class="icon-wrap floating" style="animation-delay:1s;"><i class="fab fa-whatsapp" style="color:#25D366;"></i></div>
+        <h4>WhatsApp</h4>
+        <a href="https://wa.me/919011352549" target="_blank">Chat with us</a>
+      </div>
+      <div class="quick-item orange-border">
+        <div class="icon-wrap floating" style="animation-delay:1.5s;"><i class="fas fa-map-marker-alt" style="color:#f39c12;"></i></div>
+        <h4>Visit Us</h4>
+        <p>Beed, Maharashtra</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS + FORM -->
+<section class="section" id="contact-form" style="background:#f6faf8;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">CONNECT WITH US</span>
+      <h2>Get In Touch</h2>
+      <div class="deco-line"></div>
+      <p>We're here to help. Reach out to us for any enquiries, partnerships, or support.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- LEFT: Contact Details -->
+      <div class="contact-card">
+        <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+
+        <div class="detail-row">
+          <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info">
+            <strong>Office Address</strong>
+            <p>Yash Niwas, Plot No. 25, Samrat Colony,<br>Palwan Chowk, Dhanora Road,<br>Beed, Maharashtra – 431122</p>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="icon"><i class="fas fa-home"></i></div>
+          <div class="info">
+            <strong>Registered Address</strong>
+            <p>At. Post Dahiphal (Wad), Tq. Kaij,<br>Dist. Beed, Maharashtra – 431123</p>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="icon"><i class="fas fa-phone"></i></div>
+          <div class="info">
+            <strong>Phone</strong>
+            <a href="tel:9011352549">9011352549</a> &bull; <a href="tel:9011352544">9011352544</a>
+          </div>
+        </div>
+
+        <div class="detail-row">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <div class="info">
+            <strong>Email</strong>
+            <a href="mailto:wadmavlilokvikasmanch@gmail.com">wadmavlilokvikasmanch@gmail.com</a><br>
+            <a href="mailto:wadmavlikaij.org@gmail.com">wadmavlikaij.org@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Working Hours -->
+        <div class="hours-box">
+          <div class="hour-row"><span class="day">Monday - Friday</span><span class="time">9:00 AM - 6:00 PM</span></div>
+          <div class="hour-row"><span class="day">Saturday</span><span class="time">9:00 AM - 4:00 PM</span></div>
+          <div class="hour-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+          <div class="status" id="statusBadge">
+            <span class="status-dot"></span>
+            <span id="statusText">Open Now</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="contact-card">
+        <h3><i class="fas fa-paper-plane"></i> Send a Message</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name <span class="required">*</span></label>
+              <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email <span class="required">*</span></label>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject <span class="required">*</span></label>
+            <input type="text" name="subject" placeholder="What's this about?" required>
+          </div>
+          <div class="form-group">
+            <label>Message <span class="required">*</span></label>
+            <textarea name="message" rows="4" placeholder="Tell us how we can help you..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+        <p style="text-align:center;margin-top:12px;font-size:12px;color:var(--muted);">
+          <i class="fas fa-lock" style="color:var(--pink);"></i> Your information is safe with us.
+        </p>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="map-container">
+      <div class="map-overlay">
+        <i class="fas fa-map-pin"></i> Find us in Beed
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235.813272897347!2d75.74050125402549!3d18.97506125327355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc52b1c2ae474a5%3A0x72ff7c20689dff36!2sWadmavli%20Lok%20Vikas%20Manch!5e0!3m2!1sen!2sin!4v1785516934677!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="section" style="background:white;padding:40px 0;">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">FOLLOW US</span>
+      <h2>Connect With Us Online</h2>
+      <div class="deco-line"></div>
+      <p>Stay updated with our latest news, events, and impact stories.</p>
+    </div>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/wadmavli_lok_vikas_manch/" target="_blank" class="social-item instagram">
+        <span class="icon"><i class="fab fa-instagram"></i></span>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/share/19E1mR717e/" target="_blank" class="social-item facebook">
+        <span class="icon"><i class="fab fa-facebook-f"></i></span>
+        <span>Facebook</span>
+      </a>
+      <a href="https://x.com/wadmavli_beed" target="_blank" class="social-item twitter">
+        <span class="icon"><i class="fab fa-x-twitter"></i></span>
+        <span>Twitter / X</span>
+      </a>
+      <a href="https://wa.me/919011352549" target="_blank" class="social-item whatsapp">
+        <span class="icon"><i class="fab fa-whatsapp"></i></span>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Let's Work Together</h2>
+    <p>Have a partnership idea, want to volunteer, or need more information? We're just a message away.</p>
+    <a href="#contact-form" class="btn-white"><i class="fas fa-envelope"></i> Send a Message</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Working Hours Status
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const time = hours + minutes / 60;
+    const badge = document.getElementById('statusBadge');
+    const text = document.getElementById('statusText');
+
+    let open = false;
+    if (day >= 1 && day <= 5) { // Mon-Fri
+      if (time >= 9 && time < 18) open = true;
+    } else if (day === 6) { // Sat
+      if (time >= 9 && time < 16) open = true;
+    }
+
+    if (open) {
+      badge.className = 'status';
+      text.textContent = 'Open Now';
+    } else {
+      badge.className = 'status closed';
+      text.textContent = 'Closed Now';
+    }
+  }
+  updateStatus();
+
+  // EmailJS
+  emailjs.init({ publicKey: "N8B-uOw-emAzOCu1f" });
+
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    emailjs.sendForm("service_4c85wrw", "template_qchpu2v", this)
+      .then(function() {
+        alert("✅ Thank you! Your message has been sent successfully. We'll get back to you soon.");
+        form.reset();
+        btn.innerHTML = original;
+        btn.disabled = false;
+      })
+      .catch(function() {
+        alert("❌ Something went wrong. Please try again or contact us directly.");
+        btn.innerHTML = original;
+        btn.disabled = false;
+      });
+  });
+</script>
+</body>
+</html>
