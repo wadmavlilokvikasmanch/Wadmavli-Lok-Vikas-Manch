@@ -1,807 +1,578 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Explore the photo gallery of Wadmavli Lok Vikas Manch showcasing our journey of empowering communities through education, women empowerment, water conservation, livelihood and humanitarian initiatives.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6faf8;
+      color: #263746;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+    :root {
+      --blue: #075b9a;
+      --dark: #063b67;
+      --pink: #e85b88;
+      --light: #f6faf8;
+      --white: #ffffff;
+      --text: #263746;
+      --muted: #667985;
+    }
+    /* header */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: var(--pink);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: var(--blue);
+    }
+    .nav-donate {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+    /* HERO */
+    .volunteer-hero {
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                  radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                  linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+    .volunteer-hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      top: -100px;
+      left: -80px;
+    }
+    .volunteer-hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(7,91,154,.07);
+      bottom: -160px;
+      right: -100px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .hero-content h1 {
+      color: var(--dark);
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 13px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 25px rgba(7,91,154,.20);
+    }
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(7,91,154,.25);
+    }
+    @media(max-width:768px) {
+      .volunteer-hero { min-height: 400px; padding: 60px 20px; }
+      .hero-content h1 { font-size: 34px; }
+      .hero-content p { font-size: 14px; margin-bottom: 26px; }
+    }
 
-<title>Gallery | Wadmavli Lok Vikas Manch</title>
+    /* GALLERY GRID */
+    .section {
+      padding: 70px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+    .section-heading h2 {
+      color: var(--dark);
+      font-size: 40px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,.08);
+      transition: .3s;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(7,91,154,.12);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: .5s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+    .gallery-caption {
+      padding: 16px 18px;
+      font-weight: 600;
+      color: var(--dark);
+      text-align: center;
+      background: white;
+      font-size: 15px;
+    }
+    .category-title {
+      color: var(--blue);
+      font-size: 26px;
+      margin: 50px 0 15px;
+      border-left: 5px solid var(--pink);
+      padding-left: 18px;
+      font-weight: 600;
+    }
+    .category-title:first-of-type {
+      margin-top: 0;
+    }
 
-<meta name="description" content="Explore the photo gallery of Wadmavli Lok Vikas Manch showcasing our journey of empowering communities through education, women empowerment, water conservation, livelihood and humanitarian initiatives.">
+    /* footer */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #063b67;
+    }
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+    .footer-brand p {
+      color: #e85b88;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .footer-links h4 {
+      color: #063b67;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .footer-links a {
+      color: #526b7a;
+      text-decoration: none;
+      font-size: 13px;
+      transition: .3s;
+    }
+    .footer-links a:hover {
+      color: #e85b88;
+      transform: translateX(3px);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding: 20px 10px;
+      text-align: center;
+    }
+    .footer-bottom p {
+      color: #667985;
+      font-size: 12px;
+    }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-
-<style>
-
-:root{
---blue:#075b9a;
---dark:#063b67;
---pink:#e85b88;
---light:#f7fbff;
---text:#243340;
---shadow:0 12px 35px rgba(0,0,0,.08);
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:var(--light);
-color:var(--text);
-overflow-x:hidden;
-}
-
-.container{
-width:min(1200px,92%);
-margin:auto;
-}
-
-a{
-text-decoration:none;
-}
-
-img{
-display:block;
-width:100%;
-}
-
-/* HEADER */
-
-header{
-position:sticky;
-top:0;
-z-index:999;
-background:#fff;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.navbar{
-height:80px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-width:58px;
-height:58px;
-border-radius:50%;
-}
-
-.logo h2{
-font-size:19px;
-color:var(--dark);
-}
-
-.logo span{
-font-size:11px;
-font-weight:700;
-letter-spacing:2px;
-color:var(--pink);
-}
-
-nav{
-display:flex;
-gap:30px;
-align-items:center;
-}
-
-nav a{
-font-weight:600;
-color:#3d4b57;
-transition:.3s;
-}
-
-nav a:hover,
-nav .active{
-color:var(--pink);
-}
-
-.donate-btn{
-background:var(--pink);
-padding:12px 22px;
-border-radius:30px;
-color:white;
-}
-
-.menu-btn{
-display:none;
-font-size:26px;
-background:none;
-border:none;
-cursor:pointer;
-}
-
-@media(max-width:768px){
-
-.menu-btn{
-display:block;
-}
-
-nav{
-display:none;
-position:absolute;
-top:80px;
-left:0;
-width:100%;
-background:white;
-flex-direction:column;
-padding:20px;
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-
-nav.active{
-display:flex;
-}
-
-}
-
-/* HERO */
-
-.hero{
-height:80vh;
-background:
-linear-gradient(rgba(7,91,154,.72),rgba(6,59,103,.82)),
-url("gallery-banner.jpg") center/cover;
-display:flex;
-align-items:center;
-color:white;
-}
-
-.hero-content{
-max-width:720px;
-}
-
-.hero-tag{
-display:inline-block;
-background:rgba(255,255,255,.18);
-padding:10px 18px;
-border-radius:30px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:64px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:19px;
-line-height:1.8;
-margin-bottom:35px;
-}
-
-.hero-buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 28px;
-border-radius:40px;
-font-weight:600;
-transition:.3s;
-}
-
-.btn-primary{
-background:var(--pink);
-color:white;
-}
-
-.btn-primary:hover{
-transform:translateY(-4px);
-}
-
-.btn-secondary{
-border:2px solid white;
-color:white;
-}
-
-.btn-secondary:hover{
-background:white;
-color:var(--blue);
-}
-
-@media(max-width:768px){
-
-.hero{
-height:70vh;
-text-align:center;
-}
-
-.hero h1{
-font-size:40px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-}
-
-/* SECTION TITLE */
-
-.section{
-padding:90px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-title span{
-color:var(--pink);
-font-weight:700;
-letter-spacing:2px;
-}
-
-.section-title h2{
-font-size:44px;
-margin:15px 0;
-color:var(--dark);
-}
-
-.section-title p{
-max-width:760px;
-margin:auto;
-line-height:1.8;
-color:#6c7a86;
-}
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-.gallery-item{
-border-radius:18px;
-overflow:hidden;
-box-shadow:var(--shadow);
-transition:.3s;
-cursor:pointer;
-background:white;
-}
-
-.gallery-item img{
-height:250px;
-object-fit:cover;
-transition:.5s;
-}
-
-.gallery-item:hover img{
-transform:scale(1.08);
-}
-
-.gallery-item:hover{
-transform:translateY(-6px);
-}
-
-.gallery-caption{
-padding:18px;
-text-align:center;
-font-weight:600;
-}
-
-</style>
+    /* lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    #lightbox img {
+      max-width: 95%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.5);
+    }
+    @media(max-width:768px) {
+      .section-heading h2 { font-size: 30px; }
+      .category-title { font-size: 22px; }
+      .gallery-item img { height: 190px; }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-
-<div class="container navbar">
-
-<div class="logo">
-
-<img src="logo.png" alt="WLVM">
-
-<div>
-
-<h2>Wadmavli Lok Vikas Manch</h2>
-
-<span>TOWARDS EMPOWERMENT</span>
-
-</div>
-
-</div>
-
-<button class="menu-btn" id="menuBtn">
-
-<i class="fa-solid fa-bars"></i>
-
-</button>
-
-<nav id="navMenu">
-
-<a href="index.html">Home</a>
-
-<a href="about.html">About</a>
-
-<a href="programs.html">Programs</a>
-
-<a href="gallery.html" class="active">Gallery</a>
-
-<a href="contact.html">Contact</a>
-
-<a href="donate.html" class="donate-btn">Donate</a>
-
-</nav>
-
-</div>
-
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
 </header>
 
-<section class="hero">
-
-<div class="container hero-content">
-
-<div class="hero-tag">
-📸 Capturing Our Journey
-</div>
-
-<h1>Every Picture Tells a Story</h1>
-
-<p>
-For over 26 years, Wadmavli Lok Vikas Manch has been transforming lives through education, women empowerment, sustainable livelihoods, environmental conservation and humanitarian service.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#gallery" class="btn btn-primary">
-Explore Gallery
-</a>
-
-<a href="index.html" class="btn btn-secondary">
-Back Home
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="gallery">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>OUR GALLERY</span>
-
-<h2>Moments of Change</h2>
-
-<p>
-Explore inspiring moments from our programs, community activities, and the positive impact created across villages over the past 26 years.
-</p>
-
-</div>
-<!-- =========================
-MISSION EDUCATION
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">📚 Mission Education</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="mission1.jpg" alt="Mission Education">
-<div class="gallery-caption">Mission Education</div>
-</div>
-
-<div class="gallery-item">
-<img src="mission2.jpg" alt="Mission Education">
-<div class="gallery-caption">Learning Together</div>
-</div>
-
-<div class="gallery-item">
-<img src="mission3.jpg" alt="Mission Education">
-<div class="gallery-caption">School Activities</div>
-</div>
-
-<div class="gallery-item">
-<img src="mission4.jpg" alt="Mission Education">
-<div class="gallery-caption">Student Support</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-WOMEN EMPOWERMENT
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">👩 Women Empowerment</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="women1.jpg" alt="">
-<div class="gallery-caption">Self Help Groups</div>
-</div>
-
-<div class="gallery-item">
-<img src="women2.jpg" alt="">
-<div class="gallery-caption">Women's Meetings</div>
-</div>
-
-<div class="gallery-item">
-<img src="women3.jpg" alt="">
-<div class="gallery-caption">Leadership Development</div>
-</div>
-
-<div class="gallery-item">
-<img src="women4.jpg" alt="">
-<div class="gallery-caption">Community Empowerment</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-SKILL DEVELOPMENT
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">💼 Skill Development</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="skill1.jpg" alt="">
-<div class="gallery-caption">Vocational Training</div>
-</div>
-
-<div class="gallery-item">
-<img src="skill2.jpg" alt="">
-<div class="gallery-caption">Healthcare Training</div>
-</div>
-
-<div class="gallery-item">
-<img src="skill3.jpg" alt="">
-<div class="gallery-caption">Driving School Project</div>
-</div>
-
-<div class="gallery-item">
-<img src="skill4.jpg" alt="">
-<div class="gallery-caption">Employment Support</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-WATER CONSERVATION
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">💧 Water Conservation</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="water1.jpg" alt="">
-<div class="gallery-caption">Watershed Development</div>
-</div>
-
-<div class="gallery-item">
-<img src="water2.jpg" alt="">
-<div class="gallery-caption">Safe Drinking Water</div>
-</div>
-
-<div class="gallery-item">
-<img src="water3.jpg" alt="">
-<div class="gallery-caption">Community Participation</div>
-</div>
-
-<div class="gallery-item">
-<img src="water4.jpg" alt="">
-<div class="gallery-caption">Water Structures</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-ORGANIC FARMING
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">🌱 Organic Farming</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="organic1.jpg" alt="">
-<div class="gallery-caption">Farmer Training</div>
-</div>
-
-<div class="gallery-item">
-<img src="organic2.jpg" alt="">
-<div class="gallery-caption">Organic Agriculture</div>
-</div>
-
-<div class="gallery-item">
-<img src="organic3.jpg" alt="">
-<div class="gallery-caption">Sustainable Farming</div>
-</div>
-
-<div class="gallery-item">
-<img src="organic4.jpg" alt="">
-<div class="gallery-caption">Field Demonstration</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-HEALTH & NUTRITION
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">🏥 Health & Nutrition</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="health1.jpg" alt="">
-<div class="gallery-caption">Health Awareness</div>
-</div>
-
-<div class="gallery-item">
-<img src="health2.jpg" alt="">
-<div class="gallery-caption">Nutrition Program</div>
-</div>
-
-<div class="gallery-item">
-<img src="health3.jpg" alt="">
-<div class="gallery-caption">Medical Camp</div>
-</div>
-
-<div class="gallery-item">
-<img src="health4.jpg" alt="">
-<div class="gallery-caption">Community Health</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-DISASTER RELIEF
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">🤝 Disaster Relief</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="relief1.jpg" alt="">
-<div class="gallery-caption">Relief Distribution</div>
-</div>
-
-<div class="gallery-item">
-<img src="relief2.jpg" alt="">
-<div class="gallery-caption">COVID-19 Support</div>
-</div>
-
-<div class="gallery-item">
-<img src="relief3.jpg" alt="">
-<div class="gallery-caption">Emergency Response</div>
-</div>
-
-<div class="gallery-item">
-<img src="relief4.jpg" alt="">
-<div class="gallery-caption">Helping Families</div>
-</div>
-
-</div>
-
-<br><br><br>
-
-<!-- =========================
-COMMUNITY DEVELOPMENT
-========================= -->
-
-<h2 style="margin-bottom:25px;color:#075b9a;">🏡 Community Development</h2>
-
-<div class="gallery-grid">
-
-<div class="gallery-item">
-<img src="community1.jpg" alt="">
-<div class="gallery-caption">Village Development</div>
-</div>
-
-<div class="gallery-item">
-<img src="community2.jpg" alt="">
-<div class="gallery-caption">Community Meetings</div>
-</div>
-
-<div class="gallery-item">
-<img src="community3.jpg" alt="">
-<div class="gallery-caption">Awareness Campaign</div>
-</div>
-
-<div class="gallery-item">
-<img src="community4.jpg" alt="">
-<div class="gallery-caption">Together We Grow</div>
-</div>
-
-</div>
-<!-- =========================
-FOOTER
-========================= -->
-
-</div>
-</section>
-
-<footer style="background:#063b67;color:white;padding:70px 0 30px;">
-
-<div class="container">
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;">
-
-<div>
-
-<h2 style="margin-bottom:18px;">Wadmavli Lok Vikas Manch</h2>
-
-<p style="line-height:1.8;color:#d7e6f2;">
-
-Working since 2000 to empower rural communities through
-education, women empowerment, livelihood promotion,
-water conservation, climate action and humanitarian services.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 style="margin-bottom:20px;">Quick Links</h3>
-
-<p><a href="index.html" style="color:white;">Home</a></p>
-<p><a href="about.html" style="color:white;">About</a></p>
-<p><a href="programs.html" style="color:white;">Programs</a></p>
-<p><a href="gallery.html" style="color:white;">Gallery</a></p>
-<p><a href="contact.html" style="color:white;">Contact</a></p>
-
-</div>
-
-<div>
-
-<h3 style="margin-bottom:20px;">Contact</h3>
-
-<p><i class="fa-solid fa-location-dot"></i> Beed, Maharashtra</p>
-
-<p style="margin-top:10px;">
-<i class="fa-solid fa-envelope"></i>
-info@wadmavlibeed.org
-</p>
-
-<p style="margin-top:10px;">
-<i class="fa-solid fa-phone"></i>
-+91 XXXXXXXXXX
-</p>
-
-</div>
-
-</div>
-
-<hr style="
-margin:45px 0;
-border:none;
-height:1px;
-background:rgba(255,255,255,.15);
-">
-
-<p style="text-align:center;color:#d7e6f2;">
-
-© 2026 Wadmavli Lok Vikas Manch.
-All Rights Reserved.
-
-</p>
-
-</div>
-
+<main>
+  <section class="volunteer-hero">
+    <div class="hero-content">
+      <span class="section-tag">📸 OUR JOURNEY</span>
+      <h1>Gallery</h1>
+      <p>For over 26 years, Wadmavli Lok Vikas Manch has been transforming lives through education, women empowerment, sustainable livelihoods, environmental conservation and humanitarian service. Explore inspiring moments from our programs and community activities.</p>
+      <a href="#gallery-start" class="btn btn-primary">Explore Gallery</a>
+    </div>
+  </section>
+
+  <section class="section" id="gallery-start">
+    <div class="container">
+      <div class="section-heading">
+        <span class="section-tag">MOMENTS OF CHANGE</span>
+        <h2>Our Work in Pictures</h2>
+        <p>From mission education to watershed development – every image reflects our commitment towards empowerment.</p>
+      </div>
+
+      <!-- Mission Education -->
+      <h3 class="category-title">📚 Mission Education</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="mission1.jpg" alt="Mission Education"><div class="gallery-caption">Mission Education</div></div>
+        <div class="gallery-item"><img src="mission2.jpg" alt="Learning Together"><div class="gallery-caption">Learning Together</div></div>
+        <div class="gallery-item"><img src="mission3.jpg" alt="School Activities"><div class="gallery-caption">School Activities</div></div>
+        <div class="gallery-item"><img src="mission4.jpg" alt="Student Support"><div class="gallery-caption">Student Support</div></div>
+      </div>
+
+      <!-- Women Empowerment -->
+      <h3 class="category-title">👩 Women Empowerment</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="women1.jpg" alt="Self Help Groups"><div class="gallery-caption">Self Help Groups</div></div>
+        <div class="gallery-item"><img src="women2.jpg" alt="Women's Meetings"><div class="gallery-caption">Women's Meetings</div></div>
+        <div class="gallery-item"><img src="women3.jpg" alt="Leadership Development"><div class="gallery-caption">Leadership Development</div></div>
+        <div class="gallery-item"><img src="women4.jpg" alt="Community Empowerment"><div class="gallery-caption">Community Empowerment</div></div>
+      </div>
+
+      <!-- Skill Development -->
+      <h3 class="category-title">💼 Skill Development</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="skill1.jpg" alt="Vocational Training"><div class="gallery-caption">Vocational Training</div></div>
+        <div class="gallery-item"><img src="skill2.jpg" alt="Healthcare Training"><div class="gallery-caption">Healthcare Training</div></div>
+        <div class="gallery-item"><img src="skill3.jpg" alt="Driving School"><div class="gallery-caption">Driving School</div></div>
+        <div class="gallery-item"><img src="skill4.jpg" alt="Employment Support"><div class="gallery-caption">Employment Support</div></div>
+      </div>
+
+      <!-- Water Conservation -->
+      <h3 class="category-title">💧 Water Conservation</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="water1.jpg" alt="Watershed Development"><div class="gallery-caption">Watershed Development</div></div>
+        <div class="gallery-item"><img src="water2.jpg" alt="Safe Drinking Water"><div class="gallery-caption">Safe Drinking Water</div></div>
+        <div class="gallery-item"><img src="water3.jpg" alt="Community Participation"><div class="gallery-caption">Community Participation</div></div>
+        <div class="gallery-item"><img src="water4.jpg" alt="Water Structures"><div class="gallery-caption">Water Structures</div></div>
+      </div>
+
+      <!-- Organic Farming -->
+      <h3 class="category-title">🌱 Organic Farming</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="organic1.jpg" alt="Farmer Training"><div class="gallery-caption">Farmer Training</div></div>
+        <div class="gallery-item"><img src="organic2.jpg" alt="Organic Agriculture"><div class="gallery-caption">Organic Agriculture</div></div>
+        <div class="gallery-item"><img src="organic3.jpg" alt="Sustainable Farming"><div class="gallery-caption">Sustainable Farming</div></div>
+        <div class="gallery-item"><img src="organic4.jpg" alt="Field Demonstration"><div class="gallery-caption">Field Demonstration</div></div>
+      </div>
+
+      <!-- Health & Nutrition -->
+      <h3 class="category-title">🏥 Health & Nutrition</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="health1.jpg" alt="Health Awareness"><div class="gallery-caption">Health Awareness</div></div>
+        <div class="gallery-item"><img src="health2.jpg" alt="Nutrition Program"><div class="gallery-caption">Nutrition Program</div></div>
+        <div class="gallery-item"><img src="health3.jpg" alt="Medical Camp"><div class="gallery-caption">Medical Camp</div></div>
+        <div class="gallery-item"><img src="health4.jpg" alt="Community Health"><div class="gallery-caption">Community Health</div></div>
+      </div>
+
+      <!-- Disaster Relief -->
+      <h3 class="category-title">🤝 Disaster Relief</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="relief1.jpg" alt="Relief Distribution"><div class="gallery-caption">Relief Distribution</div></div>
+        <div class="gallery-item"><img src="relief2.jpg" alt="COVID-19 Support"><div class="gallery-caption">COVID-19 Support</div></div>
+        <div class="gallery-item"><img src="relief3.jpg" alt="Emergency Response"><div class="gallery-caption">Emergency Response</div></div>
+        <div class="gallery-item"><img src="relief4.jpg" alt="Helping Families"><div class="gallery-caption">Helping Families</div></div>
+      </div>
+
+      <!-- Community Development -->
+      <h3 class="category-title">🏡 Community Development</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="community1.jpg" alt="Village Development"><div class="gallery-caption">Village Development</div></div>
+        <div class="gallery-item"><img src="community2.jpg" alt="Community Meetings"><div class="gallery-caption">Community Meetings</div></div>
+        <div class="gallery-item"><img src="community3.jpg" alt="Awareness Campaign"><div class="gallery-caption">Awareness Campaign</div></div>
+        <div class="gallery-item"><img src="community4.jpg" alt="Together We Grow"><div class="gallery-caption">Together We Grow</div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
 </footer>
 
-<!-- =========================
-LIGHTBOX
-========================= -->
-
-<div id="lightbox"
-style="
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-z-index:9999;
-padding:20px;">
-
-<img id="lightbox-img"
-style="
-max-width:95%;
-max-height:90%;
-border-radius:10px;">
-
+<!-- Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="Enlarged view">
 </div>
 
 <script>
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
 
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.getElementById("navMenu");
+  // Lightbox
+  const items = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-menuBtn.onclick=function(){
+  items.forEach(item => {
+    const img = item.querySelector("img");
+    if (img) {
+      img.addEventListener("click", function(e) {
+        e.stopPropagation();
+        lightbox.style.display = "flex";
+        lightboxImg.src = this.src;
+      });
+    }
+  });
 
-nav.classList.toggle("active");
-
-if(nav.classList.contains("active")){
-
-menuBtn.innerHTML='<i class="fa-solid fa-xmark"></i>';
-
-}else{
-
-menuBtn.innerHTML='<i class="fa-solid fa-bars"></i>';
-
-}
-
-}
-
-// Lightbox
-
-const images=document.querySelectorAll(".gallery-item img");
-
-const lightbox=document.getElementById("lightbox");
-
-const lightboxImg=document.getElementById("lightbox-img");
-
-images.forEach(img=>{
-
-img.onclick=function(){
-
-lightbox.style.display="flex";
-
-lightboxImg.src=this.src;
-
-}
-
-})
-
-lightbox.onclick=function(){
-
-lightbox.style.display="none";
-
-}
-
+  lightbox.addEventListener("click", function() {
+    this.style.display = "none";
+  });
 </script>
-
 </body>
 </html>
