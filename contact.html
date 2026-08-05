@@ -1147,16 +1147,23 @@
 emailjs.init({ publicKey: "N8B-uOw-emAzOCu1f" });
 
 const form = document.getElementById("contactForm");
+const successDiv = document.getElementById('formSuccess');
+const errorDiv = document.getElementById('formError');
+
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     
-    // 🟢 NEW: Check if reCAPTCHA is completed
+    // Hide any previous messages
+    successDiv.style.display = 'none';
+    errorDiv.style.display = 'none';
+    
+    // reCAPTCHA check
     const recaptchaResponse = document.querySelector('.g-recaptcha-response');
     if (!recaptchaResponse || recaptchaResponse.value === '') {
-        alert('Please complete the reCAPTCHA verification to prove you are human.');
+        errorDiv.style.display = 'block';
+        document.getElementById('errorMessage').textContent = 'Please complete the reCAPTCHA verification.';
         return;
     }
-    // 🟢 END OF NEW CODE
     
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
@@ -1165,25 +1172,37 @@ form.addEventListener("submit", function(e) {
 
     emailjs.sendForm("service_4c85wrw", "template_qchpu2v", this)
         .then(function() {
-            alert("✅ Thank you! Your message has been sent successfully. We'll get back to you soon.");
+            // Show success message
+            successDiv.style.display = 'block';
+            document.getElementById('successMessage').textContent = '✅ Your message has been sent successfully! We\'ll get back to you soon.';
+            
             form.reset();
-            // 🟢 NEW: Reset reCAPTCHA
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.reset();
             }
-            // 🟢 END OF NEW CODE
             btn.innerHTML = original;
             btn.disabled = false;
+            
+            // Auto-hide success after 5 seconds
+            setTimeout(function() {
+                successDiv.style.display = 'none';
+            }, 5000);
         })
         .catch(function() {
-            alert("❌ Something went wrong. Please try again or contact us directly.");
+            // Show error message
+            errorDiv.style.display = 'block';
+            document.getElementById('errorMessage').textContent = '❌ Something went wrong. Please try again or contact us directly.';
+            
             btn.innerHTML = original;
             btn.disabled = false;
-            // 🟢 NEW: Reset reCAPTCHA on error
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.reset();
             }
-            // 🟢 END OF NEW CODE
+            
+            // Auto-hide error after 5 seconds
+            setTimeout(function() {
+                errorDiv.style.display = 'none';
+            }, 5000);
         });
 });
 </script>
