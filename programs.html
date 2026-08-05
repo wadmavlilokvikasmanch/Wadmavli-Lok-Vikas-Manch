@@ -1,1 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Explore the programs of Wadmavli Lok Vikas Manch - Education, Women Empowerment, Skill Development, Organic Farming, Water Conservation, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f6faf8;
+      color: #263746;
+      overflow-x: hidden;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+    :root {
+      --blue: #075b9a;
+      --dark: #063b67;
+      --pink: #e85b88;
+      --light: #f6faf8;
+      --white: #ffffff;
+      --text: #263746;
+      --muted: #667985;
+    }
 
+    /* HEADER */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: var(--pink);
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: var(--dark);
+      font-size: 14px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: var(--blue);
+    }
+    .nav-donate {
+      background: var(--blue);
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--dark);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                  radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                  linear-gradient(135deg,#eef8ff,#ffffff);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      top: -100px;
+      left: -80px;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(7,91,154,.07);
+      bottom: -160px;
+      right: -100px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
+    }
+    .hero .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.15);
+      animation: floatParticle 15s infinite linear;
+    }
+    .hero .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .hero .particle:nth-child(2) { left: 25%; top: 70%; animation-delay: 2s; width: 10px; height: 10px; }
+    .hero .particle:nth-child(3) { left: 70%; top: 15%; animation-delay: 4s; }
+    .hero .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; width: 8px; height: 8px; }
+    .hero .particle:nth-child(5) { left: 50%; top: 85%; animation-delay: 3s; }
+    @keyframes floatParticle {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-60px) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+    }
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: auto;
+    }
+    .section-tag {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      animation: fadeInDown 0.8s ease;
+    }
+    .hero-content h1 {
+      color: var(--dark);
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .hero-content h1 span {
+      color: var(--pink);
+      position: relative;
+    }
+    .hero-content h1 span::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--pink);
+      border-radius: 2px;
+      animation: underlineGrow 1s ease 0.5s both;
+    }
+    @keyframes underlineGrow {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .hero-content p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 25px rgba(7,91,154,.20);
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(7,91,154,.30);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media(max-width:768px) {
+      .hero { min-height: 300px; padding: 40px 20px; }
+      .hero-content h1 { font-size: 30px; }
+      .hero-content p { font-size: 14px; }
+    }
+
+    /* SECTION */
+    .section {
+      padding: 50px 0;
+    }
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .section-heading h2 {
+      color: var(--dark);
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .deco-line {
+      width: 50px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 16px;
+      border-radius: 10px;
+      animation: pulseWidth 2s infinite;
+    }
+    @keyframes pulseWidth {
+      0%, 100% { width: 50px; }
+      50% { width: 80px; }
+    }
+
+    /* PROGRAM GRID */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .program-card {
+      background: white;
+      border-radius: 22px;
+      padding: 30px 24px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.07);
+      transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+      border-bottom: 4px solid transparent;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: cardFadeIn 0.6s ease forwards;
+    }
+    .program-card:nth-child(1) { animation-delay: 0.05s; }
+    .program-card:nth-child(2) { animation-delay: 0.10s; }
+    .program-card:nth-child(3) { animation-delay: 0.15s; }
+    .program-card:nth-child(4) { animation-delay: 0.20s; }
+    .program-card:nth-child(5) { animation-delay: 0.25s; }
+    .program-card:nth-child(6) { animation-delay: 0.30s; }
+    .program-card:nth-child(7) { animation-delay: 0.35s; }
+    .program-card:nth-child(8) { animation-delay: 0.40s; }
+    .program-card:nth-child(9) { animation-delay: 0.45s; }
+
+    @keyframes cardFadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .program-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+      opacity: 0;
+      transition: .5s;
+    }
+    .program-card:hover::before {
+      opacity: 1;
+    }
+    .program-card::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(232,91,136,.06), transparent 60%);
+      opacity: 0;
+      transition: .6s;
+      transform: scale(0);
+    }
+    .program-card:hover::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .program-card:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 25px 60px rgba(7,91,154,.15);
+      border-bottom-color: var(--pink);
+    }
+    .program-card .icon-wrap {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 14px;
+      transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      z-index: 1;
+    }
+    .program-card:hover .icon-wrap {
+      transform: scale(1.1) rotate(-8deg) translateY(-4px);
+    }
+    .program-card .icon-wrap.pink-bg { background: #fff0f5; }
+    .program-card .icon-wrap.blue-bg { background: #f0f7ff; }
+    .program-card .icon-wrap.green-bg { background: #edf8f1; }
+    .program-card .icon-wrap.orange-bg { background: #fff5e6; }
+    .program-card .icon-wrap.purple-bg { background: #f3f0ff; }
+    .program-card .icon-wrap.teal-bg { background: #e6f7f5; }
+
+    .program-card h3 {
+      color: var(--dark);
+      font-size: 20px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+      transition: .3s;
+    }
+    .program-card:hover h3 {
+      color: var(--blue);
+    }
+    .program-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .program-card .learn-more {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: .4s;
+      position: relative;
+      z-index: 1;
+    }
+    .program-card:hover .learn-more {
+      color: var(--pink);
+      gap: 14px;
+    }
+    .program-card .learn-more i {
+      transition: .4s;
+    }
+    .program-card:hover .learn-more i {
+      transform: translateX(6px) scale(1.2);
+    }
+    .program-card .card-number {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(7,91,154,.04);
+      transition: .4s;
+      line-height: 1;
+    }
+    .program-card:hover .card-number {
+      color: rgba(232,91,136,.08);
+      transform: scale(1.1) rotate(-5deg);
+    }
+    @media(max-width:992px) {
+      .program-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:600px) {
+      .program-grid { grid-template-columns: 1fr; }
+    }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .stat-item {
+      background: white;
+      padding: 20px 14px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.05);
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+      border-bottom: 3px solid var(--pink);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-item::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: .4s;
+    }
+    .stat-item:hover::before {
+      transform: scaleX(1);
+    }
+    .stat-item:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 16px 40px rgba(7,91,154,.12);
+    }
+    .stat-item h4 {
+      color: var(--blue);
+      font-size: 28px;
+      font-weight: 700;
+      transition: .3s;
+    }
+    .stat-item:hover h4 {
+      color: var(--pink);
+      transform: scale(1.05);
+    }
+    .stat-item p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .stat-item .stat-icon {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+      opacity: 0.6;
+      transition: .3s;
+    }
+    .stat-item:hover .stat-icon {
+      opacity: 1;
+      transform: scale(1.1) rotate(-5deg);
+    }
+    @media(max-width:768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width:480px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-item { padding: 14px 10px; }
+      .stat-item h4 { font-size: 22px; }
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #075b9a, #063b67);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+      top: -150px;
+      right: -100px;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+    .cta-section::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.08);
+      bottom: -100px;
+      left: -50px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
+    }
+    .cta-section h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section p {
+      max-width: 600px;
+      margin: 0 auto 22px;
+      color: #eef5ff;
+      font-size: 15px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-white {
+      background: white;
+      color: var(--blue);
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: .4s;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-white:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      color: var(--pink);
+    }
+    @media(max-width:600px) {
+      .cta-section .btn-white { width: 100%; justify-content: center; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #062f50;
+      color: white;
+      text-align: center;
+      padding: 38px 20px 25px;
+    }
+    footer h2 {
+      font-size: 21px;
+    }
+    .footer-tagline {
+      color: #ffabc4;
+      font-weight: bold;
+      margin: 4px 0 12px;
+    }
+    footer p {
+      color: #b9cedc;
+      font-size: 12px;
+    }
+
+    /* Floating animation */
+    .floating {
+      animation: floatY 6s ease-in-out infinite;
+    }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(232,91,136,.35);
+      transition: .4s;
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--blue);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(7,91,154,.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="hero-content">
+    <span class="section-tag">OUR PROGRAMS</span>
+    <h1>Programs That Create <span>Opportunity</span></h1>
+    <p>Our initiatives focus on practical support, skills, livelihoods and stronger communities. Click on any program to learn more.</p>
+    <a href="#programs" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Programs</a>
+  </div>
+</section>
+
+<!-- PROGRAM GRID -->
+<section class="section" id="programs" style="background:white;">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <span class="section-tag">WHAT WE DO</span>
+      <h2>Our Programs</h2>
+      <div class="deco-line"></div>
+      <p>Each program is designed to create lasting impact in the communities we serve.</p>
+    </div>
+
+    <div class="program-grid">
+      <!-- Program 1: Mission Education -->
+      <a href="program-education.html" class="program-card" data-aos="fade-up" data-aos-delay="50">
+        <span class="card-number">01</span>
+        <div class="icon-wrap pink-bg">📚</div>
+        <h3>Mission Education</h3>
+        <p>Supporting children's education for children aged 6–13 years in Kalepadal, Hadapsar, Pune.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 2: Motor Driving School -->
+      <a href="program-driving.html" class="program-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="card-number">02</span>
+        <div class="icon-wrap blue-bg">🚗</div>
+        <h3>Motor Driving School</h3>
+        <p>Driving training and licence support for people aged 18 years and above.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 3: Skill Development -->
+      <a href="program-skill.html" class="program-card" data-aos="fade-up" data-aos-delay="150">
+        <span class="card-number">03</span>
+        <div class="icon-wrap green-bg">💼</div>
+        <h3>Skill Development</h3>
+        <p>Livelihood-oriented training to strengthen employment and self-employment opportunities.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 4: Women SHGs -->
+      <a href="program-women.html" class="program-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="card-number">04</span>
+        <div class="icon-wrap orange-bg">👩</div>
+        <h3>Women SHGs</h3>
+        <p>Supporting women through Self Help Groups, bank linkage, self-employment and livelihoods.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 5: Organic Farming -->
+      <a href="program-organic.html" class="program-card" data-aos="fade-up" data-aos-delay="250">
+        <span class="card-number">05</span>
+        <div class="icon-wrap green-bg">🌾</div>
+        <h3>Organic Farming</h3>
+        <p>Supporting farmers through organic farming, scheme awareness and manure-making demonstrations.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 6: Clean Drinking Water -->
+      <a href="program-water.html" class="program-card" data-aos="fade-up" data-aos-delay="300">
+        <span class="card-number">06</span>
+        <div class="icon-wrap blue-bg">💧</div>
+        <h3>Clean Drinking Water</h3>
+        <p>Working to improve access to clean drinking water for households in villages of Beed district.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 7: Tree Plantation -->
+      <a href="program-tree.html" class="program-card" data-aos="fade-up" data-aos-delay="350">
+        <span class="card-number">07</span>
+        <div class="icon-wrap green-bg">🌳</div>
+        <h3>Tree Plantation</h3>
+        <p>Promoting tree plantation and environmental awareness as part of climate action.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 8: Watershed Development -->
+      <a href="program-watershed.html" class="program-card" data-aos="fade-up" data-aos-delay="400">
+        <span class="card-number">08</span>
+        <div class="icon-wrap teal-bg">🏞️</div>
+        <h3>Watershed Development</h3>
+        <p>Farm ponds, bunding, loose boulders, soil conservation and tree plantation activities.</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Program 9: Disaster Relief -->
+      <a href="program-disaster.html" class="program-card" data-aos="fade-up" data-aos-delay="450">
+        <span class="card-number">09</span>
+        <div class="icon-wrap orange-bg">🚑</div>
+        <h3>Disaster Relief</h3>
+        <p>Undertaken major disaster relief initiatives during the 2015–16 drought and the COVID-19 pandemic (2020–2022).</p>
+        <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="section" style="background:#f6faf8;">
+  <div class="container">
+    <div class="section-heading" data-aos="fade-up">
+      <span class="section-tag">OUR IMPACT</span>
+      <h2>Program Reach</h2>
+      <div class="deco-line"></div>
+      <p>The people and communities reached through our ongoing initiatives.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="50">
+        <span class="stat-icon">🎓</span>
+        <h4>750+</h4>
+        <p>Mission Education Beneficiaries</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+        <span class="stat-icon">👩</span>
+        <h4>3,250+</h4>
+        <p>SHG Members</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="150">
+        <span class="stat-icon">🌾</span>
+        <h4>350+</h4>
+        <p>Organic Farmers</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+        <span class="stat-icon">🚗</span>
+        <h4>60+</h4>
+        <p>Driving School Students</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="250">
+        <span class="stat-icon">❤️</span>
+        <h4>17,000+</h4>
+        <p>Disaster Relief Beneficiaries</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+        <span class="stat-icon">🏡</span>
+        <h4>10+</h4>
+        <p>Villages - Organic Farming</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="350">
+        <span class="stat-icon">💧</span>
+        <h4>7+</h4>
+        <p>Villages - Watershed</p>
+      </div>
+      <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+        <span class="stat-icon">💼</span>
+        <h4>3,700+</h4>
+        <p>STEP Program Students</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 data-aos="fade-up">Want to Support Our Programs?</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Your contribution helps us continue and expand these initiatives. Join us in making a difference.</p>
+    <a href="donate.html" class="btn-white" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-heart"></i> Support Our Work</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <h2>Wadmavli Lok Vikas Manch</h2>
+    <div class="footer-tagline">Towards Empowerment</div>
+    <p>Established 19 June 2000</p>
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Scroll to Top Button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>
