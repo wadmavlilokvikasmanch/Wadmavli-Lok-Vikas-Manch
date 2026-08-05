@@ -3,1250 +3,1100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Volunteer With Us | Wadmavli Lok Vikas Manch</title>
-
-    <meta name="description"
-          content="Volunteer with Wadmavli Lok Vikas Manch and contribute your time, skills and support towards meaningful community development.">
-
+    <meta name="description" content="Volunteer with Wadmavli Lok Vikas Manch and contribute your time, skills and support towards meaningful community development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
-
-        :root{
-            --blue:#075b9a;
-            --dark:#063b67;
-            --pink:#e85b88;
-            --light:#f6faf8;
-            --white:#ffffff;
-            --text:#263746;
-            --muted:#667985;
+        :root {
+            --blue: #075b9a;
+            --dark: #063b67;
+            --pink: #e85b88;
+            --light: #f6faf8;
+            --white: #ffffff;
+            --text: #263746;
+            --muted: #667985;
         }
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        html{
-            scroll-behavior:smooth;
+        html {
+            scroll-behavior: smooth;
         }
 
-        body{
-            font-family:'Poppins',Arial,sans-serif;
-            background:var(--light);
-            color:var(--text);
-            overflow-x:hidden;
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
         }
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
 
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-/* =========================
-   HEADER
-   ========================= */
-
-header{
-    background:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 4px 20px rgba(0,0,0,.06);
-}
-
-.navbar{
-    min-height:82px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
-}
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-image{
-    width:58px;
-    height:58px;
-    object-fit:contain;
-}
-
-.logo-text h2{
-    font-size:18px;
-    color:var(--dark);
-    line-height:1.2;
-}
-
-.logo-text span{
-    display:block;
-    color:var(--pink);
-    font-size:9px;
-    letter-spacing:2px;
-    font-weight:600;
-    margin-top:4px;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:22px;
-}
-
-nav a{
-    color:var(--dark);
-    text-decoration:none;
-    font-size:14px;
-    font-weight:500;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:var(--blue);
-}
-
-.nav-donate{
-    background:var(--blue);
-    color:white !important;
-    padding:10px 18px;
-    border-radius:25px;
-}
-
-
-/* =========================
-   MOBILE MENU BUTTON
-   ========================= */
-
-.mobile-menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    color:var(--dark);
-    font-size:24px;
-    cursor:pointer;
-    padding:8px;
-}
-
-
-/* =========================
-   MOBILE NAVIGATION
-   ========================= */
-
-@media(max-width:950px){
-
-    nav{
-        display:none;
-    }
-
-    .mobile-menu-btn{
-        display:flex;
-        flex-shrink:0;
-    }
-
-    .navbar{
-        position:relative;
-    }
-
-    .navbar.mobile-open nav{
-        display:flex;
-        position:absolute;
-        top:100%;
-        right:0;
-        width:220px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        background:white;
-        padding:10px 0;
-        border-radius:0 0 16px 16px;
-        box-shadow:0 12px 30px rgba(0,0,0,.15);
-        z-index:2000;
-    }
-
-    .navbar.mobile-open nav a{
-        display:block;
-        width:100%;
-        padding:13px 20px;
-        text-align:left;
-        box-sizing:border-box;
-    }
-
-    .navbar.mobile-open nav a:hover{
-        background:#f1f7fb;
-    }
-
-    .navbar.mobile-open .nav-donate{
-        margin:8px 12px;
-        width:auto;
-        text-align:center;
-    }
-
-}
-      /* =========================
-   VOLUNTEER HERO
-   ========================= */
-
-.volunteer-hero{
-    min-height:520px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:90px 20px;
-    position:relative;
-    overflow:hidden;
-
-    background:
-        radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
-        radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
-        linear-gradient(135deg,#eef8ff,#ffffff);
-}
-
-.volunteer-hero::before{
-    content:"";
-    position:absolute;
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    background:rgba(232,91,136,.08);
-    top:-100px;
-    left:-80px;
-}
-
-.volunteer-hero::after{
-    content:"";
-    position:absolute;
-    width:340px;
-    height:340px;
-    border-radius:50%;
-    background:rgba(7,91,154,.07);
-    bottom:-160px;
-    right:-100px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:780px;
-    margin:auto;
-}
-
-.section-tag{
-    display:inline-block;
-    color:var(--pink);
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:2px;
-    margin-bottom:14px;
-}
-
-.hero-content h1{
-    color:var(--dark);
-    font-size:52px;
-    line-height:1.15;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    max-width:680px;
-    margin:0 auto 32px;
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.8;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    border-radius:30px;
-    padding:13px 28px;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:var(--blue);
-    color:white;
-    padding:14px 30px;
-    border-radius:30px;
-    box-shadow:0 10px 25px rgba(7,91,154,.20);
-}
-
-.btn-primary:hover{
-    background:var(--dark);
-    transform:translateY(-3px);
-    box-shadow:0 14px 30px rgba(7,91,154,.25);
-}
-.btn-primary:hover{
-    background:var(--dark);
-    transform:translateY(-2px);
-}
-        @media(max-width:768px){
-
-    .volunteer-hero{
-        min-height:500px;
-        padding:70px 20px;
-    }
-
-    .hero-content h1{
-        font-size:34px;
-        line-height:1.25;
-    }
-
-    .hero-content p{
-        font-size:14px;
-        line-height:1.8;
-        margin-bottom:26px;
-    }
-
-    .hero-content .btn{
-        width:100%;
-        max-width:300px;
-    }
-
-}
-     /* =========================
-   WHY VOLUNTEER
-   ========================= */
-
-.why-volunteer{
-    padding:100px 20px;
-    background:#ffffff;
-}
-
-.why-volunteer .section-heading{
-    max-width:750px;
-    margin:0 auto;
-    text-align:center;
-}
-
-.section-heading h2{
-    color:var(--dark);
-    font-size:40px;
-    line-height:1.25;
-    margin-bottom:15px;
-}
-
-.section-heading p{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.8;
-}
-
-.volunteer-benefits{
-    width:90%;
-    max-width:1100px;
-    margin:55px auto 0;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.benefit-card{
-    background:#ffffff;
-    padding:35px 28px;
-    border-radius:25px;
-    text-align:center;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    border-top:4px solid var(--blue);
-
-    transition:.3s;
-}
-
-.benefit-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 20px 45px rgba(7,91,154,.13);
-}
-
-.benefit-icon{
-    width:70px;
-    height:70px;
-
-    margin:0 auto 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#eef8ff;
-
-    font-size:32px;
-}
-
-.benefit-card h3{
-    color:var(--dark);
-    font-size:20px;
-    margin-bottom:12px;
-}
-
-.benefit-card p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.8;
-}
-        @media(max-width:768px){
-
-    .why-volunteer{
-        padding:70px 20px;
-    }
-
-    .section-heading h2{
-        font-size:28px;
-    }
-
-    .section-heading p{
-        font-size:14px;
-        line-height:1.75;
-    }
-
-    .volunteer-benefits{
-        width:100%;
-        margin-top:35px;
-
-        grid-template-columns:1fr;
-
-        gap:18px;
-    }
-
-    .benefit-card{
-        padding:28px 22px;
-        border-radius:22px;
-    }
-
-    .benefit-icon{
-        width:62px;
-        height:62px;
-        font-size:28px;
-        margin-bottom:15px;
-    }
-
-    .benefit-card h3{
-        font-size:19px;
-    }
-
-    .benefit-card p{
-        font-size:14px;
-        line-height:1.75;
-    }
-
-}
         /* =========================
-   HOW YOU CAN CONTRIBUTE
-   ========================= */
+           HEADER
+        ========================= */
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+        }
 
-.contribute-section{
-    padding:100px 20px;
-    background:#f6faf8;
-}
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
 
-.contribute-section .section-heading{
-    max-width:760px;
-    margin:0 auto;
-    text-align:center;
-}
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-.contribute-grid{
-    width:90%;
-    max-width:1100px;
-    margin:55px auto 0;
+        .logo-image {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
 
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-}
+        .logo-text h2 {
+            font-size: 18px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
 
-.contribute-card{
-    background:white;
-    padding:30px 22px;
-    border-radius:22px;
-    text-align:center;
+        .logo-text span {
+            display: block;
+            color: var(--pink);
+            font-size: 9px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
 
-    box-shadow:0 12px 35px rgba(0,0,0,.07);
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
 
-    transition:.3s;
-}
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: .3s;
+        }
 
-.contribute-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 18px 40px rgba(7,91,154,.12);
-}
+        nav a:hover {
+            color: var(--blue);
+        }
 
-.contribute-icon{
-    width:62px;
-    height:62px;
+        .nav-donate {
+            background: var(--blue);
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
 
-    margin:0 auto 18px;
+        .mobile-menu-btn {
+            display: none;
+            border: 0;
+            background: none;
+            color: var(--dark);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+        }
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+        @media(max-width:950px) {
+            nav { display: none; }
+            .mobile-menu-btn { display: flex; flex-shrink: 0; }
+            .navbar { position: relative; }
+            .navbar.mobile-open nav {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 220px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: white;
+                padding: 10px 0;
+                border-radius: 0 0 16px 16px;
+                box-shadow: 0 12px 30px rgba(0,0,0,.15);
+                z-index: 2000;
+            }
+            .navbar.mobile-open nav a {
+                display: block;
+                width: 100%;
+                padding: 13px 20px;
+                text-align: left;
+                box-sizing: border-box;
+            }
+            .navbar.mobile-open nav a:hover {
+                background: #f1f7fb;
+            }
+            .navbar.mobile-open .nav-donate {
+                margin: 8px 12px;
+                width: auto;
+                text-align: center;
+            }
+        }
 
-    border-radius:18px;
-
-    background:#eef8ff;
-
-    font-size:28px;
-}
-
-.contribute-card h3{
-    color:var(--dark);
-    font-size:18px;
-    line-height:1.4;
-    margin-bottom:10px;
-}
-
-.contribute-card p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.75;
-}
-       @media(max-width:768px){
-
-    .contribute-section{
-        padding:70px 20px;
-    }
-
-    .contribute-grid{
-        width:100%;
-        margin-top:35px;
-
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .contribute-card{
-        padding:26px 22px;
-        border-radius:20px;
-    }
-
-    .contribute-icon{
-        width:58px;
-        height:58px;
-        font-size:26px;
-        margin-bottom:15px;
-    }
-
-    .contribute-card h3{
-        font-size:18px;
-    }
-
-    .contribute-card p{
-        font-size:14px;
-        line-height:1.75;
-    }
-
-} 
-       /* =========================
-   VOLUNTEER CTA
-   ========================= */
-
-.volunteer-cta{
-    padding:100px 20px;
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--dark)
-    );
-    color:white;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-}
-
-.volunteer-cta::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:rgba(255,255,255,.06);
-    top:-150px;
-    left:-100px;
-}
-
-.volunteer-cta::after{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    background:rgba(232,91,136,.12);
-    bottom:-200px;
-    right:-100px;
-}
-
-.cta-content{
-    position:relative;
-    z-index:2;
-    max-width:750px;
-    margin:auto;
-}
-
-.volunteer-cta .section-tag{
-    color:#ffd1df;
-}
-
-.volunteer-cta h2{
-    font-size:42px;
-    line-height:1.25;
-    margin-bottom:18px;
-}
-
-.volunteer-cta p{
-    max-width:680px;
-    margin:0 auto 30px;
-    color:#eef5ff;
-    font-size:15px;
-    line-height:1.8;
-}
-
-.cta-button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:14px 30px;
-
-    background:white;
-    color:var(--blue);
-
-    border-radius:30px;
-
-    text-decoration:none;
-    font-size:14px;
-    font-weight:700;
-
-    transition:.3s;
-}
-
-.cta-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
-}
-        @media(max-width:768px){
-
-    .volunteer-cta{
-        padding:70px 20px;
-    }
-
-    .volunteer-cta h2{
-        font-size:30px;
-        line-height:1.3;
-    }
-
-    .volunteer-cta p{
-        font-size:14px;
-        line-height:1.8;
-        margin-bottom:25px;
-    }
-
-    .cta-button{
-        width:100%;
-        max-width:300px;
-        box-sizing:border-box;
-    }
-
-}
         /* =========================
-   FOOTER
-   ========================= */
+           HERO with particles
+        ========================= */
+        .volunteer-hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 20px;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 15% 20%, rgba(232,91,136,.18), transparent 30%),
+                        radial-gradient(circle at 85% 80%, rgba(7,91,154,.20), transparent 30%),
+                        linear-gradient(135deg,#eef8ff,#ffffff);
+        }
 
-.site-footer{
-    background:#eef7fc;
-    color:#063b67;
-    padding:65px 20px 0;
-}
+        .volunteer-hero::before {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(232,91,136,.08);
+            top: -100px;
+            left: -80px;
+            animation: floatBlob 8s ease-in-out infinite;
+        }
 
-.footer-content{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
+        .volunteer-hero::after {
+            content: "";
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: rgba(7,91,154,.07);
+            bottom: -160px;
+            right: -100px;
+            animation: floatBlob 10s ease-in-out infinite reverse;
+        }
 
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
+        .volunteer-hero .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(232,91,136,.15);
+            animation: floatParticle 15s infinite linear;
+        }
+        .volunteer-hero .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .volunteer-hero .particle:nth-child(2) { left: 25%; top: 70%; animation-delay: 2s; width: 10px; height: 10px; }
+        .volunteer-hero .particle:nth-child(3) { left: 70%; top: 15%; animation-delay: 4s; }
+        .volunteer-hero .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; width: 8px; height: 8px; }
+        .volunteer-hero .particle:nth-child(5) { left: 50%; top: 85%; animation-delay: 3s; }
 
-    padding-bottom:45px;
-}
+        @keyframes floatParticle {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-60px) rotate(180deg); opacity: 0.8; }
+            100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+        }
 
-.footer-brand h3{
-    font-size:18px;
-    margin-bottom:5px;
-    color:#063b67;
-}
+        @keyframes floatBlob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
 
-.footer-brand img{
-    width:58px;
-    height:58px;
-    object-fit:contain;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            margin: auto;
+        }
 
-.footer-brand h3{
-    font-size:18px;
-    margin-bottom:5px;
-}
+        .section-tag {
+            display: inline-block;
+            color: var(--pink);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            animation: fadeInDown 0.8s ease;
+        }
 
-.footer-brand p{
-    color:#e85b88;
-    font-size:11px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-}
+        .hero-content h1 {
+            color: var(--dark);
+            font-size: 52px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
 
-.footer-links{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
+        .hero-content h1 span {
+            color: var(--pink);
+            position: relative;
+        }
 
-.footer-links h4{
-    color:#063b67;
-    font-size:16px;
-    margin-bottom:8px;
-}
+        .hero-content h1 span::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--pink);
+            border-radius: 2px;
+            animation: underlineGrow 1s ease 0.5s both;
+        }
 
-.footer-links a{
-    color:#526b7a;
-    text-decoration:none;
-    font-size:13px;
-    transition:.3s;
-}
+        @keyframes underlineGrow {
+            from { width: 0; }
+            to { width: 100%; }
+        }
 
-.footer-links a:hover{
-    color:#ffd1df;
-    transform:translateX(3px);
-}
+        .hero-content p {
+            max-width: 680px;
+            margin: 0 auto 32px;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
 
-.footer-bottom{
-    border-top:1px solid rgba(255,255,255,.15);
-    padding:20px 10px;
-    text-align:center;
-}
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.footer-bottom p{
-    color:#667985;
-    font-size:12px;
-}
-        @media(max-width:768px){
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .site-footer{
-        padding:50px 20px 0;
-    }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 30px;
+            padding: 13px 28px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+            border: none;
+            cursor: pointer;
+        }
 
-    .footer-content{
-        width:100%;
-        grid-template-columns:1fr;
-        gap:35px;
-        padding-bottom:35px;
-    }
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(7,91,154,.20);
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
 
-    .footer-brand{
-        align-items:center;
-    }
+        .btn-primary:hover {
+            background: var(--dark);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 35px rgba(7,91,154,.30);
+        }
 
-    .footer-brand img{
-        width:52px;
-        height:52px;
-    }
+        @media(max-width:768px) {
+            .volunteer-hero {
+                min-height: 500px;
+                padding: 70px 20px;
+            }
+            .hero-content h1 {
+                font-size: 34px;
+                line-height: 1.25;
+            }
+            .hero-content p {
+                font-size: 14px;
+                line-height: 1.8;
+                margin-bottom: 26px;
+            }
+            .hero-content .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
 
-    .footer-brand h3{
-        font-size:17px;
-    }
+        /* =========================
+           WHY VOLUNTEER
+        ========================= */
+        .why-volunteer {
+            padding: 100px 20px;
+            background: #ffffff;
+        }
 
-    .footer-links{
-        gap:10px;
-    }
+        .why-volunteer .section-heading {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    .footer-links h4{
-        font-size:15px;
-    }
+        .section-heading h2 {
+            color: var(--dark);
+            font-size: 40px;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
 
-    .footer-links a{
-        font-size:13px;
-    }
+        .section-heading p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
 
-    .footer-bottom{
-        padding:18px 5px;
-    }
+        .deco-line {
+            width: 50px;
+            height: 3px;
+            background: var(--pink);
+            margin: 0 auto 16px;
+            border-radius: 10px;
+            animation: pulseWidth 2s infinite;
+        }
 
-    .footer-bottom p{
-        font-size:11px;
-        line-height:1.6;
-    }
+        @keyframes pulseWidth {
+            0%, 100% { width: 50px; }
+            50% { width: 80px; }
+        }
 
-}
-        /* =========================================
-   FINAL VOLUNTEER MOBILE CLEANUP
-   ========================================= */
+        .volunteer-benefits {
+            width: 90%;
+            max-width: 1100px;
+            margin: 55px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-@media(max-width:768px){
+        .benefit-card {
+            background: #ffffff;
+            padding: 35px 28px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,.08);
+            border-top: 4px solid var(--blue);
+            transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: cardFadeIn 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
 
-    html,
-    body{
-        width:100%;
-        max-width:100%;
-        overflow-x:hidden;
-    }
+        .benefit-card:nth-child(1) { animation-delay: 0.05s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.10s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.15s; }
 
-    section{
-        width:100%;
-        max-width:100%;
-        box-sizing:border-box;
-    }
+        @keyframes cardFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    img{
-        max-width:100%;
-    }
+        .benefit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+            opacity: 0;
+            transition: .5s;
+        }
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+        .benefit-card::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(232,91,136,.06), transparent 60%);
+            opacity: 0;
+            transition: .6s;
+            transform: scale(0);
+        }
+        .benefit-card:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    p{
-        max-width:100%;
-        overflow-wrap:break-word;
-    }
+        .benefit-card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 25px 55px rgba(7,91,154,.18);
+            border-top-color: var(--pink);
+        }
 
-    /* Header */
-    .navbar{
-        width:calc(100% - 30px);
-        min-height:72px;
-        margin:auto;
-    }
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #eef8ff;
+            font-size: 32px;
+            transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-    .logo-area{
-        min-width:0;
-        gap:8px;
-    }
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(-8deg);
+            background: var(--pink);
+            color: white;
+        }
 
-    .logo-image{
-        width:48px;
-        height:48px;
-        flex-shrink:0;
-    }
+        .benefit-card .card-number {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 40px;
+            font-weight: 800;
+            color: rgba(7,91,154,.04);
+            transition: .4s;
+            line-height: 1;
+        }
+        .benefit-card:hover .card-number {
+            color: rgba(232,91,136,.08);
+            transform: scale(1.1);
+        }
 
-    .logo-text{
-        min-width:0;
-    }
+        .benefit-card h3 {
+            color: var(--dark);
+            font-size: 20px;
+            margin-bottom: 12px;
+            transition: .3s;
+        }
+        .benefit-card:hover h3 {
+            color: var(--blue);
+        }
 
-    .logo-text h2{
-        font-size:14px;
-        line-height:1.25;
-    }
+        .benefit-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
 
-    .logo-text span{
-        font-size:7px;
-        letter-spacing:1.3px;
-    }
+        @media(max-width:768px) {
+            .why-volunteer { padding: 70px 20px; }
+            .section-heading h2 { font-size: 28px; }
+            .section-heading p { font-size: 14px; line-height: 1.75; }
+            .volunteer-benefits {
+                width: 100%;
+                margin-top: 35px;
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .benefit-card { padding: 28px 22px; border-radius: 22px; }
+            .benefit-icon { width: 62px; height: 62px; font-size: 28px; margin-bottom: 15px; }
+            .benefit-card h3 { font-size: 19px; }
+            .benefit-card p { font-size: 14px; line-height: 1.75; }
+        }
 
-    .mobile-menu-btn{
-        flex-shrink:0;
-    }
+        /* =========================
+           HOW YOU CAN CONTRIBUTE
+        ========================= */
+        .contribute-section {
+            padding: 100px 20px;
+            background: #f6faf8;
+        }
 
-    /* Hero */
-    .volunteer-hero{
-        width:100%;
-        min-height:470px;
-        padding:65px 18px;
-    }
+        .contribute-section .section-heading {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    .hero-content{
-        width:100%;
-    }
+        .contribute-grid {
+            width: 90%;
+            max-width: 1100px;
+            margin: 55px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
 
-    .hero-content h1{
-        font-size:32px;
-    }
+        .contribute-card {
+            background: white;
+            padding: 30px 22px;
+            border-radius: 22px;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0,0,0,.07);
+            transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: cardFadeIn 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid transparent;
+        }
 
-    .hero-content p{
-        width:100%;
-        font-size:14px;
-    }
+        .contribute-card:nth-child(1) { animation-delay: 0.05s; }
+        .contribute-card:nth-child(2) { animation-delay: 0.10s; }
+        .contribute-card:nth-child(3) { animation-delay: 0.15s; }
+        .contribute-card:nth-child(4) { animation-delay: 0.20s; }
 
-    /* Section headings */
-    .section-heading{
-        width:100%;
-    }
+        .contribute-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+            opacity: 0;
+            transition: .5s;
+        }
+        .contribute-card:hover::before {
+            opacity: 1;
+        }
+        .contribute-card::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(232,91,136,.05), transparent 60%);
+            opacity: 0;
+            transition: .6s;
+            transform: scale(0);
+        }
+        .contribute-card:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
 
-    .section-heading h2{
-        font-size:27px;
-    }
+        .contribute-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 22px 50px rgba(7,91,154,.15);
+            border-bottom-color: var(--pink);
+        }
 
-    /* Cards */
-    .benefit-card,
-    .contribute-card{
-        width:100%;
-        box-sizing:border-box;
-    }
+        .contribute-icon {
+            width: 62px;
+            height: 62px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: #eef8ff;
+            font-size: 28px;
+            transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
 
-    /* CTA */
-    .volunteer-cta{
-        width:100%;
-        padding-left:18px;
-        padding-right:18px;
-    }
+        .contribute-card:hover .contribute-icon {
+            transform: scale(1.1) rotate(-8deg) translateY(-4px);
+            background: var(--pink);
+            color: white;
+        }
 
-    .cta-content{
-        width:100%;
-    }
+        .contribute-card .card-number {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 32px;
+            font-weight: 800;
+            color: rgba(7,91,154,.04);
+            transition: .4s;
+            line-height: 1;
+        }
+        .contribute-card:hover .card-number {
+            color: rgba(232,91,136,.08);
+            transform: scale(1.1);
+        }
 
-    .volunteer-cta h2{
-        font-size:29px;
-    }
+        .contribute-card h3 {
+            color: var(--dark);
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            transition: .3s;
+        }
+        .contribute-card:hover h3 {
+            color: var(--blue);
+        }
 
-    /* Footer */
-    .site-footer{
-        width:100%;
-        box-sizing:border-box;
-    }
+        .contribute-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.75;
+        }
 
-    .footer-content{
-        width:100%;
-    }
+        @media(max-width:768px) {
+            .contribute-section { padding: 70px 20px; }
+            .contribute-grid {
+                width: 100%;
+                margin-top: 35px;
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .contribute-card { padding: 26px 22px; border-radius: 20px; }
+            .contribute-icon { width: 58px; height: 58px; font-size: 26px; margin-bottom: 15px; }
+            .contribute-card h3 { font-size: 18px; }
+            .contribute-card p { font-size: 14px; line-height: 1.75; }
+        }
 
-}
+        /* =========================
+           VOLUNTEER CTA
+        ========================= */
+        .volunteer-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--blue), var(--dark));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .volunteer-cta::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.06);
+            top: -150px;
+            left: -100px;
+            animation: floatBlob 8s ease-in-out infinite;
+        }
+
+        .volunteer-cta::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: rgba(232,91,136,.12);
+            bottom: -200px;
+            right: -100px;
+            animation: floatBlob 10s ease-in-out infinite reverse;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .volunteer-cta .section-tag {
+            color: #ffd1df;
+        }
+
+        .volunteer-cta h2 {
+            font-size: 42px;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+
+        .volunteer-cta p {
+            max-width: 680px;
+            margin: 0 auto 30px;
+            color: #eef5ff;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background: white;
+            color: var(--blue);
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 14px 35px rgba(0,0,0,.25);
+            color: var(--pink);
+        }
+
+        @media(max-width:768px) {
+            .volunteer-cta { padding: 70px 20px; }
+            .volunteer-cta h2 { font-size: 30px; line-height: 1.3; }
+            .volunteer-cta p { font-size: 14px; line-height: 1.8; margin-bottom: 25px; }
+            .cta-button { width: 100%; max-width: 300px; box-sizing: border-box; }
+        }
+
+        /* =========================
+           SCROLL TOP BUTTON
+        ========================= */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--pink);
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(232,91,136,.35);
+            transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 999;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-top:hover {
+            background: var(--blue);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(7,91,154,.35);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        .site-footer {
+            background: #eef7fc;
+            color: #063b67;
+            padding: 65px 20px 0;
+        }
+
+        .footer-content {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 45px;
+        }
+
+        .footer-brand h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #063b67;
+        }
+
+        .footer-brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .footer-brand p {
+            color: #e85b88;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .footer-links h4 {
+            color: #063b67;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #526b7a;
+            text-decoration: none;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #e85b88;
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.15);
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #667985;
+            font-size: 12px;
+        }
+
+        @media(max-width:768px) {
+            .site-footer { padding: 50px 20px 0; }
+            .footer-content {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-bottom: 35px;
+            }
+            .footer-brand { align-items: center; }
+            .footer-brand img { width: 52px; height: 52px; }
+            .footer-brand h3 { font-size: 17px; }
+            .footer-links { gap: 10px; }
+            .footer-links h4 { font-size: 15px; }
+            .footer-links a { font-size: 13px; }
+            .footer-bottom { padding: 18px 5px; }
+            .footer-bottom p { font-size: 11px; line-height: 1.6; }
+        }
+
+        /* Mobile cleanup */
+        @media(max-width:768px) {
+            html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+            section { width: 100%; max-width: 100%; box-sizing: border-box; }
+            img { max-width: 100%; }
+            h1, h2, h3, h4, p { max-width: 100%; overflow-wrap: break-word; }
+            .navbar {
+                width: calc(100% - 30px);
+                min-height: 72px;
+                margin: auto;
+            }
+            .logo-area { min-width: 0; gap: 8px; }
+            .logo-image { width: 48px; height: 48px; flex-shrink: 0; }
+            .logo-text { min-width: 0; }
+            .logo-text h2 { font-size: 14px; line-height: 1.25; }
+            .logo-text span { font-size: 7px; letter-spacing: 1.3px; }
+            .mobile-menu-btn { flex-shrink: 0; }
+            .volunteer-hero { width: 100%; min-height: 470px; padding: 65px 18px; }
+            .hero-content { width: 100%; }
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { width: 100%; font-size: 14px; }
+            .section-heading { width: 100%; }
+            .section-heading h2 { font-size: 27px; }
+            .benefit-card, .contribute-card { width: 100%; box-sizing: border-box; }
+            .volunteer-cta { width: 100%; padding-left: 18px; padding-right: 18px; }
+            .cta-content { width: 100%; }
+            .volunteer-cta h2 { font-size: 29px; }
+            .site-footer { width: 100%; box-sizing: border-box; }
+            .footer-content { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container navbar">
-
         <div class="logo-area">
-
-            <img
-                src="logo.png"
-                alt="Wadmavli Lok Vikas Manch Logo"
-                class="logo-image">
-
+            <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
             <div class="logo-text">
-
                 <h2>Wadmavli Lok Vikas Manch</h2>
-
                 <span>TOWARDS EMPOWERMENT</span>
-
             </div>
-
         </div>
-
         <nav>
-
             <a href="index.html">Home</a>
-
             <a href="about.html">About</a>
-
             <a href="programs.html">Programs</a>
-
             <a href="gallery.html">Gallery</a>
-
             <a href="volunteer.html">Volunteer</a>
-
             <a href="partner.html">Partner</a>
-
             <a href="contact.html">Contact</a>
-
             <a href="donate.html" class="nav-donate">Donate</a>
-
         </nav>
-
-        <button class="mobile-menu-btn"
-                onclick="toggleMobileMenu()"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-         <i class="fa-solid fa-bars"></i>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
         </button>
-
     </div>
 </header>
 
-
 <main>
-
     <section class="volunteer-hero">
-
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
         <div class="hero-content">
-
             <span class="section-tag">JOIN OUR COMMUNITY</span>
-
-            <h1>Volunteer With Us 🤝</h1>
-
-            <p>
-                Be a part of meaningful change.
-                Your time, skills and support can help
-                create stronger and more empowered communities.
-            </p>
-
-            <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor"
-                target="_blank"
-                class="btn btn-primary">
+            <h1>Volunteer <span>With Us</span> 🤝</h1>
+            <p>Be a part of meaningful change. Your time, skills and support can help create stronger and more empowered communities.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor" target="_blank" class="btn btn-primary">
                 Fill Volunteer Form
             </a>
-
         </div>
-
     </section>
 
-
- <section class="why-volunteer">
-
-    <div class="section-heading">
-
-        <span class="section-tag">MAKE A DIFFERENCE</span>
-
-        <h2>Why Volunteer With Us?</h2>
-
-        <p>
-            Volunteering is an opportunity to contribute,
-            learn and work together towards positive change.
-        </p>
-
-    </div>
-
-
-    <div class="volunteer-benefits">
-
-        <div class="benefit-card">
-
-            <div class="benefit-icon">🤝</div>
-
-            <h3>Serve Your Community</h3>
-
-            <p>
-                Contribute your time and energy to initiatives
-                that support people and communities.
-            </p>
-
+    <section class="why-volunteer">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-tag">MAKE A DIFFERENCE</span>
+            <h2>Why Volunteer With Us?</h2>
+            <div class="deco-line"></div>
+            <p>Volunteering is an opportunity to contribute, learn and work together towards positive change.</p>
         </div>
 
-
-        <div class="benefit-card">
-
-            <div class="benefit-icon">💡</div>
-
-            <h3>Share Your Skills</h3>
-
-            <p>
-                Use your knowledge, creativity and abilities
-                to support meaningful community work.
-            </p>
-
-        </div>
-
-
-        <div class="benefit-card">
-
-            <div class="benefit-icon">🌱</div>
-
-            <h3>Grow & Make an Impact</h3>
-
-            <p>
-                Learn through experience while becoming
-                part of positive and sustainable change.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-    <section class="contribute-section">
-
-    <div class="section-heading">
-
-        <span class="section-tag">YOUR CONTRIBUTION MATTERS</span>
-
-        <h2>How You Can Contribute</h2>
-
-        <p>
-            Every person has something valuable to offer.
-            Choose a way to contribute that matches your interests,
-            skills and availability.
-        </p>
-
-    </div>
-
-
-    <div class="contribute-grid">
-
-        <div class="contribute-card">
-            <div class="contribute-icon">📚</div>
-
-            <h3>Education Support</h3>
-
-            <p>
-                Support educational activities and help
-                children and young people learn and grow.
-            </p>
-        </div>
-
-
-        <div class="contribute-card">
-            <div class="contribute-icon">👩‍👩‍👧</div>
-
-            <h3>Community Activities</h3>
-
-            <p>
-                Participate in community initiatives and
-                activities that bring people together.
-            </p>
-        </div>
-
-
-        <div class="contribute-card">
-            <div class="contribute-icon">📣</div>
-
-            <h3>Awareness & Outreach</h3>
-
-            <p>
-                Help spread awareness about important
-                community initiatives and opportunities.
-            </p>
-        </div>
-
-
-        <div class="contribute-card">
-            <div class="contribute-icon">💻</div>
-
-            <h3>Skills & Digital Support</h3>
-
-            <p>
-                Contribute useful skills such as communication,
-                design, technology, documentation or administration.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-   <section class="volunteer-cta">
-
-    <div class="cta-content">
-
-        <span class="section-tag">TAKE THE NEXT STEP</span>
-
-        <h2>Ready to Make a Difference?</h2>
-
-        <p>
-            Join us in supporting meaningful community initiatives.
-            Your time, skills and willingness to contribute can help
-            create positive change.
-        </p>
-
-        <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-button">
-            Fill Volunteer Form
-        </a>
-
-    </div>
-
-</section> 
-</main>
-
-
-<footer class="site-footer">
-
-    <div class="footer-content">
-
-        <div class="footer-brand">
-
-            <img
-                src="logo.png"
-                alt="Wadmavli Lok Vikas Manch Logo">
-
-            <div>
-                <h3>Wadmavli Lok Vikas Manch</h3>
-
-                <p>
-                    Towards Empowerment
-                </p>
+        <div class="volunteer-benefits">
+            <div class="benefit-card">
+                <span class="card-number">01</span>
+                <div class="benefit-icon">🤝</div>
+                <h3>Serve Your Community</h3>
+                <p>Contribute your time and energy to initiatives that support people and communities.</p>
             </div>
 
+            <div class="benefit-card">
+                <span class="card-number">02</span>
+                <div class="benefit-icon">💡</div>
+                <h3>Share Your Skills</h3>
+                <p>Use your knowledge, creativity and abilities to support meaningful community work.</p>
+            </div>
+
+            <div class="benefit-card">
+                <span class="card-number">03</span>
+                <div class="benefit-icon">🌱</div>
+                <h3>Grow & Make an Impact</h3>
+                <p>Learn through experience while becoming part of positive and sustainable change.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contribute-section">
+        <div class="section-heading" data-aos="fade-up">
+            <span class="section-tag">YOUR CONTRIBUTION MATTERS</span>
+            <h2>How You Can Contribute</h2>
+            <div class="deco-line"></div>
+            <p>Every person has something valuable to offer. Choose a way to contribute that matches your interests, skills and availability.</p>
         </div>
 
+        <div class="contribute-grid">
+            <div class="contribute-card">
+                <span class="card-number">04</span>
+                <div class="contribute-icon">📚</div>
+                <h3>Education Support</h3>
+                <p>Support educational activities and help children and young people learn and grow.</p>
+            </div>
 
+            <div class="contribute-card">
+                <span class="card-number">05</span>
+                <div class="contribute-icon">👩‍👩‍👧</div>
+                <h3>Community Activities</h3>
+                <p>Participate in community initiatives and activities that bring people together.</p>
+            </div>
+
+            <div class="contribute-card">
+                <span class="card-number">06</span>
+                <div class="contribute-icon">📣</div>
+                <h3>Awareness & Outreach</h3>
+                <p>Help spread awareness about important community initiatives and opportunities.</p>
+            </div>
+
+            <div class="contribute-card">
+                <span class="card-number">07</span>
+                <div class="contribute-icon">💻</div>
+                <h3>Skills & Digital Support</h3>
+                <p>Contribute useful skills such as communication, design, technology, documentation or administration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="volunteer-cta">
+        <div class="cta-content" data-aos="fade-up">
+            <span class="section-tag">TAKE THE NEXT STEP</span>
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join us in supporting meaningful community initiatives. Your time, skills and willingness to contribute can help create positive change.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScgubJQB8u1lvD_9spCR9BqPeuGJ-7jccSpsxkGoiu6dfNdnQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Fill Volunteer Form
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+            <div>
+                <h3>Wadmavli Lok Vikas Manch</h3>
+                <p>Towards Empowerment</p>
+            </div>
+        </div>
         <div class="footer-links">
-
             <h4>Quick Links</h4>
-
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="programs.html">Programs</a>
             <a href="gallery.html">Gallery</a>
-
         </div>
-
-
         <div class="footer-links">
-
             <h4>Get Involved</h4>
-
             <a href="volunteer.html">Volunteer</a>
             <a href="partner.html">Partner With Us</a>
             <a href="contact.html">Contact Us</a>
             <a href="donate.html">Donate</a>
-
         </div>
-
     </div>
-
-
     <div class="footer-bottom">
-
-        <p>
-            © 2026 Wadmavli Lok Vikas Manch.
-            All Rights Reserved.
-        </p>
-
+        <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
     </div>
-
 </footer>
 
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+    // AOS Animation
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50
+    });
 
-function toggleMobileMenu(){
+    // Mobile Menu
+    function toggleMobileMenu() {
+        const navbar = document.querySelector(".navbar");
+        const button = document.querySelector(".mobile-menu-btn");
+        if (!navbar || !button) return;
+        navbar.classList.toggle("mobile-open");
+        const isOpen = navbar.classList.contains("mobile-open");
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
 
-    const navbar = document.querySelector(".navbar");
-    const button = document.querySelector(".mobile-menu-btn");
-
-    if(!navbar || !button) return;
-
-    navbar.classList.toggle("mobile-open");
-
-    const isOpen = navbar.classList.contains("mobile-open");
-
-    button.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-    );
-
-}
-
+    // Scroll to Top Button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
 </script>
-
 </body>
 </html>
