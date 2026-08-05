@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -144,7 +145,8 @@
         text-align: center;
       }
     }
-    /* HERO */
+
+    /* HERO with particles */
     .volunteer-hero {
       min-height: 400px;
       display: flex;
@@ -167,6 +169,7 @@
       background: rgba(232,91,136,.08);
       top: -100px;
       left: -80px;
+      animation: floatBlob 8s ease-in-out infinite;
     }
     .volunteer-hero::after {
       content: "";
@@ -177,7 +180,32 @@
       background: rgba(7,91,154,.07);
       bottom: -160px;
       right: -100px;
+      animation: floatBlob 10s ease-in-out infinite reverse;
     }
+    .volunteer-hero .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(232,91,136,.15);
+      animation: floatParticle 15s infinite linear;
+    }
+    .volunteer-hero .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .volunteer-hero .particle:nth-child(2) { left: 25%; top: 70%; animation-delay: 2s; width: 10px; height: 10px; }
+    .volunteer-hero .particle:nth-child(3) { left: 70%; top: 15%; animation-delay: 4s; }
+    .volunteer-hero .particle:nth-child(4) { left: 85%; top: 60%; animation-delay: 1s; width: 8px; height: 8px; }
+    .volunteer-hero .particle:nth-child(5) { left: 50%; top: 85%; animation-delay: 3s; }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-60px) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(0) rotate(360deg); opacity: 0.3; }
+    }
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
     .hero-content {
       position: relative;
       z-index: 2;
@@ -191,12 +219,33 @@
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 14px;
+      animation: fadeInDown 0.8s ease;
     }
     .hero-content h1 {
       color: var(--dark);
       font-size: 48px;
       line-height: 1.15;
       margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+    .hero-content h1 span {
+      color: var(--pink);
+      position: relative;
+    }
+    .hero-content h1 span::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--pink);
+      border-radius: 2px;
+      animation: underlineGrow 1s ease 0.5s both;
+    }
+    @keyframes underlineGrow {
+      from { width: 0; }
+      to { width: 100%; }
     }
     .hero-content p {
       max-width: 680px;
@@ -204,6 +253,7 @@
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
+      animation: fadeInUp 0.8s ease 0.4s both;
     }
     .btn {
       display: inline-flex;
@@ -214,16 +264,27 @@
       font-size: 14px;
       font-weight: 600;
       transition: .3s;
+      border: none;
+      cursor: pointer;
     }
     .btn-primary {
       background: var(--blue);
       color: white;
       box-shadow: 0 10px 25px rgba(7,91,154,.20);
+      animation: fadeInUp 0.8s ease 0.6s both;
     }
     .btn-primary:hover {
       background: var(--dark);
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(7,91,154,.25);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(7,91,154,.30);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @media(max-width:768px) {
       .volunteer-hero { min-height: 350px; padding: 50px 20px; }
@@ -231,7 +292,7 @@
       .hero-content p { font-size: 14px; margin-bottom: 26px; }
     }
 
-    /* GALLERY GRID — MASONRY STYLE WITH ANIMATION */
+    /* GALLERY GRID */
     .section {
       padding: 70px 0;
     }
@@ -251,6 +312,18 @@
       font-size: 15px;
       line-height: 1.8;
     }
+    .deco-line {
+      width: 50px;
+      height: 3px;
+      background: var(--pink);
+      margin: 0 auto 16px;
+      border-radius: 10px;
+      animation: pulseWidth 2s infinite;
+    }
+    @keyframes pulseWidth {
+      0%, 100% { width: 50px; }
+      50% { width: 80px; }
+    }
 
     /* category title */
     .category-title {
@@ -268,7 +341,7 @@
       margin-top: 0;
     }
 
-    /* grid with subtle stagger */
+    /* grid with stagger animation */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -281,15 +354,14 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 15px 35px rgba(0,0,0,.08);
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       background: white;
       aspect-ratio: 1 / 1;
       cursor: pointer;
       opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 0.6s forwards;
+      transform: translateY(40px);
+      animation: cardFadeIn 0.6s ease forwards;
     }
-
     .gallery-item:nth-child(1) { animation-delay: 0.05s; }
     .gallery-item:nth-child(2) { animation-delay: 0.10s; }
     .gallery-item:nth-child(3) { animation-delay: 0.15s; }
@@ -299,30 +371,63 @@
     .gallery-item:nth-child(7) { animation-delay: 0.35s; }
     .gallery-item:nth-child(8) { animation-delay: 0.40s; }
 
-    @keyframes fadeUp {
+    @keyframes cardFadeIn {
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gallery-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+      opacity: 0;
+      transition: .5s;
+      z-index: 1;
+    }
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(232,91,136,.06), transparent 60%);
+      opacity: 0;
+      transition: .6s;
+      transform: scale(0);
+      z-index: 1;
+    }
+    .gallery-item:hover::after {
+      opacity: 1;
+      transform: scale(1);
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease, filter 0.3s ease;
+      transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s ease;
       filter: brightness(0.98) saturate(1.02);
     }
 
     .gallery-item:hover {
-      transform: scale(1.02) translateY(-6px);
-      box-shadow: 0 25px 45px rgba(7,91,154,.18);
+      transform: scale(1.03) translateY(-8px);
+      box-shadow: 0 28px 55px rgba(7,91,154,.20);
       z-index: 5;
     }
 
     .gallery-item:hover img {
       transform: scale(1.12) rotate(0.5deg);
-      filter: brightness(1.04) saturate(1.1);
+      filter: brightness(1.05) saturate(1.1);
     }
 
-    /* overlay with icon — no caption text */
+    /* overlay with icon */
     .gallery-item .overlay {
       position: absolute;
       inset: 0;
@@ -331,8 +436,9 @@
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.35s ease;
+      transition: opacity 0.4s ease;
       pointer-events: none;
+      z-index: 2;
     }
 
     .gallery-item:hover .overlay {
@@ -343,19 +449,34 @@
       font-size: 40px;
       color: white;
       background: rgba(0,0,0,0.3);
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(4px);
       padding: 16px;
       border-radius: 50%;
-      transform: scale(0.8);
-      transition: transform 0.3s ease;
+      transform: scale(0.8) rotate(-10deg);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .gallery-item:hover .overlay i {
-      transform: scale(1);
+      transform: scale(1) rotate(0deg);
     }
 
-    /* no caption text */
+    /* gallery item number */
+    .gallery-item .item-number {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 32px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.08);
+      transition: .4s;
+      z-index: 2;
+      line-height: 1;
+    }
+    .gallery-item:hover .item-number {
+      color: rgba(255,255,255,0.18);
+      transform: scale(1.1);
+    }
 
     /* footer */
     .site-footer {
@@ -437,15 +558,15 @@
       align-items: center;
       z-index: 9999;
       padding: 20px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
     }
     #lightbox img {
       max-width: 92%;
       max-height: 88%;
       border-radius: 14px;
       box-shadow: 0 30px 60px rgba(0,0,0,.6);
-      transform: scale(0.95);
-      animation: zoomIn 0.3s forwards;
+      transform: scale(0.9);
+      animation: zoomIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
     @keyframes zoomIn {
       to { transform: scale(1); }
@@ -457,7 +578,7 @@
       color: white;
       font-size: 36px;
       cursor: pointer;
-      transition: .2s;
+      transition: .3s;
       background: rgba(0,0,0,0.3);
       width: 54px;
       height: 54px;
@@ -466,14 +587,17 @@
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
     }
     #lightbox .close-lightbox:hover {
       background: var(--pink);
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--pink);
     }
     @media(max-width:600px) {
       #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
     }
+
     /* shuffle button */
     .shuffle-btn {
       display: inline-block;
@@ -486,20 +610,74 @@
       font-weight: 600;
       font-size: 14px;
       cursor: pointer;
-      transition: .3s;
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
       box-shadow: 0 8px 20px rgba(232,91,136,.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .shuffle-btn::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,.1), transparent 60%);
+      opacity: 0;
+      transition: .4s;
+      transform: scale(0);
+    }
+    .shuffle-btn:hover::before {
+      opacity: 1;
+      transform: scale(1);
     }
     .shuffle-btn:hover {
       background: var(--dark);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(6,59,103,.3);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(6,59,103,.35);
+    }
+    .shuffle-btn:active {
+      transform: scale(0.95);
     }
     .shuffle-btn i {
       margin-right: 8px;
+      transition: .3s;
+    }
+    .shuffle-btn:hover i {
+      transform: rotate(180deg);
     }
     .center-btn {
       text-align: center;
       margin-top: 25px;
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(232,91,136,.35);
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--blue);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(7,91,154,.35);
     }
   </style>
 </head>
@@ -532,9 +710,14 @@
 
 <main>
   <section class="volunteer-hero">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
     <div class="hero-content">
       <span class="section-tag">📸 OUR JOURNEY</span>
-      <h1>Moments of Change</h1>
+      <h1>Moments of <span>Change</span></h1>
       <p>For over 26 years, Wadmavli Lok Vikas Manch has been transforming lives through education, women empowerment, sustainable livelihoods, environmental conservation and humanitarian service.</p>
       <a href="#gallery-start" class="btn btn-primary"><i class="fas fa-images"></i> Explore Gallery</a>
     </div>
@@ -542,82 +725,83 @@
 
   <section class="section" id="gallery-start">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading" data-aos="fade-up">
         <span class="section-tag">VISUAL STORY</span>
         <h2>Our Work in Pictures</h2>
+        <div class="deco-line"></div>
         <p>Each image reflects our commitment towards empowerment — no words needed.</p>
       </div>
 
       <!-- Mission Education -->
-      <h3 class="category-title"><i class="fas fa-book-open"></i> Mission Education</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-book-open"></i> Mission Education</h3>
       <div class="gallery-grid" id="grid1">
-        <div class="gallery-item"><img src="mission1.jpeg" alt="Mission Education"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="mission2.jpeg" alt="Learning Together"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="mission3.jpeg" alt="School Activities"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="mission4.jpeg" alt="Student Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">01</span><img src="mission1.jpeg" alt="Mission Education"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">02</span><img src="mission2.jpeg" alt="Learning Together"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">03</span><img src="mission3.jpeg" alt="School Activities"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">04</span><img src="mission4.jpeg" alt="Student Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Women Empowerment -->
-      <h3 class="category-title"><i class="fas fa-female"></i> Women Empowerment</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-female"></i> Women Empowerment</h3>
       <div class="gallery-grid" id="grid2">
-        <div class="gallery-item"><img src="women1.jpeg" alt="Self Help Groups"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="women2.jpeg" alt="Women's Meetings"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="women3.jpeg" alt="Leadership Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="women4.jpeg" alt="Community Empowerment"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">05</span><img src="women1.jpeg" alt="Self Help Groups"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">06</span><img src="women2.jpeg" alt="Women's Meetings"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">07</span><img src="women3.jpeg" alt="Leadership Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">08</span><img src="women4.jpeg" alt="Community Empowerment"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Skill Development -->
-      <h3 class="category-title"><i class="fas fa-tools"></i> Skill Development</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-tools"></i> Skill Development</h3>
       <div class="gallery-grid" id="grid3">
-        <div class="gallery-item"><img src="skill1.jpeg" alt="Vocational Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="skill2.jpeg" alt="Healthcare Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="skill3.jpeg" alt="Driving School"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="skill4.jpeg" alt="Employment Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">09</span><img src="skill1.jpeg" alt="Vocational Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">10</span><img src="skill2.jpeg" alt="Healthcare Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">11</span><img src="skill3.jpeg" alt="Driving School"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">12</span><img src="skill4.jpeg" alt="Employment Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Water Conservation -->
-      <h3 class="category-title"><i class="fas fa-water"></i> Water Conservation</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-water"></i> Water Conservation</h3>
       <div class="gallery-grid" id="grid4">
-        <div class="gallery-item"><img src="water1.jpeg" alt="Watershed Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="water2.jpeg" alt="Safe Drinking Water"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="water3.jpeg" alt="Community Participation"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="water4.jpeg" alt="Water Structures"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">13</span><img src="water1.jpeg" alt="Watershed Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">14</span><img src="water2.jpeg" alt="Safe Drinking Water"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">15</span><img src="water3.jpeg" alt="Community Participation"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">16</span><img src="water4.jpeg" alt="Water Structures"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Organic Farming -->
-      <h3 class="category-title"><i class="fas fa-seedling"></i> Organic Farming</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-seedling"></i> Organic Farming</h3>
       <div class="gallery-grid" id="grid5">
-        <div class="gallery-item"><img src="organic1.jpeg" alt="Farmer Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="organic2.jpeg" alt="Organic Agriculture"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="organic3.jpeg" alt="Sustainable Farming"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="organic4.jpeg" alt="Field Demonstration"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">17</span><img src="organic1.jpeg" alt="Farmer Training"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">18</span><img src="organic2.jpeg" alt="Organic Agriculture"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">19</span><img src="organic3.jpeg" alt="Sustainable Farming"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">20</span><img src="organic4.jpeg" alt="Field Demonstration"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Health & Nutrition -->
-      <h3 class="category-title"><i class="fas fa-heartbeat"></i> Health & Nutrition</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-heartbeat"></i> Health & Nutrition</h3>
       <div class="gallery-grid" id="grid6">
-        <div class="gallery-item"><img src="health1.jpeg" alt="Health Awareness"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="health2.jpeg" alt="Nutrition Program"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="health3.jpeg" alt="Medical Camp"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="health4.jpeg" alt="Community Health"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">21</span><img src="health1.jpeg" alt="Health Awareness"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">22</span><img src="health2.jpeg" alt="Nutrition Program"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">23</span><img src="health3.jpeg" alt="Medical Camp"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">24</span><img src="health4.jpeg" alt="Community Health"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Disaster Relief -->
-      <h3 class="category-title"><i class="fas fa-hand-holding-heart"></i> Disaster Relief</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-hand-holding-heart"></i> Disaster Relief</h3>
       <div class="gallery-grid" id="grid7">
-        <div class="gallery-item"><img src="relief1.jpeg" alt="Relief Distribution"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="relief2.jpeg" alt="COVID-19 Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="relief3.jpeg" alt="Emergency Response"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="relief4.jpeg" alt="Helping Families"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">25</span><img src="relief1.jpeg" alt="Relief Distribution"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">26</span><img src="relief2.jpeg" alt="COVID-19 Support"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">27</span><img src="relief3.jpeg" alt="Emergency Response"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">28</span><img src="relief4.jpeg" alt="Helping Families"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Community Development -->
-      <h3 class="category-title"><i class="fas fa-people-arrows"></i> Community Development</h3>
+      <h3 class="category-title" data-aos="fade-right"><i class="fas fa-people-arrows"></i> Community Development</h3>
       <div class="gallery-grid" id="grid8">
-        <div class="gallery-item"><img src="community1.jpeg" alt="Village Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="community2.jpeg" alt="Community Meetings"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="community3.jpeg" alt="Awareness Campaign"><div class="overlay"><i class="fas fa-expand"></i></div></div>
-        <div class="gallery-item"><img src="community4.jpeg" alt="Together We Grow"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">29</span><img src="community1.jpeg" alt="Village Development"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">30</span><img src="community2.jpeg" alt="Community Meetings"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">31</span><img src="community3.jpeg" alt="Awareness Campaign"><div class="overlay"><i class="fas fa-expand"></i></div></div>
+        <div class="gallery-item"><span class="item-number">32</span><img src="community4.jpeg" alt="Together We Grow"><div class="overlay"><i class="fas fa-expand"></i></div></div>
       </div>
 
       <!-- Shuffle fun -->
@@ -663,8 +847,21 @@
   <img id="lightbox-img" src="" alt="Enlarged view">
 </div>
 
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-  // mobile menu
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
   function toggleMobileMenu() {
     const navbar = document.querySelector(".navbar");
     const button = document.querySelector(".mobile-menu-btn");
@@ -674,7 +871,7 @@
     button.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
-  // lightbox
+  // Lightbox
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
@@ -706,20 +903,27 @@
         const j = Math.floor(Math.random() * (i + 1));
         grid.appendChild(items[j]);
       }
-      // re-trigger animation (reset)
       items.forEach(el => {
         el.style.animation = 'none';
-        el.offsetHeight; // reflow
+        el.offsetHeight;
         el.style.animation = '';
       });
     });
-    // add a little haptic feedback
     this.innerHTML = '<i class="fas fa-check"></i> Shuffled!';
     setTimeout(() => {
       this.innerHTML = '<i class="fas fa-random"></i> Shuffle Gallery';
     }, 1200);
   });
-</script>
 
+  // Scroll to Top Button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
 </body>
 </html>
