@@ -178,3 +178,60 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+/* =========================
+   CONTAINER - Full Width
+========================= */
+.container {
+    width: 94%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* For sections with background colors - stretch full width */
+.section {
+    padding: 70px 0;
+    width: 100%;
+}
+
+/* Keep hero content centered */
+.hero-content {
+    max-width: 900px;  /* Increased from 780px */
+    margin: auto;
+}
+
+/* For text-heavy sections, keep readability */
+.about-main p,
+.program-card p,
+.story-text p {
+    max-width: 100%;
+}
+
+/* =========================
+   RESPONSIVE - Adjust for smaller screens
+========================= */
+@media(max-width:1200px) {
+    .container {
+        width: 95%;
+        max-width: 1200px;
+    }
+}
+
+@media(max-width:768px) {
+    .container {
+        width: 96%;
+        padding: 0 10px;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+}
+
+@media(max-width:480px) {
+    .container {
+        width: 98%;
+        padding: 0 8px;
+    }
+}
