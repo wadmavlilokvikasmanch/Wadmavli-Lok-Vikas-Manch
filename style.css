@@ -4,10 +4,10 @@
 
 /* =========================
    WHATSAPP FLOATING BUTTON
-   ========================= */
+========================= */
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;  /* Position above scroll button */
     right: 30px;
     width: 60px;
     height: 60px;
@@ -25,27 +25,7 @@
     animation: pulse-whatsapp 2s infinite;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1) translateY(-3px);
-    box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
-    color: white !important;
-}
-
-@keyframes pulse-whatsapp {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 5px 40px rgba(37, 211, 102, 0.6);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
-    }
-}
-
+/* Tooltip - positioned to the left */
 .whatsapp-float .whatsapp-tooltip {
     position: absolute;
     right: 72px;
@@ -78,25 +58,12 @@
     transform: translateX(-5px);
 }
 
-@media(max-width:600px) {
-    .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        font-size: 28px;
-        bottom: 20px;
-        right: 20px;
-    }
-    .whatsapp-float .whatsapp-tooltip {
-        display: none;
-    }
-}
-
 /* =========================
    SCROLL TO TOP BUTTON
-   ========================= */
+========================= */
 .scroll-top {
     position: fixed;
-    bottom: 100px;
+    bottom: 30px;  /* At the bottom */
     right: 30px;
     width: 45px;
     height: 45px;
@@ -124,15 +91,31 @@
     box-shadow: 0 12px 30px rgba(6, 59, 103, 0.35);
 }
 
+/* =========================
+   RESPONSIVE - Mobile
+========================= */
 @media(max-width:600px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        bottom: 85px;  /* Mobile: above scroll button */
+        right: 20px;
+    }
+    
+    .whatsapp-float .whatsapp-tooltip {
+        display: none;  /* Hide tooltip on mobile */
+    }
+    
     .scroll-top {
-        bottom: 85px;
+        bottom: 20px;  /* ✅ CORRECT - At the very bottom */
         right: 20px;
         width: 40px;
         height: 40px;
         font-size: 16px;
     }
 }
+
 /* =========================
    FORM SUCCESS/ERROR MESSAGES
 ========================= */
