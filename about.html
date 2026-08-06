@@ -3058,6 +3058,122 @@ section{padding:70px 20px;}
     transform:translateY(-3px);
     box-shadow:0 12px 30px rgba(6,59,103,.35);
 }
+ /* =========================================
+   FIX: MOBILE WHITE SCREEN ISSUE
+   ========================================= */
+
+/* Make everything fit on mobile */
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Force all sections to stay inside */
+section {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Container - force full width on mobile */
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Make sure images don't overflow */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Hero section fix */
+.hero {
+    padding: 60px 15px !important;
+    background-attachment: scroll !important;
+}
+
+.hero-content {
+    max-width: 100% !important;
+    padding: 40px 10px !important;
+}
+
+/* Story card fix */
+.story-card {
+    padding: 20px !important;
+    width: 100% !important;
+}
+
+.story-image img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Timeline fix */
+.timeline {
+    padding-left: 10px !important;
+}
+
+.timeline-row {
+    padding-left: 25px !important;
+}
+
+/* Work cards fix */
+.work-card {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+/* Grid fixes */
+.impact-grid,
+.mission-grid,
+.work-grid,
+.values-grid,
+.registration-grid,
+.future-grid {
+    width: 100% !important;
+}
+
+/* Footer fix */
+.site-footer {
+    padding: 40px 15px 0 !important;
+}
+
+.footer-content {
+    width: 100% !important;
+    padding: 0 10px !important;
+}
+
+/* Remove any overflow from any element */
+* {
+    max-width: 100% !important;
+}
+
+/* Fix for all cards */
+.glass-card,
+.reg-card,
+.future-card,
+.value-card,
+.impact-card,
+.testimonial-card {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Floating elements - hide on mobile */
+.floating-card,
+.floating-icon {
+    display: none !important;
+}
 </style>
 
 </head>
