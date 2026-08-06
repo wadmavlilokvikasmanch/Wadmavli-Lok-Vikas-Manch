@@ -119,3 +119,34 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+// =========================
+// DROPDOWN TOGGLE FOR MOBILE
+// =========================
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const trigger = dropdown.querySelector('.dropdown-trigger');
+        
+        if (trigger) {
+            trigger.addEventListener('click', function(e) {
+                // Only on mobile (screen width <= 950px)
+                if (window.innerWidth <= 950) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 950) {
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+    });
+});
